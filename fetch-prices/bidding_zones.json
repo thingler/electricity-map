@@ -1,0 +1,298 @@
+[
+  {
+    "BiddingZone": "BZN|AL",
+    "Code": "10YAL-KESH-----5"
+  },
+  {
+    "BiddingZone": "BZN|AT",
+    "Code": "10YAT-APG------L"
+  },
+  {
+    "BiddingZone": "BZN|BE",
+    "Code": "10YBE----------2"
+  },
+  {
+    "BiddingZone": "BZN|BA",
+    "Code": "10YBA-JPCC-----D"
+  },
+  {
+    "BiddingZone": "BZN|BG",
+    "Code": "10YCA-BULGARIA-R"
+  },
+  {
+    "BiddingZone": "BZN|HR",
+    "Code": "10YHR-HEP------M"
+  },
+  {
+    "BiddingZone": "BZN|CY",
+    "Code": "10YCY-1001A0003J"
+  },
+  {
+    "BiddingZone": "BZN|CZ",
+    "Code": "10YCZ-CEPS-----N"
+  },
+  {
+    "BiddingZone": "BZN|DK1",
+    "Code": "10YDK-1--------W"
+  },
+  {
+    "BiddingZone": "BZN|DK2",
+    "Code": "10YDK-2--------M"
+  },
+  {
+    "BiddingZone": "BZN|EE",
+    "Code": "10Y1001A1001A39I"
+  },
+  {
+    "BiddingZone": "BZN|FI",
+    "Code": "10YFI-1--------U"
+  },
+  {
+    "BiddingZone": "BZN|FR",
+    "Code": "10YFR-RTE------C"
+  },
+  {
+    "BiddingZone": "BZN|GE",
+    "Code": "10Y1001A1001B012"
+  },
+  {
+    "BiddingZone": "BZN|GR",
+    "Code": "10YGR-HTSO-----Y"
+  },
+  {
+    "BiddingZone": "BZN|HU",
+    "Code": "10YHU-MAVIR----U"
+  },
+  {
+    "BiddingZone": "BZN|IT-Brindisi",
+    "Code": "10Y1001A1001A699"
+  },
+  {
+    "BiddingZone": "BZN|IT-Calabria",
+    "Code": "10Y1001C--00096J"
+  },
+  {
+    "BiddingZone": "BZN|IT-Centre-North",
+    "Code": "10Y1001A1001A70O"
+  },
+  {
+    "BiddingZone": "BZN|IT-Centre-South",
+    "Code": "10Y1001A1001A71M"
+  },
+  {
+    "BiddingZone": "BZN|IT-Foggia",
+    "Code": "10Y1001A1001A72K"
+  },
+  {
+    "BiddingZone": "BZN|IT-GR",
+    "Code": "10Y1001A1001A66F"
+  },
+  {
+    "BiddingZone": "BZN|IT-Malta",
+    "Code": "10Y1001A1001A877"
+  },
+  {
+    "BiddingZone": "BZN|IT-North",
+    "Code": "10Y1001A1001A73I"
+  },
+  {
+    "BiddingZone": "BZN|IT-North-AT",
+    "Code": "10Y1001A1001A80L"
+  },
+  {
+    "BiddingZone": "BZN|IT-North-CH",
+    "Code": "10Y1001A1001A68B"
+  },
+  {
+    "BiddingZone": "BZN|IT-North-FR",
+    "Code": "10Y1001A1001A81J"
+  },
+  {
+    "BiddingZone": "BZN|IT-North-SI",
+    "Code": "10Y1001A1001A67D"
+  },
+  {
+    "BiddingZone": "BZN|IT-Priolo",
+    "Code": "10Y1001A1001A76C"
+  },
+  {
+    "BiddingZone": "BZN|IT-Rossano",
+    "Code": "10Y1001A1001A77A"
+  },
+  {
+    "BiddingZone": "BZN|IT-SACOAC",
+    "Code": "10Y1001A1001A885"
+  },
+  {
+    "BiddingZone": "BZN|IT-SACODC",
+    "Code": "10Y1001A1001A893"
+  },
+  {
+    "BiddingZone": "BZN|IT-Sardinia",
+    "Code": "10Y1001A1001A74G"
+  },
+  {
+    "BiddingZone": "BZN|IT-Sicily",
+    "Code": "10Y1001A1001A75E"
+  },
+  {
+    "BiddingZone": "BZN|IT-South",
+    "Code": "10Y1001A1001A788"
+  },
+  {
+    "BiddingZone": "BZN|XK",
+    "Code": "10Y1001C--00100H"
+  },
+  {
+    "BiddingZone": "BZN|LV",
+    "Code": "10YLV-1001A00074"
+  },
+  {
+    "BiddingZone": "BZN|LT",
+    "Code": "10YLT-1001A0008Q"
+  },
+  {
+    "BiddingZone": "BZN|DE-AT-LU",
+    "Code": "10Y1001A1001A63L"
+  },
+  {
+    "BiddingZone": "BZN|DE-LU",
+    "Code": "10Y1001A1001A82H"
+  },
+  {
+    "BiddingZone": "BZN|MT",
+    "Code": "10Y1001A1001A93C"
+  },
+  {
+    "BiddingZone": "BZN|MD",
+    "Code": "10Y1001A1001A990"
+  },
+  {
+    "BiddingZone": "BZN|ME",
+    "Code": "10YCS-CG-TSO---S"
+  },
+  {
+    "BiddingZone": "BZN|NL",
+    "Code": "10YNL----------L"
+  },
+  {
+    "BiddingZone": "BZN|MK",
+    "Code": "10YMK-MEPSO----8"
+  },
+  {
+    "BiddingZone": "BZN|NO1",
+    "Code": "10YNO-1--------2"
+  },
+  {
+    "BiddingZone": "BZN|NO2",
+    "Code": "10YNO-2--------T"
+  },
+  {
+    "BiddingZone": "BZN|NO2NSL",
+    "Code": "50Y0JVU59B4JWQCU"
+  },
+  {
+    "BiddingZone": "BZN|NO3",
+    "Code": "10YNO-3--------J"
+  },
+  {
+    "BiddingZone": "BZN|NO4",
+    "Code": "10YNO-4--------9"
+  },
+  {
+    "BiddingZone": "BZN|NO5",
+    "Code": "10Y1001A1001A48H"
+  },
+  {
+    "BiddingZone": "BZN|PL",
+    "Code": "10YPL-AREA-----S"
+  },
+  {
+    "BiddingZone": "BZN|PT",
+    "Code": "10YPT-REN------W"
+  },
+  {
+    "BiddingZone": "BZN|RO",
+    "Code": "10YRO-TEL------P"
+  },
+  {
+    "BiddingZone": "BZN|RS",
+    "Code": "10YCS-SERBIATSOV"
+  },
+  {
+    "BiddingZone": "BZN|CZ+DE+SK",
+    "Code": "10YDOM-CZ-DE-SKK"
+  },
+  {
+    "BiddingZone": "BZN|SK",
+    "Code": "10YSK-SEPS-----K"
+  },
+  {
+    "BiddingZone": "BZN|SI",
+    "Code": "10YSI-ELES-----O"
+  },
+  {
+    "BiddingZone": "BZN|ES",
+    "Code": "10YES-REE------0"
+  },
+  {
+    "BiddingZone": "BZN|SE1",
+    "Code": "10Y1001A1001A44P"
+  },
+  {
+    "BiddingZone": "BZN|SE2",
+    "Code": "10Y1001A1001A45N"
+  },
+  {
+    "BiddingZone": "BZN|SE3",
+    "Code": "10Y1001A1001A46L"
+  },
+  {
+    "BiddingZone": "BZN|SE4",
+    "Code": "10Y1001A1001A47J"
+  },
+  {
+    "BiddingZone": "BZN|CH",
+    "Code": "10YCH-SWISSGRIDZ"
+  },
+  {
+    "BiddingZone": "BZN|TR",
+    "Code": "10YTR-TEIAS----W"
+  },
+  {
+    "BiddingZone": "BZN|UA",
+    "Code": "10Y1001C--00003F"
+  },
+  {
+    "BiddingZone": "BZN|UA-BEI",
+    "Code": "10YUA-WEPS-----0"
+  },
+  {
+    "BiddingZone": "BZN|UA-DobTPP",
+    "Code": "10Y1001A1001A869"
+  },
+  {
+    "BiddingZone": "BZN|UA-IPS",
+    "Code": "10Y1001C--000182"
+  },
+  {
+    "BiddingZone": "BZN|GB",
+    "Code": "10YGB----------A"
+  },
+  {
+    "BiddingZone": "BZN|GB(ElecLink)",
+    "Code": "11Y0-0000-0265-K"
+  },
+  {
+    "BiddingZone": "BZN|GB(IFA)",
+    "Code": "10Y1001C--00098F"
+  },
+  {
+    "BiddingZone": "BZN|GB(IFA2)",
+    "Code": "17Y0000009369493"
+  },
+  {
+    "BiddingZone": "BZN|IE(SEM)",
+    "Code": "10Y1001A1001A59C"
+  }
+]
