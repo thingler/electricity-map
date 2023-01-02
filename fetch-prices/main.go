@@ -10,6 +10,7 @@ import (
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/dynamodb"
 	"github.com/aws/aws-sdk-go-v2/service/scheduler"
+	"github.com/aws/aws-sdk-go-v2/service/ssm"
 	"golang.org/x/exp/slices"
 )
 
@@ -24,6 +25,26 @@ type LambdaSchedulerEvent struct {
 
 // HandleRequest lambda init functions
 func HandleRequest(ctx context.Context, lambdaEvent LambdaSchedulerEvent) error {
+	// AWS CLI configuration
+	cfg, err := config.LoadDefaultConfig(context.TODO(), func(o *config.LoadOptions) error {
+		o.Region = "eu-west-1"
+		return nil
+	})
+	if err != nil {
+		return err
+	}
+
+	// Get parameters from SSM Parameter Store
+	parameter := SSMParameter{
+		Svc: ssm.NewFromConfig(cfg),
+	}
+	token := parameter.GetParameter("entsoe_token")
+	schedulerName := parameter.GetParameter("scheduler_name")
+	schedulerArn := parameter.GetParameter("scheduler_arn")
+	schedulerRoleArn := parameter.GetParameter("scheduler_role_arn")
+	tableName := parameter.GetParameter("table_name")
+	timeIndexName := parameter.GetParameter("time_index_name")
+
 	// Read Bidding Zone Json data from file bidding_zones.json
 	biddingZoneJson, err := os.ReadFile("bidding_zones.json")
 	if err != nil {
@@ -54,27 +75,15 @@ func HandleRequest(ctx context.Context, lambdaEvent LambdaSchedulerEvent) error 
 	firstDay := date.Today().Format("2006-01-02")
 	lastDay := date.IncDays(+2).Format("2006-01-02")
 
-	// AWS CLI configuration
-	cfg, err := config.LoadDefaultConfig(context.TODO(), func(o *config.LoadOptions) error {
-		o.Region = "eu-west-1"
-		return nil
-	})
-	if err != nil {
-		return err
-	}
-
 	// DynamoDB clients
 	dynamDBSvc := dynamodb.NewFromConfig(cfg)
 
 	// EventBridgeScheduler
-	schedulerName := "day_ahead_price"
-	schedulerArn := "arn:aws:lambda:eu-west-1:846764252037:function:fetch-prices"
-	schedulerRoleArn := "arn:aws:iam::846764252037:role/service-role/Amazon_EventBridge_Scheduler_LAMBDA"
 	eventScheduler := &EventBridgeScheduler{
 		Svc:     scheduler.NewFromConfig(cfg),
-		Name:    &schedulerName,
-		Arn:     &schedulerArn,
-		RoleArn: &schedulerRoleArn,
+		Name:    schedulerName,
+		Arn:     schedulerArn,
+		RoleArn: schedulerRoleArn,
 	}
 
 	// Update schedule to rate in case the Lambda function crashes or timeout
@@ -90,11 +99,11 @@ func HandleRequest(ctx context.Context, lambdaEvent LambdaSchedulerEvent) error 
 		biddingZone := biddingZones[i]
 		price := &DayAheadPrice{
 			Svc:           dynamDBSvc,
-			Token:         "6e6bfa68-2eb4-43e6-9e4a-47b85970a031",
+			Token:         token,
 			BiddingZone:   biddingZone.BiddingZone,
 			Code:          biddingZone.Code,
-			TableName:     "day_ahead_prices",
-			TimeIndexName: "time-index",
+			TableName:     tableName,
+			TimeIndexName: timeIndexName,
 		}
 
 		// Get current pirce information for bidding zone from DynamoDB

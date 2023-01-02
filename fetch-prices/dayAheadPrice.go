@@ -30,9 +30,9 @@ type dayAheadPriceData struct {
 type DayAheadPrice struct {
 	Code                          string
 	BiddingZone                   string
-	Token                         string
-	TableName                     string
-	TimeIndexName                 string
+	Token                         *string
+	TableName                     *string
+	TimeIndexName                 *string
 	Svc                           *dynamodb.Client
 	publicationMarketDocument     *PublicationMarketDocument
 	acknowledgementMarketDocument *AcknowledgementMarketDocument
@@ -109,7 +109,7 @@ func (price *DayAheadPrice) GetAPIPrice(firstDay string, lastDay string) error {
 		return err
 	}
 	req.Header.Set("Content-Type", "application/xml; charset=utf-8")
-	req.Header.Set("SECURITY_TOKEN", price.Token)
+	req.Header.Set("SECURITY_TOKEN", *price.Token)
 	resp, err := client.Do(req)
 	if err != nil {
 		return err
@@ -146,8 +146,8 @@ func (price *DayAheadPrice) GetDBPrice(fromDay string) error {
 	startDate.IncDays(-1)
 
 	params := &dynamodb.QueryInput{
-		TableName:              &price.TableName,
-		IndexName:              &price.TimeIndexName,
+		TableName:              price.TableName,
+		IndexName:              price.TimeIndexName,
 		KeyConditionExpression: aws.String("bidding_zone = :hashKey and #time >= :sortkeyval"),
 		ExpressionAttributeValues: map[string]types.AttributeValue{
 			":hashKey":    &types.AttributeValueMemberS{Value: price.BiddingZone},
@@ -234,12 +234,12 @@ func (price *DayAheadPrice) UpdateDB() (int, error) {
 		if err != nil {
 			return 0, err
 		}
-		requestItems[price.TableName] = append(requestItems[price.TableName], types.WriteRequest{
+		requestItems[*price.TableName] = append(requestItems[*price.TableName], types.WriteRequest{
 			PutRequest: &types.PutRequest{
 				Item: av,
 			},
 		})
-		requestItemSize = len(requestItems[price.TableName])
+		requestItemSize = len(requestItems[*price.TableName])
 		if requestItemSize == maxRequestItemSize {
 			break
 		}
@@ -248,9 +248,9 @@ func (price *DayAheadPrice) UpdateDB() (int, error) {
 	for i := 0; i < requestItemSize; i += maxBatchWriteSize {
 		writeItems := map[string][]types.WriteRequest{}
 		if (i + maxBatchWriteSize) < requestItemSize {
-			writeItems[price.TableName] = requestItems[price.TableName][i:(i + maxBatchWriteSize)]
+			writeItems[*price.TableName] = requestItems[*price.TableName][i:(i + maxBatchWriteSize)]
 		} else {
-			writeItems[price.TableName] = requestItems[price.TableName][i:requestItemSize]
+			writeItems[*price.TableName] = requestItems[*price.TableName][i:requestItemSize]
 		}
 		batchInput := &dynamodb.BatchWriteItemInput{
 			RequestItems: writeItems,
@@ -261,9 +261,9 @@ func (price *DayAheadPrice) UpdateDB() (int, error) {
 		}
 		log.Printf(
 			"Wrote %d data points from %s to %s for bidding zone %s",
-			len(writeItems[price.TableName]),
+			len(writeItems[*price.TableName]),
 			priceData[i].Time,
-			priceData[i+len(writeItems[price.TableName])-1].Time,
+			priceData[i+len(writeItems[*price.TableName])-1].Time,
 			price.BiddingZone,
 		)
 	}
