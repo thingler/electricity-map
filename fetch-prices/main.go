@@ -94,7 +94,6 @@ func HandleRequest(ctx context.Context, lambdaEvent LambdaSchedulerEvent) error 
 	}
 
 	// Loop trough bidding zones and update DynamoDB if there are new price data for the bidding zone
-	elementsUpdated := 0
 	for i := bzIndex; i < len(biddingZones); i++ {
 		biddingZone := biddingZones[i]
 		price := &DayAheadPrice{
@@ -119,7 +118,7 @@ func HandleRequest(ctx context.Context, lambdaEvent LambdaSchedulerEvent) error 
 		}
 
 		// Update DynamoDB table with new price information
-		elementsUpdated, err = price.UpdateDB()
+		elementsUpdated, err := price.UpdateDB()
 		if err != nil {
 			return err
 		}
