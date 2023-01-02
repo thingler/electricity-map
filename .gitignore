@@ -21,4 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-*.zip
+
+# Go
+/fetch-prices/*.zip
+/fetch-prices/fetch-prices
