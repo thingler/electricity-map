@@ -1,0 +1,26 @@
+.map {
+  max-height: 95.6vh;
+}
+.noPriceData {
+  fill: #c5bab5;
+}
+
+.trivial {
+  fill: #82e4b5;
+}
+
+.low {
+  fill: #75bb94;
+}
+
+.medium {
+  fill: #fbcd62;
+}
+
+.concerning {
+  fill: #fbb879;
+}
+
+.high {
+  fill: #8a5574;
+}

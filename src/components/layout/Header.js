@@ -7,6 +7,9 @@ function Header() {
     <header className={classes.header}>
       <div className={classes.logo}>Thingler</div>
       <nav>
+        <div className={classes.menuIcon}>
+          <span className={classes.navIcon}></span>
+        </div>
         <ul>
           <li>
             <Link to="/">Thingler</Link>

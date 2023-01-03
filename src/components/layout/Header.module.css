@@ -1,24 +1,34 @@
 .header {
+  /* position: absolute; */
   width: 100%;
-  height: 5rem;
+  height: 4rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background-color: #77002e;
-  padding: 0 10%;
+  /* justify-content: space-between; */
+  justify-content: flex-start;
 }
 
 .logo {
   font-size: 2rem;
-  color: white;
+  color: #000000;
   font-weight: bold;
+  margin-left: 2rem;
+  flex: 1 1 auto;
+  align-self: auto;
+  border: 1px solid green;
+}
+
+.header nav {
+  flex: 2 1 auto;
+  align-self: auto;
+  border: 1px solid green;
 }
 
 .header ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
+  display: none;
   align-items: baseline;
 }
 
@@ -28,20 +38,71 @@
 
 .header a {
   text-decoration: none;
-  font-size: 1.5rem;
-  color: #fcb8d2;
+  font-size: 1.2rem;
+  color: #173e43;
 }
 
 .header a:hover,
 .header a:active,
 .header a.active {
-  color: white;
+  color: #848484;
 }
 
-.badge {
-  background-color: #cc2062;
-  color: white;
-  border-radius: 12px;
-  padding: 0 1rem;
-  margin-left: 0.5rem;
+/* Wait!! */
+.menuIcon {
+  cursor: pointer;
+  display: inline-block;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.menuIcon .navIcon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  width: 18px;
+}
+
+.menuIcon .navIcon:before,
+.menuIcon .navIcon:after {
+  background: #333;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+
+.menuIcon .navIcon:before {
+  top: 5px;
+}
+
+.menuIcon .navIcon:after {
+  top: -5px;
+}
+
+.menuIcon:hover .navIcon {
+  background: transparent;
+}
+
+.menuIcon:hover .navIcon:before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.menuIcon:hover .navIcon:after {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+@media (min-width: 55em) {
+  .menuIcon {
+    display: none;
+  }
+  .header ul {
+    display: flex;
+  }
 }

@@ -1,0 +1,23 @@
+.flexContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.map {
+  flex: 3 1 auto;
+  align-self: auto;
+  background-color: #dddfd4;
+  text-align: right;
+}
+
+.text {
+  flex: 1 1 auto;
+  align-self: auto;
+  margin: 0 0.5rem;
+}
+
+@media (min-width: 55em) {
+  .flexContainer {
+    flex-direction: row;
+  }
+}

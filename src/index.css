@@ -1,53 +1,22 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   font-family: sans-serif;
-  margin: 3rem;
-  background-color: #dfdfdf;
+  background-color: #f9f9f6;
+  color: #848484;
 }
 
 h1,
 h2 {
-  color: #333333;
-}
-
-.btn {
-  font: inherit;
-  padding: 0.5rem 1.5rem;
-  cursor: pointer;
-  border-radius: 4px;
-  background-color: #800040;
-  color: white;
-  border: 1px solid #800040;
-  margin: 0 1rem;
-}
-
-.btn:hover {
-  background-color: #9c1458;
-  border-color: #9c1458;
-}
-
-.btn--alt {
-  background-color: transparent;
-  color: #800040;
-}
-
-.btn--alt:hover {
-  background-color: #f8dae9;
-}
-
-.card {
-  background-color: white;
-  border-radius: 4px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-  padding: 1rem;
-  width: 20rem;
-}
-
-.actions {
-  text-align: right;
+  color: #000000;
 }
 
 .modal {
