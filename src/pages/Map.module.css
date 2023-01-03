@@ -13,11 +13,15 @@
 .text {
   flex: 1 1 auto;
   align-self: auto;
-  margin: 0 0.5rem;
+  padding: 0 1rem;
+  background-color: #f7f6f4;
 }
 
 @media (min-width: 55em) {
   .flexContainer {
     flex-direction: row;
+  }
+  .text {
+    margin: 4rem 0.5rem 0;
   }
 }

@@ -1,13 +1,20 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 import classes from "./Header.module.css";
 
 function Header() {
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+
+  function toggleMenu() {
+    setMenuIsOpen(!menuIsOpen);
+  }
+
   return (
     <header className={classes.header}>
       <div className={classes.logo}>Thingler</div>
       <nav>
-        <div className={classes.menuIcon}>
+        <div className={classes.menuIcon} onClick={toggleMenu}>
           <span className={classes.navIcon}></span>
         </div>
         <ul>
