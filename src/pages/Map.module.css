@@ -4,14 +4,14 @@
 }
 
 .map {
-  flex: 3 1 auto;
+  flex: 0 0 65%;
   align-self: auto;
   background-color: #dddfd4;
   text-align: right;
 }
 
 .text {
-  flex: 1 1 auto;
+  flex: 1 0 33%;
   align-self: auto;
   padding: 0 1rem;
   background-color: #f7f6f4;
@@ -22,6 +22,6 @@
     flex-direction: row;
   }
   .text {
-    margin: 4rem 0.5rem 0;
+    margin: 4rem 0.7rem 0;
   }
 }

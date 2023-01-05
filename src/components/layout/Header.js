@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
 import { useState } from "react";
 
-import classes from "./Header.module.css";
+import Nav from "./Nav";
+
+import css from "./Header.module.css";
 
 function Header() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -11,24 +12,17 @@ function Header() {
   }
 
   return (
-    <header className={classes.header}>
-      <div className={classes.logo}>Thingler</div>
-      <nav>
-        <div className={classes.menuIcon} onClick={toggleMenu}>
-          <span className={classes.navIcon}></span>
+    <header
+      className={menuIsOpen ? `${css.header} ${css.menuIsOpen}` : css.header}
+    >
+      <div className={css.flexContainer}>
+        <div className={css.logo}>Thingler</div>
+        {!menuIsOpen && <Nav />}
+        <div className={css.menuIcon} onClick={toggleMenu}>
+          <span className={css.navIcon}></span>
         </div>
-        <ul>
-          <li>
-            <Link to="/">Thingler</Link>
-          </li>
-          <li>
-            <Link to="/map">Europe Map</Link>
-          </li>
-          <li>
-            <Link to="/country">Country</Link>
-          </li>
-        </ul>
-      </nav>
+      </div>
+      {menuIsOpen && <Nav toggleMenu={toggleMenu} />}
     </header>
   );
 }

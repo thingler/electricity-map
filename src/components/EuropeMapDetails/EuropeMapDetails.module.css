@@ -1,0 +1,60 @@
+.priceContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.priceContainer .header {
+  font-weight: bold;
+  padding: 1rem 1rem;
+}
+
+.country {
+  display: flex;
+  flex: 0 0 auto;
+  align-self: auto;
+  /* margin: 0.4rem 0; */
+  background-color: #dddfd4;
+  /* background-color: #fae596; */
+  padding: 0.5rem 0rem 0.5rem 0.2rem;
+  color: #173e43;
+}
+
+.country .name {
+  flex: 0 0 60%;
+  white-space: nowrap;
+}
+
+.country .name .dot {
+  position: relative;
+  top: 0.1rem;
+  height: 1rem;
+  width: 1rem;
+  margin: 0 0.5rem;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.country .name .trivial {
+  background-color: #82e4b5;
+}
+
+.country .name .low {
+  background-color: #75bb94;
+}
+
+.country .name .medium {
+  background-color: #fbcd62;
+}
+
+.country .name .concerning {
+  background-color: #fbb879;
+}
+
+.country .name .high {
+  background-color: #8a5574;
+}
+
+.country .price {
+  flex: 0 0 auto;
+  text-align: center;
+}
