@@ -25,3 +25,5 @@ yarn-error.log*
 # Go
 /fetch-prices/*.zip
 /fetch-prices/fetch-prices
+/get-data/*.zip
+/get-data/get-data
