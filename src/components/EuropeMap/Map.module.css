@@ -1,6 +1,12 @@
 .map {
   max-height: 100vh;
 }
+
+.map text {
+  transform: matrix(100,0,0,-100,0,12490);
+  font: bold 0.12rem sans-serif;
+}
+
 .noPriceData {
   fill: #c5bab5;
 }
