@@ -4,7 +4,11 @@
 
 .map text {
   transform: matrix(100,0,0,-100,0,12490);
-  font: bold 0.12rem sans-serif;
+  font: bold 0.11rem sans-serif;
+  /* stroke: #505050;
+  stroke-width: 0.015rem;
+  stroke-linecap: round;
+  stroke-linejoin: round; */
 }
 
 .noPriceData {
