@@ -1,13 +1,39 @@
-// import css from "./BiddingZone.module.css";
+import css from "./BiddingZone.module.css";
 
 function Header(props) {
+  var price = props.children;
+  var className = null;
+
+  if (price <= 50) {
+    className = css.trivial;
+  }
+  if (price > 50) {
+    className = css.low;
+  }
+  if (price > 120) {
+    className = css.medium;
+  }
+  if (price > 200) {
+    className = css.concerning;
+  }
+  if (price > 400) {
+    className = css.high;
+  }
+  if (price === null) {
+    className = css.noPriceData;
+  } else {
+    price = Math.round(price * 10) / 100;
+  }
+
   return (
-    <g>
-      <path className={props.className} d={props.d} />
-      <text x={props.textX} y={props.textY}>
-        {props.children}
-      </text>
-    </g>
+    <>
+      <path className={className} d={props.d} />
+      {price !== null && (
+        <text x={props.textX} y={props.textY}>
+          {price}
+        </text>
+      )}
+    </>
   );
 }
 

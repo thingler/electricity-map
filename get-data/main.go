@@ -28,7 +28,8 @@ func HandleRequest(ctx context.Context, request events.APIGatewayV2HTTPRequest) 
 		Body:            "[]",
 		IsBase64Encoded: false,
 		Headers: map[string]string{
-			"content-type": "application/json",
+			"content-type":                "application/json",
+			"Access-Control-Allow-Origin": "*",
 		},
 	}
 	// log.Println("Version", request.Version)

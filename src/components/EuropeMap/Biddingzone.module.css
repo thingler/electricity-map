@@ -1,0 +1,32 @@
+text {
+  transform: matrix(100,0,0,-100,0,12490);
+  font: bold 0.11rem sans-serif;
+  /* stroke: #505050;
+  stroke-width: 0.015rem;
+  stroke-linecap: round;
+  stroke-linejoin: round; */
+}
+
+.noPriceData {
+  fill: #c5bab5;
+}
+
+.trivial {
+  fill: #82e4b5;
+}
+
+.low {
+  fill: #75bb94;
+}
+
+.medium {
+  fill: #fbcd62;
+}
+
+.concerning {
+  fill: #fbb879;
+}
+
+.high {
+  fill: #8a5574;
+}
