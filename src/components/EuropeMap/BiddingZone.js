@@ -22,7 +22,7 @@ function Header(props) {
   if (price === null) {
     className = css.noPriceData;
   } else {
-    price = Math.round(price * 10) / 100;
+    price = (Math.round(price * 10) / 100).toFixed(2);
   }
 
   return (

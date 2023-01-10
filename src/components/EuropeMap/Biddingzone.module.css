@@ -1,6 +1,7 @@
 text {
   transform: matrix(100,0,0,-100,0,12490);
   font: bold 0.11rem sans-serif;
+  /* transition: all 3s ease-out; */
   /* stroke: #505050;
   stroke-width: 0.015rem;
   stroke-linecap: round;
@@ -13,20 +14,25 @@ text {
 
 .trivial {
   fill: #82e4b5;
+  transition: all 0.4s ease-out;
 }
 
 .low {
   fill: #75bb94;
+  transition: all 0.4s ease-out;
 }
 
 .medium {
   fill: #fbcd62;
+  transition: all 0.4s ease-out;
 }
 
 .concerning {
   fill: #fbb879;
+  transition: all 0.4s ease-out;
 }
 
 .high {
   fill: #8a5574;
+  transition: all 0.4s ease-out;
 }
