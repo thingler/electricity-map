@@ -1,12 +1,27 @@
-import BiddingZones from "../BiddingZones";
+import { useState, useEffect } from "react";
+
+import BiddingZoneList from "../BiddingZoneList";
 
 import BiddingZone from "./BiddingZone";
 import classes from "./Map.module.css";
 
 function EuropeMap(props) {
-  const biddingZones = BiddingZones();
+  const biddingZoneList = BiddingZoneList();
+  const [smallWidth, setSmallWidth] = useState(true);
 
-  const mapData = biddingZones.map((zone) => {
+  useEffect(() => {
+    function handleWidth() {
+      if (window.innerWidth < 600) {
+        setSmallWidth(true);
+      } else {
+        setSmallWidth(false);
+      }
+    }
+    handleWidth();
+    window.addEventListener("resize", handleWidth);
+  }, []);
+
+  const mapData = biddingZoneList.map((zone) => {
     var averagePrice = null;
     if (zone.bz in props.bzPrice && props.bzPrice[zone.bz].length > 0) {
       var finalPrice = props.bzPrice[zone.bz].reduce(
@@ -37,16 +52,12 @@ function EuropeMap(props) {
   return (
     <svg
       version="1.0"
-      viewBox="0 0 1190.0 1245.0"
+      viewBox={smallWidth ? "0 0 1000 1245" : "0 0 1190 1245"}
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid meet"
       className={classes.map}
     >
-      <g
-        transform="translate(-50,1249) scale(0.1,-0.1)"
-        fill="#000000"
-        stroke="none"
-      >
+      <g transform="translate(-50,1249) scale(0.1,-0.1)" stroke="none">
         {mapData}
       </g>
     </svg>

@@ -1,12 +1,12 @@
-import BiddingZones from "../BiddingZones";
+import BiddingZoneList from "../BiddingZoneList";
 
 import Country from "./Country";
 import css from "./EuropeMapDetails.module.css";
 
 function EuropeMapDetails(props) {
-  const biddingZones = BiddingZones();
+  const biddingZoneList = BiddingZoneList();
 
-  const countries = biddingZones.reduce((previous, zone) => {
+  const countries = biddingZoneList.reduce((previous, zone) => {
     var averagePrice = null;
     if (zone.bz in props.bzPrice && props.bzPrice[zone.bz].length > 0) {
       if (!(zone.country in previous)) {

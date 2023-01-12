@@ -1,6 +1,6 @@
-export default BiddingZones;
+export default BiddingZoneList;
 
-function BiddingZones() {
+function BiddingZoneList() {
   return [
     {
       country: "Russia",

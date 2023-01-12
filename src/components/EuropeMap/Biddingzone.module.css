@@ -1,11 +1,6 @@
 text {
   transform: matrix(100,0,0,-100,0,12490);
   font: bold 0.11rem sans-serif;
-  /* transition: all 3s ease-out; */
-  /* stroke: #505050;
-  stroke-width: 0.015rem;
-  stroke-linecap: round;
-  stroke-linejoin: round; */
 }
 
 .noPriceData {
