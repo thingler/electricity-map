@@ -5,18 +5,34 @@
 
 .priceContainer .header {
   font-weight: bold;
+  font-size: 0.9rem;
   padding: 1rem 1rem;
+  background-color: #dfd7d4;
 }
+
+.countryContainer {
+  background-color: #dfd7d4;
+}
+
+.countryContainer:nth-child(2n){
+  background-color: #dddfd4;
+}
+
 
 .country {
   display: flex;
   flex: 0 0 auto;
   align-self: auto;
   /* margin: 0.4rem 0; */
-  background-color: #dddfd4;
   /* background-color: #fae596; */
-  padding: 0.5rem 0rem 0.5rem 0.2rem;
+  padding: 0.25rem 0rem 0.25rem 0.2rem;
   color: #173e43;
+  font-size: 0.8rem;
+}
+
+.countryWithBZs {
+  padding: 0;
+  padding-bottom: 0.25rem;
 }
 
 .country .name {
@@ -24,14 +40,26 @@
   white-space: nowrap;
 }
 
+.country .nameWithBZs {
+  margin-left: 1.8rem;
+  padding-bottom: 0;
+}
+
 .country .name .dot {
   position: relative;
   top: 0.1rem;
-  height: 1rem;
-  width: 1rem;
+  height: 0.75rem;
+  width: 0.75rem;
   margin: 0 0.5rem;
   border-radius: 50%;
   display: inline-block;
+}
+
+.country .name .dotWithBZs {
+  margin-left: 3rem;
+  top: 0.05rem;
+  height: 0.7rem;
+  width: 0.7rem;
 }
 
 .country .name .trivial {
@@ -57,4 +85,5 @@
 .country .price {
   flex: 0 0 auto;
   text-align: center;
+  padding-top: 0.15rem
 }

@@ -7,7 +7,9 @@ import classes from "./Map.module.css";
 function MapPage() {
   const [bzPrice, setBzPrice] = useState({});
   useEffect(() => {
-    fetch("https://api.thingler.io/day-ahead?date=2023-01-10")
+    const d = new Date();
+    const now = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+    fetch(`https://api.thingler.io/day-ahead?date=${now}`)
       .then((response) => {
         return response.json();
       })
