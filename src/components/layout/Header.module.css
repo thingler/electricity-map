@@ -130,6 +130,7 @@
 @media (min-width: 55em) {
   .header {
     position: absolute;
+    z-index: 1;
   }
   .header nav {
     flex: 1 0 auto;

@@ -1,3 +1,57 @@
 .map {
   max-height: 100vh;
 }
+
+.energyPriceLevels {
+  position: absolute;
+  /* top: 0.5rem;
+  left: 3rem; */
+  top: 1rem;
+  left: 2rem;
+  padding: 0.3rem;
+  color: #173e43;
+  background: rgba(197, 186, 181, 0.5);
+  text-align: left;
+  font-size: 0.75rem;
+}
+
+.energyPriceLevels .level {
+  padding: 0.2rem 0;
+}
+
+.energyPriceLevels .level .dot {
+  position: relative;
+  top: 0.05rem;
+  height: 0.6rem;
+  width: 0.6rem;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.energyPriceLevels .level .trivial {
+  background-color: #82e4b5;
+}
+
+.energyPriceLevels .level .low {
+  background-color: #75bb94;
+}
+
+.energyPriceLevels .level .medium {
+  background-color: #fbcd62;
+}
+
+.energyPriceLevels .level .concerning {
+  background-color: #fbb879;
+}
+
+.energyPriceLevels .level .high {
+  background-color: #8a5574;
+}
+
+@media (min-width: 55em) {
+  .energyPriceLevels {
+    top: 3.5rem;
+    left: 2rem;
+  }
+}

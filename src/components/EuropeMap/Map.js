@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 
 import BiddingZoneList from "../BiddingZoneList";
+import EnergyPriceLevels from "../EnergyPriceLevels";
 
 import BiddingZone from "./BiddingZone";
 import classes from "./Map.module.css";
 
 function EuropeMap(props) {
+  const priceLevels = EnergyPriceLevels();
   const biddingZoneList = BiddingZoneList();
   const [smallWidth, setSmallWidth] = useState(true);
 
@@ -50,17 +52,41 @@ function EuropeMap(props) {
   });
 
   return (
-    <svg
-      version="1.0"
-      viewBox={smallWidth ? "0 0 1000 1245" : "0 0 1190 1245"}
-      xmlns="http://www.w3.org/2000/svg"
-      preserveAspectRatio="xMidYMid meet"
-      className={classes.map}
-    >
-      <g transform="translate(-50,1249) scale(0.1,-0.1)" stroke="none">
-        {mapData}
-      </g>
-    </svg>
+    <>
+      <div className={classes.energyPriceLevels}>
+        <div className={classes.level}>
+          <span className={`${classes.dot} ${classes.trivial}`} />
+          {`≤ ${priceLevels.low / 10}`} / kWh
+        </div>
+        <div className={classes.level}>
+          <span className={`${classes.dot} ${classes.low}`} />
+          &gt; {priceLevels.low / 10} / kWh
+        </div>
+        <div className={classes.level}>
+          <span className={`${classes.dot} ${classes.medium}`} />
+          &gt; {priceLevels.medium / 10} / kWh
+        </div>
+        <div className={classes.level}>
+          <span className={`${classes.dot} ${classes.concerning}`} />
+          &gt; {priceLevels.concerning / 10} / kWh
+        </div>
+        <div className={classes.level}>
+          <span className={`${classes.dot} ${classes.high}`} />
+          &gt; {priceLevels.high / 10} / kWh
+        </div>
+      </div>
+      <svg
+        version="1.0"
+        viewBox={smallWidth ? "0 0 1000 1245" : "0 0 1190 1245"}
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="xMidYMid meet"
+        className={classes.map}
+      >
+        <g transform="translate(-50,1249) scale(0.1,-0.1)" stroke="none">
+          {mapData}
+        </g>
+      </svg>
+    </>
   );
 }
 
