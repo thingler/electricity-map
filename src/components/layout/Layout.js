@@ -1,11 +1,14 @@
+import { CountryPageContextProvider } from "../../store/CountryPageContext";
 import Header from "./Header";
 
 function Layout(props) {
   return (
-    <div>
-      <Header />
+    <>
+      <CountryPageContextProvider>
+        <Header />
+      </CountryPageContextProvider>
       <main>{props.children}</main>
-    </div>
+    </>
   );
 }
 export default Layout;

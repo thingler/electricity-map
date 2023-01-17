@@ -5,17 +5,17 @@ function Nav(props) {
     <nav>
       <ul>
         <li>
-          <Link onClick={props.toggleMenu} to="/">
+          <Link onClick={props.closeMenu} to="/">
             Thingler
           </Link>
         </li>
         <li>
-          <Link onClick={props.toggleMenu} to="/map">
+          <Link onClick={props.flyingHeader} to="/map">
             Europe Map
           </Link>
         </li>
         <li>
-          <Link onClick={props.toggleMenu} to="/country">
+          <Link onClick={props.closeMenu} to="/country">
             Country
           </Link>
         </li>
