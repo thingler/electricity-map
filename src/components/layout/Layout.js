@@ -1,12 +1,12 @@
-import { CountryPageContextProvider } from "../../store/CountryPageContext";
+import { MapPageContextProvider } from "../../store/MapPageContext";
 import Header from "./Header";
 
 function Layout(props) {
   return (
     <>
-      <CountryPageContextProvider>
+      <MapPageContextProvider>
         <Header />
-      </CountryPageContextProvider>
+      </MapPageContextProvider>
       <main>{props.children}</main>
     </>
   );

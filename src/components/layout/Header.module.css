@@ -128,7 +128,7 @@
 }
 
 @media (min-width: 55em) {
-  .headerCountrypage {
+  .headerMapPage {
     position: absolute;
     z-index: 1;
   }

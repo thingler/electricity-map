@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import CountryPageContext from "../../store/CountryPageContext";
+import MapPageContext from "../../store/MapPageContext";
 
 import Nav from "./Nav";
 
@@ -7,7 +7,7 @@ import css from "./Header.module.css";
 
 function Header() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
-  const countryPageCtx = useContext(CountryPageContext);
+  const mapPageCtx = useContext(MapPageContext);
 
   function toggleMenu() {
     setMenuIsOpen(!menuIsOpen);
@@ -15,26 +15,20 @@ function Header() {
 
   function closeMenu() {
     setMenuIsOpen(false);
-    countryPageCtx.setCountryPage(false);
+    mapPageCtx.setMapPage(false);
   }
 
   function flyingHeader() {
     setMenuIsOpen(false);
-    countryPageCtx.setCountryPage(true);
+    mapPageCtx.setMapPage(true);
   }
 
-  const countryPageHeader = countryPageCtx.isCountryPage
-    ? `${css.header} ${css.headerCountrypage}`
+  const header = mapPageCtx.isMapPage
+    ? `${css.header} ${css.headerMapPage}`
     : css.header;
 
   return (
-    <header
-      className={
-        menuIsOpen
-          ? `${countryPageHeader} ${css.menuIsOpen}`
-          : countryPageHeader
-      }
-    >
+    <header className={menuIsOpen ? `${header} ${css.menuIsOpen}` : header}>
       <div className={css.flexContainer}>
         <div className={css.logo}>Thingler</div>
         {!menuIsOpen && (
