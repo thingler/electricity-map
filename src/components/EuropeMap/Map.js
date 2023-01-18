@@ -1,4 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+
+import BzPriceContext from "../../store/BzPriceContext";
 
 import BiddingZoneList from "../BiddingZoneList";
 import EnergyPriceLevels from "../EnergyPriceLevels";
@@ -6,7 +8,9 @@ import EnergyPriceLevels from "../EnergyPriceLevels";
 import BiddingZone from "./BiddingZone";
 import classes from "./Map.module.css";
 
-function EuropeMap(props) {
+function EuropeMap() {
+  const bzPriceCtx = useContext(BzPriceContext);
+
   const priceLevels = EnergyPriceLevels();
   const biddingZoneList = BiddingZoneList();
   const [smallWidth, setSmallWidth] = useState(true);
@@ -25,8 +29,11 @@ function EuropeMap(props) {
 
   const mapData = biddingZoneList.map((zone) => {
     var averagePrice = null;
-    if (zone.bz in props.bzPrice && props.bzPrice[zone.bz].length > 0) {
-      var finalPrice = props.bzPrice[zone.bz].reduce(
+    if (
+      zone.bz in bzPriceCtx.bzPrice &&
+      bzPriceCtx.bzPrice[zone.bz].length > 0
+    ) {
+      var finalPrice = bzPriceCtx.bzPrice[zone.bz].reduce(
         (previous, bz) =>
           bz.resolution === "PT60M"
             ? {

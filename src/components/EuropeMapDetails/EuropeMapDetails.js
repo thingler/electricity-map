@@ -1,18 +1,26 @@
+import { useContext } from "react";
+
+import BzPriceContext from "../../store/BzPriceContext";
+
 import BiddingZoneList from "../BiddingZoneList";
 
 import Country from "./Country";
 import css from "./EuropeMapDetails.module.css";
 
-function EuropeMapDetails(props) {
+function EuropeMapDetails() {
+  const bzPriceCtx = useContext(BzPriceContext);
   const biddingZoneList = BiddingZoneList();
 
   const countries = biddingZoneList.reduce((previous, zone) => {
     var averagePrice = null;
-    if (zone.bz in props.bzPrice && props.bzPrice[zone.bz].length > 0) {
+    if (
+      zone.bz in bzPriceCtx.bzPrice &&
+      bzPriceCtx.bzPrice[zone.bz].length > 0
+    ) {
       if (!(zone.country in previous)) {
         previous[zone.country] = [];
       }
-      var finalPrice = props.bzPrice[zone.bz].reduce(
+      var finalPrice = bzPriceCtx.bzPrice[zone.bz].reduce(
         (previous, bz) =>
           bz.resolution === "PT60M"
             ? {
