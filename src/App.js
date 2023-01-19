@@ -3,6 +3,7 @@ import RootPage from "./pages/Root";
 import MapPage from "./pages/Map";
 import CountryPage from "./pages/Country";
 import Layout from "./components/layout/Layout";
+import { CountryPriceContextProvider } from "./store/CountryPriceContext";
 
 function App() {
   return (
@@ -10,7 +11,14 @@ function App() {
       <Routes>
         <Route path="/" element={<RootPage />} />
         <Route path="/map" element={<MapPage />} />
-        <Route path="/country" element={<CountryPage />} />
+        <Route
+          path="/country"
+          element={
+            <CountryPriceContextProvider>
+              <CountryPage />
+            </CountryPriceContextProvider>
+          }
+        />
       </Routes>
     </Layout>
   );

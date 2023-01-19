@@ -1,6 +1,6 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
-import BzPriceContext from "../store/BzPriceContext";
+import CountryPriceContext from "../store/CountryPriceContext";
 
 import BiddingZoneList from "../components/BiddingZoneList";
 import EnergyPriceLevels from "../components/EnergyPriceLevels";
@@ -23,11 +23,16 @@ import css from "./Country.module.css";
 function CountryPage() {
   const country = "Finland";
 
+  const countryPriceCtx = useContext(CountryPriceContext);
   const biddingZoneList = BiddingZoneList();
-
-  const bzPriceCtx = useContext(BzPriceContext);
-
   const priceLevels = EnergyPriceLevels();
+
+  useEffect(() => {
+    const d = new Date();
+    const now = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+
+    countryPriceCtx.updateCountryPrice(country, now);
+  }, [country]);
 
   ChartJS.register(
     CategoryScale,
@@ -40,6 +45,7 @@ function CountryPage() {
 
   const options = {
     responsive: true,
+    // maintainAspectRatio: false,
     plugins: {
       legend: {
         display: false,
@@ -55,26 +61,48 @@ function CountryPage() {
   const countryBzs = biddingZoneList.reduce((previous, zone) => {
     if (
       zone.country === country &&
-      zone.bz in bzPriceCtx.bzPrice &&
-      bzPriceCtx.bzPrice[zone.bz].length > 0
+      zone.bz in countryPriceCtx.countryPrice &&
+      countryPriceCtx.countryPrice[zone.bz].length > 0
     ) {
       previous.push({
         bz: zone.bz,
-        data: bzPriceCtx.bzPrice[zone.bz],
+        data: countryPriceCtx.countryPrice[zone.bz],
       });
     }
     return previous;
   }, []);
 
-  const chartJsx = countryBzs.map((zone, index) => {
-    const labels = zone.data.map((timeRange) =>
-      timeRange.time.substring(
-        timeRange.time.indexOf(" ") + 1,
-        timeRange.time.lastIndexOf(":")
-      )
-    );
+  var offset = new Date().getTimezoneOffset() / 60;
+  if (offset > 0) {
+    offset = -1;
+  }
 
-    const data = zone.data.map((timeRange) =>
+  const chartJsx = countryBzs.map((zone, index) => {
+    const elmentsToRemove = 3 + offset;
+
+    const bzData = zone.data.reduce((previous, data) => {
+      if (data.resolution == "PT60M") {
+        previous.push(data);
+      }
+      return previous;
+    }, []);
+
+    // const bzData = [...zone.data];
+
+    bzData.splice(0, elmentsToRemove);
+    bzData.length = 24;
+
+    const labels = bzData.map((timeRange) => {
+      const d = new Date(timeRange.time);
+      d.setHours(d.getHours() + offset * -1);
+      const hour = d.getHours() < 10 ? `0${d.getHours()}` : d.getHours();
+      const minute =
+        d.getMinutes() < 10 ? `0${d.getMinutes()}` : d.getMinutes();
+      const chartTime = `${hour}:${minute}`;
+      return chartTime;
+    });
+
+    const data = bzData.map((timeRange) =>
       (Math.round(timeRange.price * 10) / 100).toFixed(2)
     );
 
@@ -109,9 +137,9 @@ function CountryPage() {
     return <Bar key={index} options={options} data={chartData} />;
   });
 
-  console.log(Intl.DateTimeFormat().resolvedOptions().timeZone);
-  var offset = new Date().getTimezoneOffset();
-  console.log(offset / 60);
+  // console.log(Intl.DateTimeFormat().resolvedOptions().timeZone);
+  // const offset = new Date().getTimezoneOffset();
+  // console.log(offset / 60);
 
   return (
     <div className={css.flexContainer}>
