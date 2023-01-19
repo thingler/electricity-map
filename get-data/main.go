@@ -24,8 +24,8 @@ type LambdaSchedulerEvent struct {
 // HandleRequest lambda init functions
 func HandleRequest(ctx context.Context, request events.APIGatewayV2HTTPRequest) (events.APIGatewayV2HTTPResponse, error) {
 	response := events.APIGatewayV2HTTPResponse{
-		StatusCode:      200,
-		Body:            "[]",
+		StatusCode:      500,
+		Body:            "{}",
 		IsBase64Encoded: false,
 		Headers: map[string]string{
 			"content-type":                "application/json",
@@ -64,6 +64,9 @@ func HandleRequest(ctx context.Context, request events.APIGatewayV2HTTPRequest) 
 		return response, err
 	}
 
+	// DynamoDB clients
+	dynamDBSvc := dynamodb.NewFromConfig(cfg)
+
 	// Get parameters from SSM Parameter Store
 	parameter := SSMParameter{
 		Svc: ssm.NewFromConfig(cfg),
@@ -83,43 +86,35 @@ func HandleRequest(ctx context.Context, request events.APIGatewayV2HTTPRequest) 
 		return response, err
 	}
 
-	date := &Date{
-		Location: "UTC",
-	}
-	firstDay := date.Today().Format("2006-01-02")
-
-	if dateRequested, exist := request.QueryStringParameters["date"]; exist {
-		dateSet, err := date.SetDate(dateRequested, "00:00:00")
-		if err == nil {
-			firstDay = dateSet.Format("2006-01-02")
-		}
+	price := &DayAheadPrice{
+		Svc:           dynamDBSvc,
+		TableName:     tableName,
+		TimeIndexName: timeIndexName,
 	}
 
-	// DynamoDB clients
-	dynamDBSvc := dynamodb.NewFromConfig(cfg)
-
-	// var priceData map[string][]dayAheadPriceData
-	priceData := make(map[string][]dayAheadPriceData)
-
-	// Loop trough bidding zones and update DynamoDB if there are new price data for the bidding zone
-	for _, biddingZone := range biddingZones {
-		price := &DayAheadPrice{
-			Svc:           dynamDBSvc,
-			BiddingZone:   biddingZone.BiddingZone,
-			TableName:     tableName,
-			TimeIndexName: timeIndexName,
-		}
-
-		// Get current pirce information for bidding zone from DynamoDB
-		priceData[biddingZone.BiddingZone], err = price.GetDBPrice(firstDay, firstDay)
-		if err != nil {
-			return response, err
-		}
-
+	all := &AllAction{
+		Price:        price,
+		Parameters:   &request.QueryStringParameters,
+		BiddingZones: biddingZones,
 	}
 
-	json, _ := json.Marshal(priceData)
-	response.Body = string(json)
+	bz := &BzAction{
+		Price:      price,
+		Parameters: &request.QueryStringParameters,
+	}
+
+	action := NewActionFactory().
+		AddAction(all).
+		AddAction(bz).
+		GetAction(&request.QueryStringParameters)
+
+	body, err := action.Do()
+	if err != nil {
+		return response, err
+	}
+
+	response.StatusCode = 200
+	response.Body = body
 
 	return response, nil
 }

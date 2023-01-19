@@ -109,6 +109,10 @@ function CountryPage() {
     return <Bar key={index} options={options} data={chartData} />;
   });
 
+  console.log(Intl.DateTimeFormat().resolvedOptions().timeZone);
+  var offset = new Date().getTimezoneOffset();
+  console.log(offset / 60);
+
   return (
     <div className={css.flexContainer}>
       <div className={css.map}>
