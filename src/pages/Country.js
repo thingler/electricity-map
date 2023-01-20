@@ -1,3 +1,5 @@
+import { useParams } from "react-router-dom";
+
 import { useContext, useEffect } from "react";
 
 import CountryPriceContext from "../store/CountryPriceContext";
@@ -21,7 +23,7 @@ import CountryMap from "../components/CountryMap/CountryMap";
 import css from "./Country.module.css";
 
 function CountryPage() {
-  const country = "Finland";
+  const { country } = useParams();
 
   const countryPriceCtx = useContext(CountryPriceContext);
   const biddingZoneList = BiddingZoneList();
@@ -43,20 +45,10 @@ function CountryPage() {
     Legend
   );
 
-  const options = {
-    responsive: true,
-    // maintainAspectRatio: false,
-    plugins: {
-      legend: {
-        display: false,
-        position: "top",
-      },
-      title: {
-        display: true,
-        text: "c / kWh",
-      },
-    },
-  };
+  let offset = new Date().getTimezoneOffset() / 60;
+  if (offset > 0 || offset < -3) {
+    offset = -1;
+  }
 
   const countryBzs = biddingZoneList.reduce((previous, zone) => {
     if (
@@ -64,35 +56,30 @@ function CountryPage() {
       zone.bz in countryPriceCtx.countryPrice &&
       countryPriceCtx.countryPrice[zone.bz].length > 0
     ) {
+      let bzData = countryPriceCtx.countryPrice[zone.bz].reduce(
+        (previous, data) => {
+          if (data.resolution === "PT60M") {
+            previous.push(data);
+          }
+          return previous;
+        },
+        []
+      );
+      bzData.splice(0, 3 + offset);
+      if (bzData.length > 24) {
+        bzData.length = 24;
+      }
       previous.push({
         bz: zone.bz,
-        data: countryPriceCtx.countryPrice[zone.bz],
+        description: zone.description,
+        data: bzData,
       });
     }
     return previous;
   }, []);
 
-  var offset = new Date().getTimezoneOffset() / 60;
-  if (offset > 0) {
-    offset = -1;
-  }
-
   const chartJsx = countryBzs.map((zone, index) => {
-    const elmentsToRemove = 3 + offset;
-
-    const bzData = zone.data.reduce((previous, data) => {
-      if (data.resolution == "PT60M") {
-        previous.push(data);
-      }
-      return previous;
-    }, []);
-
-    // const bzData = [...zone.data];
-
-    bzData.splice(0, elmentsToRemove);
-    bzData.length = 24;
-
-    const labels = bzData.map((timeRange) => {
+    const labels = zone.data.map((timeRange) => {
       const d = new Date(timeRange.time);
       d.setHours(d.getHours() + offset * -1);
       const hour = d.getHours() < 10 ? `0${d.getHours()}` : d.getHours();
@@ -102,7 +89,7 @@ function CountryPage() {
       return chartTime;
     });
 
-    const data = bzData.map((timeRange) =>
+    const data = zone.data.map((timeRange) =>
       (Math.round(timeRange.price * 10) / 100).toFixed(2)
     );
 
@@ -134,17 +121,28 @@ function CountryPage() {
       ],
     };
 
+    const options = {
+      responsive: true,
+      // maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          display: false,
+          position: "top",
+        },
+        title: {
+          display: true,
+          text: zone.description ? `${zone.description} (c / kWh)` : "c / kWh",
+        },
+      },
+    };
+
     return <Bar key={index} options={options} data={chartData} />;
   });
-
-  // console.log(Intl.DateTimeFormat().resolvedOptions().timeZone);
-  // const offset = new Date().getTimezoneOffset();
-  // console.log(offset / 60);
 
   return (
     <div className={css.flexContainer}>
       <div className={css.map}>
-        <CountryMap />
+        <CountryMap country={country} zones={countryBzs} />
       </div>
       <div className={css.details}>{chartJsx}</div>
     </div>

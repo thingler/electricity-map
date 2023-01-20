@@ -28,12 +28,12 @@ function EuropeMap() {
   }, []);
 
   const mapData = biddingZoneList.map((zone) => {
-    var averagePrice = null;
+    let averagePrice = null;
     if (
       zone.bz in bzPriceCtx.bzPrice &&
       bzPriceCtx.bzPrice[zone.bz].length > 0
     ) {
-      var finalPrice = bzPriceCtx.bzPrice[zone.bz].reduce(
+      const finalPrice = bzPriceCtx.bzPrice[zone.bz].reduce(
         (previous, bz) =>
           bz.resolution === "PT60M"
             ? {

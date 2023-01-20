@@ -12,7 +12,7 @@ function App() {
         <Route path="/" element={<RootPage />} />
         <Route path="/map" element={<MapPage />} />
         <Route
-          path="/country"
+          path="/country/:country"
           element={
             <CountryPriceContextProvider>
               <CountryPage />

@@ -1,8 +1,8 @@
 import css from "./BiddingZone.module.css";
 
 function Header(props) {
-  var price = props.children;
-  var className = null;
+  let price = props.children;
+  let className = null;
 
   if (price <= 50) {
     className = css.trivial;

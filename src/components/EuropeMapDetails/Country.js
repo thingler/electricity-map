@@ -14,7 +14,7 @@ function Country(props) {
   }
 
   function getPriceClass(price) {
-    var priceClass = null;
+    let priceClass = null;
 
     if (price <= 50) {
       priceClass = css.trivial;
@@ -62,7 +62,7 @@ function Country(props) {
           nameClass={css.name}
           dotClass={`${css.dot} ${css.dotWithBZs} ${priceData.priceClass}`}
           priceClass={css.price}
-          biddingZone={zone.biddingZone.replace("BZN|", "")}
+          biddingZone={zone.description}
           price={priceData.price}
         />
       );

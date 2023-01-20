@@ -12,7 +12,7 @@ function EuropeMapDetails() {
   const biddingZoneList = BiddingZoneList();
 
   const countries = biddingZoneList.reduce((previous, zone) => {
-    var averagePrice = null;
+    let averagePrice = null;
     if (
       zone.bz in bzPriceCtx.bzPrice &&
       bzPriceCtx.bzPrice[zone.bz].length > 0
@@ -20,7 +20,7 @@ function EuropeMapDetails() {
       if (!(zone.country in previous)) {
         previous[zone.country] = [];
       }
-      var finalPrice = bzPriceCtx.bzPrice[zone.bz].reduce(
+      const finalPrice = bzPriceCtx.bzPrice[zone.bz].reduce(
         (previous, bz) =>
           bz.resolution === "PT60M"
             ? {
@@ -33,6 +33,7 @@ function EuropeMapDetails() {
       averagePrice = finalPrice.sum / finalPrice.elements;
       previous[zone.country].push({
         biddingZone: zone.bz,
+        description: zone.description,
         averagePrice,
       });
     }
