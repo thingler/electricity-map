@@ -87,3 +87,14 @@
   text-align: center;
   padding-top: 0.15rem
 }
+
+.country a {
+  /* text-decoration: none; */
+  color: #173e43;
+}
+
+.country a:hover,
+.country a:active,
+.country a.active {
+  color: #848484;
+}

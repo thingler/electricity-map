@@ -10,13 +10,8 @@ function Nav(props) {
           </Link>
         </li>
         <li>
-          <Link onClick={props.flyingHeader} to="/map">
+          <Link onClick={props.closeMenu} to="/map">
             Europe Map
-          </Link>
-        </li>
-        <li>
-          <Link onClick={props.closeMenu} to="/country">
-            Country
           </Link>
         </li>
       </ul>

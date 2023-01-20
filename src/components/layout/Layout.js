@@ -8,8 +8,8 @@ function Layout(props) {
     <BzPriceContextProvider>
       <MapPageContextProvider>
         <Header />
+        <main>{props.children}</main>
       </MapPageContextProvider>
-      <main>{props.children}</main>
     </BzPriceContextProvider>
   );
 }

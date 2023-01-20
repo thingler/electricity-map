@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 
 import { useContext, useEffect } from "react";
+import MapPageContext from "../store/MapPageContext";
 
 import CountryPriceContext from "../store/CountryPriceContext";
 
@@ -23,6 +24,9 @@ import CountryMap from "../components/CountryMap/CountryMap";
 import css from "./Country.module.css";
 
 function CountryPage() {
+  const mapPageCtx = useContext(MapPageContext);
+  mapPageCtx.setMapPage(false);
+
   const { country } = useParams();
 
   const countryPriceCtx = useContext(CountryPriceContext);

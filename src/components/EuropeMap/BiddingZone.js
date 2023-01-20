@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import css from "./BiddingZone.module.css";
 
 function Header(props) {
@@ -26,14 +27,14 @@ function Header(props) {
   }
 
   return (
-    <>
+    <Link to={`/country/${props.country}`}>
       <path className={className} d={props.d} />
       {price !== null && (
         <text x={props.textX} y={props.textY}>
           {price}
         </text>
       )}
-    </>
+    </Link>
   );
 }
 

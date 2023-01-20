@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import css from "./EuropeMapDetails.module.css";
 
 function Country(props) {
@@ -6,7 +7,7 @@ function Country(props) {
       <div className={bz.countryClass}>
         <div className={bz.nameClass}>
           <span className={bz.dotClass} />
-          {bz.biddingZone}
+          <Link to={`/country/${props.name}`}>{bz.biddingZone}</Link>
         </div>
         <div className={bz.priceClass}>{bz.price}</div>
       </div>
@@ -46,7 +47,7 @@ function Country(props) {
         <div className={css.country}>
           <div className={css.name}>
             <span className={`${css.dot} ${priceData.priceClass}`} />
-            {props.name}
+            <Link to={`/country/${props.name}`}>{props.name}</Link>
           </div>
           <div className={css.price}>{priceData.price}</div>
         </div>
@@ -70,7 +71,9 @@ function Country(props) {
     return (
       <div className={css.countryContainer}>
         <div className={css.country}>
-          <div className={`${css.name} ${css.nameWithBZs}`}>{props.name}</div>
+          <div className={`${css.name} ${css.nameWithBZs}`}>
+            <Link to={`/country/${props.name}`}>{props.name}</Link>
+          </div>
         </div>
         {biddingZones}
       </div>

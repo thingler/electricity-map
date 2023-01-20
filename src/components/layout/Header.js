@@ -15,12 +15,6 @@ function Header() {
 
   function closeMenu() {
     setMenuIsOpen(false);
-    mapPageCtx.setMapPage(false);
-  }
-
-  function flyingHeader() {
-    setMenuIsOpen(false);
-    mapPageCtx.setMapPage(true);
   }
 
   const header = mapPageCtx.isMapPage
@@ -31,14 +25,12 @@ function Header() {
     <header className={menuIsOpen ? `${header} ${css.menuIsOpen}` : header}>
       <div className={css.flexContainer}>
         <div className={css.logo}>Thingler</div>
-        {!menuIsOpen && (
-          <Nav flyingHeader={flyingHeader} closeMenu={closeMenu} />
-        )}
+        {!menuIsOpen && <Nav closeMenu={closeMenu} />}
         <div className={css.menuIcon} onClick={toggleMenu}>
           <span className={css.navIcon}></span>
         </div>
       </div>
-      {menuIsOpen && <Nav flyingHeader={flyingHeader} closeMenu={closeMenu} />}
+      {menuIsOpen && <Nav closeMenu={closeMenu} />}
     </header>
   );
 }

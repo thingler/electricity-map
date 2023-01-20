@@ -30,6 +30,7 @@ function CountryMap(props) {
     return (
       <BiddingZone
         key={zone.bz}
+        country={zone.country}
         d={zone.d}
         textX={zone.textX}
         textY={zone.textY}
