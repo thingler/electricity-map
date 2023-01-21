@@ -1,5 +1,6 @@
 import BiddingZoneList from "../BiddingZoneList";
 import BiddingZone from "../EuropeMap/BiddingZone";
+import PriceLevels from "../PriceLevels/PriceLevels";
 
 import css from "./CountryMap.module.css";
 
@@ -42,9 +43,12 @@ function CountryMap(props) {
 
   return (
     <>
+      <div className={css.energyPriceLevels}>
+        <PriceLevels />
+      </div>
       <svg
         version="1.0"
-        viewBox={viewBox}
+        viewBox={viewBox ? viewBox : "0 0 1190 1245"}
         xmlns="http://www.w3.org/2000/svg"
         preserveAspectRatio="xMidYMid meet"
         className={css.map}

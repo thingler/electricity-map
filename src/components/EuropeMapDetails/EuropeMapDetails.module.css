@@ -1,3 +1,7 @@
+section p {
+  font-size: 0.8rem;
+}
+
 .priceContainer {
   display: flex;
   flex-direction: column;
@@ -17,7 +21,6 @@
 .countryContainer:nth-child(2n){
   background-color: #dddfd4;
 }
-
 
 .country {
   display: flex;

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import MapPageContext from "../store/MapPageContext";
 
 import EuropeMap from "../components/EuropeMap/Map";
@@ -7,7 +7,10 @@ import classes from "./Map.module.css";
 
 function MapPage() {
   const mapPageCtx = useContext(MapPageContext);
-  mapPageCtx.setMapPage(true);
+
+  useEffect(() => {
+    mapPageCtx.setMapPage(true);
+  }, []);
 
   return (
     <div className={classes.flexContainer}>

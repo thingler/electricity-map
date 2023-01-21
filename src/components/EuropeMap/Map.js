@@ -7,6 +7,7 @@ import EnergyPriceLevels from "../EnergyPriceLevels";
 
 import BiddingZone from "./BiddingZone";
 import classes from "./Map.module.css";
+import PriceLevels from "../PriceLevels/PriceLevels";
 
 function EuropeMap() {
   const bzPriceCtx = useContext(BzPriceContext);
@@ -62,26 +63,7 @@ function EuropeMap() {
   return (
     <>
       <div className={classes.energyPriceLevels}>
-        <div className={classes.level}>
-          <span className={`${classes.dot} ${classes.trivial}`} />
-          {`≤ ${priceLevels.low / 10}`} / kWh
-        </div>
-        <div className={classes.level}>
-          <span className={`${classes.dot} ${classes.low}`} />
-          &gt; {priceLevels.low / 10} / kWh
-        </div>
-        <div className={classes.level}>
-          <span className={`${classes.dot} ${classes.medium}`} />
-          &gt; {priceLevels.medium / 10} / kWh
-        </div>
-        <div className={classes.level}>
-          <span className={`${classes.dot} ${classes.concerning}`} />
-          &gt; {priceLevels.concerning / 10} / kWh
-        </div>
-        <div className={classes.level}>
-          <span className={`${classes.dot} ${classes.high}`} />
-          &gt; {priceLevels.high / 10} / kWh
-        </div>
+        <PriceLevels />
       </div>
       <svg
         version="1.0"

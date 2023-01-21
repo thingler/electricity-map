@@ -25,7 +25,9 @@ import css from "./Country.module.css";
 
 function CountryPage() {
   const mapPageCtx = useContext(MapPageContext);
-  mapPageCtx.setMapPage(false);
+  useEffect(() => {
+    mapPageCtx.setMapPage(false);
+  }, []);
 
   const { country } = useParams();
 
@@ -33,12 +35,17 @@ function CountryPage() {
   const biddingZoneList = BiddingZoneList();
   const priceLevels = EnergyPriceLevels();
 
+  const countryName = biddingZoneList.reduce(
+    (previous, zone) => (zone.country === country ? zone.country : previous),
+    null
+  );
+
   useEffect(() => {
     const d = new Date();
     const now = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
 
-    countryPriceCtx.updateCountryPrice(country, now);
-  }, [country]);
+    countryPriceCtx.updateCountryPrice(countryName, now);
+  }, [countryName]);
 
   ChartJS.register(
     CategoryScale,
@@ -56,7 +63,7 @@ function CountryPage() {
 
   const countryBzs = biddingZoneList.reduce((previous, zone) => {
     if (
-      zone.country === country &&
+      zone.country === countryName &&
       zone.bz in countryPriceCtx.countryPrice &&
       countryPriceCtx.countryPrice[zone.bz].length > 0
     ) {
@@ -146,9 +153,12 @@ function CountryPage() {
   return (
     <div className={css.flexContainer}>
       <div className={css.map}>
-        <CountryMap country={country} zones={countryBzs} />
+        <CountryMap country={countryName} zones={countryBzs} />
       </div>
-      <div className={css.details}>{chartJsx}</div>
+      <div className={css.details}>
+        <h2>{countryName ? countryName : "Country not found!"}</h2>
+        {chartJsx}
+      </div>
     </div>
   );
 }
