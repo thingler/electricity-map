@@ -1,4 +1,4 @@
-section p {
+section .description {
   font-size: 0.8rem;
 }
 
@@ -26,8 +26,6 @@ section p {
   display: flex;
   flex: 0 0 auto;
   align-self: auto;
-  /* margin: 0.4rem 0; */
-  /* background-color: #fae596; */
   padding: 0.25rem 0rem 0.25rem 0.2rem;
   color: #173e43;
   font-size: 0.8rem;

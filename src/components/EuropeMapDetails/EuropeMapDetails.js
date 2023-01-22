@@ -5,6 +5,7 @@ import BzPriceContext from "../../store/BzPriceContext";
 import BiddingZoneList from "../BiddingZoneList";
 
 import Country from "./Country";
+import DateSelector from "../DateSelector/DateSelector";
 import css from "./EuropeMapDetails.module.css";
 
 function EuropeMapDetails() {
@@ -56,13 +57,14 @@ function EuropeMapDetails() {
   return (
     <section>
       <h1>Electricity prices</h1>
-      <p>
+      <p className={css.description}>
         This page presents the daily average prices, tax-free, for European
         countries that are members of ENTSO-E - European Network of Transmission
         System Operators for Electricity. The prices are displayed in Central
         European time (CET/CEST) and are expressed in Euro cents per
         kilowatt-hour.
       </p>
+      <DateSelector />
       <div className={css.priceContainer}>
         <div className={`${css.country} ${css.header}`}>
           <div className={css.name}>Country</div>

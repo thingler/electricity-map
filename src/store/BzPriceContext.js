@@ -1,4 +1,5 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
+import DateContext from "../store/DateContext";
 
 const BzPriceContext = createContext({
   bzPrice: {},
@@ -7,6 +8,8 @@ const BzPriceContext = createContext({
 
 export function BzPriceContextProvider(props) {
   const [bzPrice, setBzPrice] = useState({});
+
+  const dateCtx = useContext(DateContext);
 
   function updateBzPrice(date) {
     fetch(`https://api.thingler.io/day-ahead?date=${date}`)
@@ -19,10 +22,10 @@ export function BzPriceContextProvider(props) {
   }
 
   useEffect(() => {
-    const d = new Date();
-    const now = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
-    updateBzPrice(now);
-  }, []);
+    if (dateCtx.date) {
+      updateBzPrice(dateCtx.date);
+    }
+  }, [dateCtx.date]);
 
   const context = {
     bzPrice: bzPrice,

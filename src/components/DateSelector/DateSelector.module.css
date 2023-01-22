@@ -1,0 +1,25 @@
+.date {
+  display: flex;
+  flex-direction: row;
+}
+
+.date .value {
+  flex: 1 0 auto;
+  padding: 0 1rem;
+  text-align: right;
+  font-size: 1.2rem;
+  color: #000000;
+}
+
+.date .value:hover {
+  color: #848484;
+  cursor: pointer;
+}
+
+.date .value:nth-child(2n) {
+  text-align: left;
+}
+
+.selected {
+  text-decoration: underline;
+}

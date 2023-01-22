@@ -3,7 +3,6 @@ import { useState, useEffect, useContext } from "react";
 import BzPriceContext from "../../store/BzPriceContext";
 
 import BiddingZoneList from "../BiddingZoneList";
-import EnergyPriceLevels from "../EnergyPriceLevels";
 
 import BiddingZone from "./BiddingZone";
 import classes from "./Map.module.css";
@@ -12,7 +11,6 @@ import PriceLevels from "../PriceLevels/PriceLevels";
 function EuropeMap() {
   const bzPriceCtx = useContext(BzPriceContext);
 
-  const priceLevels = EnergyPriceLevels();
   const biddingZoneList = BiddingZoneList();
   const [smallWidth, setSmallWidth] = useState(true);
 
