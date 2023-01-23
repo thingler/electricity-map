@@ -34,7 +34,7 @@ function CountryPage() {
 
   useEffect(() => {
     mapPageCtx.setMapPage(false);
-  }, []);
+  });
 
   const { country } = useParams();
 
@@ -94,7 +94,8 @@ function CountryPage() {
 
   const chartJsx = countryBzs.map((zone, index) => {
     const labels = zone.data.map((timeRange) => {
-      const d = new Date(timeRange.time);
+      const time = timeRange.time.replace(" ", "T");
+      const d = new Date(time);
       d.setHours(d.getHours() + offset * -1);
       const hour = d.getHours() < 10 ? `0${d.getHours()}` : d.getHours();
       const minute =

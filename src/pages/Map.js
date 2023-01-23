@@ -10,7 +10,7 @@ function MapPage() {
 
   useEffect(() => {
     mapPageCtx.setMapPage(true);
-  }, []);
+  });
 
   return (
     <div className={classes.flexContainer}>

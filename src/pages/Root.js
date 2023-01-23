@@ -5,7 +5,7 @@ function RootPage() {
   const mapPageCtx = useContext(MapPageContext);
   useEffect(() => {
     mapPageCtx.setMapPage(false);
-  }, []);
+  });
 
   return <div>Root page</div>;
 }
