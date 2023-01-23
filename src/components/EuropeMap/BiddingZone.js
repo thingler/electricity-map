@@ -1,23 +1,28 @@
 import { Link } from "react-router-dom";
+
+import EnergyPriceLevels from "../../components/EnergyPriceLevels";
+
 import css from "./BiddingZone.module.css";
 
-function Header(props) {
+function BiddingZone(props) {
+  const priceLevels = EnergyPriceLevels();
+
   let price = props.children;
   let className = null;
 
-  if (price <= 50) {
+  if (price <= priceLevels.low) {
     className = css.trivial;
   }
-  if (price > 50) {
+  if (price > priceLevels.low) {
     className = css.low;
   }
-  if (price > 120) {
+  if (price > priceLevels.medium) {
     className = css.medium;
   }
-  if (price > 200) {
+  if (price > priceLevels.concerning) {
     className = css.concerning;
   }
-  if (price > 400) {
+  if (price > priceLevels.high) {
     className = css.high;
   }
   if (price === null) {
@@ -38,4 +43,4 @@ function Header(props) {
   );
 }
 
-export default Header;
+export default BiddingZone;

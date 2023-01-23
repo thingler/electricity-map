@@ -1,9 +1,13 @@
 import { useParams } from "react-router-dom";
 
 import { useContext, useEffect } from "react";
-import MapPageContext from "../store/MapPageContext";
 
+import DateSelector from "../components/DateSelector/DateSelector";
+import TimeZone from "../components/TimeZone/TimeZone";
+import MapPageContext from "../store/MapPageContext";
 import CountryPriceContext from "../store/CountryPriceContext";
+import DateContext from "../store/DateContext";
+import TimeZoneContext from "../store/TimeZoneContext";
 
 import BiddingZoneList from "../components/BiddingZoneList";
 import EnergyPriceLevels from "../components/EnergyPriceLevels";
@@ -25,6 +29,9 @@ import css from "./Country.module.css";
 
 function CountryPage() {
   const mapPageCtx = useContext(MapPageContext);
+  const dateCtx = useContext(DateContext);
+  const timeZoneCtx = useContext(TimeZoneContext);
+
   useEffect(() => {
     mapPageCtx.setMapPage(false);
   }, []);
@@ -41,11 +48,10 @@ function CountryPage() {
   );
 
   useEffect(() => {
-    const d = new Date();
-    const now = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
-
-    countryPriceCtx.updateCountryPrice(countryName, now);
-  }, [countryName]);
+    if (dateCtx.date) {
+      countryPriceCtx.updateCountryPrice(countryName, dateCtx.date);
+    }
+  }, [countryName, dateCtx.date]);
 
   ChartJS.register(
     CategoryScale,
@@ -56,10 +62,7 @@ function CountryPage() {
     Legend
   );
 
-  let offset = new Date().getTimezoneOffset() / 60;
-  if (offset > 0 || offset < -3) {
-    offset = -1;
-  }
+  const offset = timeZoneCtx.getOffset();
 
   const countryBzs = biddingZoneList.reduce((previous, zone) => {
     if (
@@ -157,6 +160,14 @@ function CountryPage() {
       </div>
       <div className={css.details}>
         <h2>{countryName ? countryName : "Country not found!"}</h2>
+        <div className={css.actionContainer}>
+          <div className={css.timeZone}>
+            <TimeZone />
+          </div>
+          <div className={css.dateSelector}>
+            <DateSelector />
+          </div>
+        </div>
         {chartJsx}
       </div>
     </div>

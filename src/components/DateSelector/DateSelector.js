@@ -9,7 +9,9 @@ function DateSelector() {
   function getDataString(dayOffset) {
     const d = new Date();
     d.setDate(d.getDate() + dayOffset);
-    return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+    const day = `${d.getDate()}`.padStart(2, "0");
+    const month = `${d.getMonth() + 1}`.padStart(2, "0");
+    return `${d.getFullYear()}-${month}-${day}`;
   }
 
   function setDateToday() {
@@ -26,24 +28,24 @@ function DateSelector() {
   const tomorrow = getDataString(1);
 
   return (
-    <div className={css.date}>
-      <div
+    <ul className={css.date}>
+      <li
         className={
           dateCtx.date === today ? `${css.value} ${css.selected}` : css.value
         }
         onClick={setDateToday}
       >
         Today
-      </div>
-      <div
+      </li>
+      <li
         className={
           dateCtx.date === tomorrow ? `${css.value} ${css.selected}` : css.value
         }
         onClick={setDateTomorrow}
       >
         Tomorrow
-      </div>
-    </div>
+      </li>
+    </ul>
   );
 }
 

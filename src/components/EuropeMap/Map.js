@@ -42,7 +42,9 @@ function EuropeMap() {
             : previous,
         { sum: 0, elements: 0 }
       );
-      averagePrice = finalPrice.sum / finalPrice.elements;
+      if (finalPrice.elements > 0) {
+        averagePrice = finalPrice.sum / finalPrice.elements;
+      }
     }
 
     return (

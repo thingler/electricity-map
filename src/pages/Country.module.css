@@ -18,11 +18,23 @@
   background-color: #f7f6f4;
 }
 
+.actionContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.actionContainer .timeZone {
+  flex: 1 0 auto;
+  align-self: auto;
+}
+
+.actionContainer .dateSelector {
+  flex: 1 0 auto;
+  align-self: auto;
+}
+
 @media (min-width: 55em) {
   .flexContainer {
     flex-direction: row;
-  }
-  .details {
-    /* margin: 0 0.7rem 0; */
   }
 }

@@ -1,11 +1,14 @@
 .date {
   display: flex;
   flex-direction: row;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0.75rem 0;
 }
 
 .date .value {
   flex: 1 0 auto;
-  padding: 0 1rem;
+  padding: 0 0.3rem;
   text-align: right;
   font-size: 1.2rem;
   color: #000000;
@@ -22,4 +25,10 @@
 
 .selected {
   text-decoration: underline;
+}
+
+@media (min-width: 55em) {
+  .date .value {
+    padding: 0 1rem;
+  }
 }

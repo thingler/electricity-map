@@ -61,7 +61,7 @@ function EuropeMapDetails() {
         This page presents the daily average prices, tax-free, for European
         countries that are members of ENTSO-E - European Network of Transmission
         System Operators for Electricity. The prices are displayed in Central
-        European time (CET/CEST) and are expressed in Euro cents per
+        European time (<b>CET/CEST</b>) and are expressed in Euro cents per
         kilowatt-hour.
       </p>
       <DateSelector />

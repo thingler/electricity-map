@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
+
+import EnergyPriceLevels from "../../components/EnergyPriceLevels";
+
 import css from "./EuropeMapDetails.module.css";
 
 function Country(props) {
+  const priceLevels = EnergyPriceLevels();
+
   function BiddingZone(bz) {
     return (
       <div className={bz.countryClass}>
@@ -17,19 +22,19 @@ function Country(props) {
   function getPriceClass(price) {
     let priceClass = null;
 
-    if (price <= 50) {
+    if (price <= priceLevels.low) {
       priceClass = css.trivial;
     }
-    if (price > 50) {
+    if (price > priceLevels.low) {
       priceClass = css.low;
     }
-    if (price > 120) {
+    if (price > priceLevels.medium) {
       priceClass = css.medium;
     }
-    if (price > 200) {
+    if (price > priceLevels.concerning) {
       priceClass = css.concerning;
     }
-    if (price > 400) {
+    if (price > priceLevels.high) {
       priceClass = css.high;
     }
     if (price === null) {

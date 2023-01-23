@@ -9,7 +9,11 @@ export function DateContextProvider(props) {
   const [date, setDate] = useState("");
 
   function updateDate(date) {
-    setDate(date);
+    const d = new Date(date);
+    const day = `${d.getDate()}`.padStart(2, "0");
+    const month = `${d.getMonth() + 1}`.padStart(2, "0");
+    const selectedDate = `${d.getFullYear()}-${month}-${day}`;
+    setDate(selectedDate);
   }
 
   useEffect(() => {
