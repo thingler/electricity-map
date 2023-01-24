@@ -5,6 +5,7 @@ import { CountryPriceContextProvider } from "../../store/CountryPriceContext";
 import { MapPageContextProvider } from "../../store/MapPageContext";
 
 import Header from "./Header";
+import Footer from "./Footer";
 
 function Layout(props) {
   return (
@@ -15,6 +16,7 @@ function Layout(props) {
             <MapPageContextProvider>
               <Header />
               <main>{props.children}</main>
+              <Footer />
             </MapPageContextProvider>
           </CountryPriceContextProvider>
         </BzPriceContextProvider>

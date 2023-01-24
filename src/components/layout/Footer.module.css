@@ -1,0 +1,51 @@
+.footer {
+    margin-top: 1.5rem;
+}
+
+.footer hr {
+  border: 0.07rem solid #dedddb;
+}
+
+.footer .content {
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer .content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .content ul li {
+  padding: 1rem 0 0 0;
+}
+
+.footer .content ul li:first-child {
+    padding-left: 0;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #173e43;
+}
+
+.footer a:hover,
+.footer a:active,
+.footer a.active {
+  color: #848484;
+}
+
+@media (min-width: 55em) {
+  .footer .content ul {
+    flex-direction: row;
+
+  }
+  .footer .content ul li {
+    padding: 1rem 0 0 2.5rem;
+  }
+}

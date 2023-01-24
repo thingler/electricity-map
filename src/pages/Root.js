@@ -1,3 +1,4 @@
+import { Navigate } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import MapPageContext from "../store/MapPageContext";
 
@@ -6,8 +7,8 @@ function RootPage() {
   useEffect(() => {
     mapPageCtx.setMapPage(false);
   });
-
-  return <div>Root page</div>;
+  return <Navigate replace to="/map" />;
+  // return <div>Root page</div>;
 }
 
 export default RootPage;

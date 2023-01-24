@@ -1,6 +1,7 @@
 .header {
   width: 100%;
   height: 4rem;
+  line-height: 1;
 }
 
 .header .flexContainer {
@@ -21,7 +22,9 @@
 
 .logo {
   font-size: 2rem;
+  font-family: loraBoldItalic;
   color: #000000;
+  /* color: #8a5574; */
   font-weight: bold;
   padding: 0.8rem 1rem 0;
   flex: 0 0 65%;

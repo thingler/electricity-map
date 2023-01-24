@@ -9,12 +9,32 @@ body {
 }
 
 body {
-  font-family: sans-serif;
+  font-family: latoRegular, sans-serif;
   background-color: #eff4ff;
   color: #848484;
+  line-height: 1.4;
 }
 
 h1,
 h2 {
   color: #000000;
+}
+
+b {
+  font-family: latoBold, sans-serif;
+}
+
+@font-face {
+  font-family: latoRegular;
+  src: url(./fonts/Lato-Regular.ttf);
+}
+
+@font-face {
+  font-family: latoBold;
+  src: url(./fonts/Lato-Bold.ttf);
+}
+
+@font-face {
+  font-family: loraBoldItalic;
+  src: url(./fonts/Lora-BoldItalic.ttf);
 }
