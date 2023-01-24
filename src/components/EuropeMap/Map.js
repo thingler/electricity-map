@@ -69,7 +69,7 @@ function EuropeMap() {
         version="1.0"
         viewBox={smallWidth ? "0 0 1000 1245" : "0 0 1190 1245"}
         xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="xMidYMid meet"
+        preserveAspectRatio="xMaxYMid meet"
         className={classes.map}
       >
         <g transform="translate(-50,1249) scale(0.1,-0.1)" stroke="none">

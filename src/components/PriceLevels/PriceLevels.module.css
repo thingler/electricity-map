@@ -7,7 +7,7 @@
   font-size: 0.75rem;
   border-radius: 0.4rem;
   border: 1px solid #8a5574;
-  box-shadow: 0.1rem 0.1rem #888888;
+  /* box-shadow: 0.1rem 0.1rem #888888; */
 }
 
 .energyPriceLevels .level {

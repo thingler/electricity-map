@@ -33,8 +33,21 @@
   align-self: auto;
 }
 
+.details .chartBox {
+  padding-bottom: 2.5rem;
+}
+
+@media (max-width: 55em) {
+  .details .chartBox {
+    height: 20rem;
+  }
+}
+
 @media (min-width: 55em) {
   .flexContainer {
     flex-direction: row;
+  }
+  .details .chartBox {
+    aspect-ratio: 2 / 1;
   }
 }

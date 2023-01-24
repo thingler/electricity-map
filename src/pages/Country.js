@@ -65,20 +65,17 @@ function CountryPage() {
   const offset = timeZoneCtx.getOffset();
 
   const countryBzs = biddingZoneList.reduce((previous, zone) => {
-    if (
-      zone.country === countryName &&
-      zone.bz in countryPriceCtx.countryPrice &&
-      countryPriceCtx.countryPrice[zone.bz].length > 0
-    ) {
-      let bzData = countryPriceCtx.countryPrice[zone.bz].reduce(
-        (previous, data) => {
-          if (data.resolution === "PT60M") {
-            previous.push(data);
-          }
-          return previous;
-        },
-        []
-      );
+    const bzPriceData = countryPriceCtx.getBiddingZonePrice(
+      zone.bz,
+      dateCtx.date
+    );
+    if (zone.country === countryName && bzPriceData) {
+      let bzData = bzPriceData.reduce((previous, data) => {
+        if (data.resolution === "PT60M") {
+          previous.push(data);
+        }
+        return previous;
+      }, []);
       bzData.splice(0, 3 + offset);
       if (bzData.length > 24) {
         bzData.length = 24;
@@ -91,6 +88,14 @@ function CountryPage() {
     }
     return previous;
   }, []);
+
+  function ChartBar(props) {
+    return (
+      <div className={css.chartBox}>
+        <Bar options={props.options} data={props.data} />
+      </div>
+    );
+  }
 
   const chartJsx = countryBzs.map((zone, index) => {
     const labels = zone.data.map((timeRange) => {
@@ -138,7 +143,7 @@ function CountryPage() {
 
     const options = {
       responsive: true,
-      // maintainAspectRatio: false,
+      maintainAspectRatio: false,
       plugins: {
         legend: {
           display: false,
@@ -151,7 +156,7 @@ function CountryPage() {
       },
     };
 
-    return <Bar key={index} options={options} data={chartData} />;
+    return <ChartBar key={index} options={options} data={chartData} />;
   });
 
   return (

@@ -3,12 +3,21 @@ import BiddingZoneList from "../components/BiddingZoneList";
 
 const CountryPriceContext = createContext({
   countryPrice: {},
-  updateCountryPrice: (date) => {},
+  getBiddingZonePrice: (country, date) => {},
+  updateCountryPrice: (country, date) => {},
 });
 
 export function CountryPriceContextProvider(props) {
   const [countryPrice, setCountryPrice] = useState({});
   const biddingZoneList = BiddingZoneList();
+
+  function getBiddingZonePrice(bz, date) {
+    return bz in countryPrice &&
+      date in countryPrice[bz] &&
+      countryPrice[bz][date].length > 0
+      ? countryPrice[bz][date]
+      : null;
+  }
 
   function updateCountryPrice(country, date) {
     const biddingZones = biddingZoneList.reduce((previous, zone) => {
@@ -27,10 +36,25 @@ export function CountryPriceContextProvider(props) {
         })
         .then((data) => {
           setCountryPrice((price) => {
-            return {
-              ...price,
-              ...data,
-            };
+            let newData = false;
+            let dateScopedData = {};
+
+            for (const bz in data) {
+              if (
+                !(bz in price) ||
+                JSON.stringify(data[bz]) !== JSON.stringify(price[bz][date])
+              ) {
+                dateScopedData[bz] = {};
+                dateScopedData[bz][date] = data[bz];
+                newData = true;
+              }
+            }
+            return newData
+              ? {
+                  ...price,
+                  ...dateScopedData,
+                }
+              : price;
           });
         });
     }
@@ -38,6 +62,7 @@ export function CountryPriceContextProvider(props) {
 
   const context = {
     countryPrice: countryPrice,
+    getBiddingZonePrice: getBiddingZonePrice,
     updateCountryPrice: updateCountryPrice,
   };
 
