@@ -119,8 +119,6 @@ func (price *DayAheadPrice) GetAPIPrice(firstDay string, lastDay string) error {
 	if err != nil {
 		return err
 	}
-	// fmt.Println(string(body))
-	// fmt.Println(resp.StatusCode)
 
 	if resp.StatusCode != http.StatusOK || strings.Contains(string(body), "No matching data found for Data item Day-ahead Prices") {
 		if err := xml.Unmarshal(body, &price.acknowledgementMarketDocument); err != nil {
@@ -142,7 +140,7 @@ func (price *DayAheadPrice) GetDBPrice(fromDay string) error {
 	startDate := &Date{
 		Location: "UTC",
 	}
-	startDate.SetDate(fromDay, "23:00:00")
+	startDate.SetDate(fromDay, "22:00:00") // Some markets start from time 22.00 (most start from 23.00)
 	startDate.IncDays(-1)
 
 	params := &dynamodb.QueryInput{
