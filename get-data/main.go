@@ -23,15 +23,6 @@ type LambdaSchedulerEvent struct {
 
 // HandleRequest lambda init functions
 func HandleRequest(ctx context.Context, request events.APIGatewayV2HTTPRequest) (events.APIGatewayV2HTTPResponse, error) {
-	response := events.APIGatewayV2HTTPResponse{
-		StatusCode:      500,
-		Body:            "{}",
-		IsBase64Encoded: false,
-		Headers: map[string]string{
-			"content-type":                "application/json",
-			"Access-Control-Allow-Origin": "*",
-		},
-	}
 	// log.Println("Version", request.Version)
 	// log.Println("RouteKey", request.RouteKey)
 	// log.Println("RawPath", request.RawPath)
@@ -55,13 +46,18 @@ func HandleRequest(ctx context.Context, request events.APIGatewayV2HTTPRequest) 
 	// log.Println("SourceIP", request.RequestContext.HTTP.SourceIP)
 	// log.Println("UserAgent", request.RequestContext.HTTP.UserAgent)
 
+	response := &HTTPResponse{
+		Headers:    &request.Headers,
+		Parameters: &request.QueryStringParameters,
+	}
+
 	// AWS CLI configuration
 	cfg, err := config.LoadDefaultConfig(context.TODO(), func(o *config.LoadOptions) error {
 		o.Region = "eu-west-1"
 		return nil
 	})
 	if err != nil {
-		return response, err
+		return response.GetError(), err
 	}
 
 	// DynamoDB clients
@@ -77,13 +73,13 @@ func HandleRequest(ctx context.Context, request events.APIGatewayV2HTTPRequest) 
 	// Read Bidding Zone Json data from file bidding_zones.json
 	biddingZoneJson, err := os.ReadFile("bidding_zones.json")
 	if err != nil {
-		return response, err
+		return response.GetError(), err
 	}
 
 	var biddingZones []BiddingZones
 	err = json.Unmarshal(biddingZoneJson, &biddingZones)
 	if err != nil {
-		return response, err
+		return response.GetError(), err
 	}
 
 	price := &DayAheadPrice{
@@ -110,13 +106,10 @@ func HandleRequest(ctx context.Context, request events.APIGatewayV2HTTPRequest) 
 
 	body, err := action.Do()
 	if err != nil {
-		return response, err
+		return response.GetError(), err
 	}
 
-	response.StatusCode = 200
-	response.Body = body
-
-	return response, nil
+	return response.GetSuccess(body), nil
 }
 
 func main() {

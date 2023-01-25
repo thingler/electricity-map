@@ -12,7 +12,7 @@ export function BzPriceContextProvider(props) {
   const dateCtx = useContext(DateContext);
 
   function updateBzPrice(date) {
-    fetch(`https://api.thingler.io/day-ahead?date=${date}`)
+    fetch(`https://thingler.io/day-ahead?date=${date}`)
       .then((response) => {
         return response.json();
       })

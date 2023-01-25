@@ -14,7 +14,7 @@
 .text {
   flex: 1 0 33%;
   align-self: auto;
-  padding: 0 1rem;
+  padding: 0 1rem 1rem 1rem;
   background-color: #f7f6f4;
 }
 
