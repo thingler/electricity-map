@@ -10,21 +10,27 @@ section .description {
 .priceContainer .header {
   font-family: latoBold;
   font-weight: bold;
-  font-size: 0.9rem;
+  /* font-size: 0.9rem; */
   padding: 1rem 1rem;
-  /* background-color: #dfd7d4; */
   background-color: #E8D8D2;
 }
 
 .countryContainer {
-  /* background-color: #dfd7d4; */
-  background-color: #E8D8D2;
-
+  background-color: #E5DEDA;
 }
 
-.countryContainer:nth-child(2n){
-  /* background-color: #dddfd4; */
-  background-color: #E5DEDA;
+.countryContainer:last-child {
+  padding-bottom: 0.5rem;
+}
+
+.countryContainer .hr {
+  border: 0.02rem solid #c5bab5;
+  margin: 0.3rem 0.75rem;
+}
+
+.countryContainer .hiddenHr {
+  border: 0;
+  margin: 0.2rem 0;
 }
 
 .country {
@@ -33,7 +39,7 @@ section .description {
   align-self: auto;
   padding: 0.25rem 0rem 0.25rem 0.2rem;
   color: #173e43;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .countryWithBZs {

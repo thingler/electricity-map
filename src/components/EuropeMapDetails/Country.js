@@ -49,6 +49,7 @@ function Country(props) {
     const priceData = getPriceClass(props.country[0].averagePrice);
     return (
       <div className={css.countryContainer}>
+        <hr className={props.first ? css.hiddenHr : css.hr} />
         <div className={css.country}>
           <div className={css.name}>
             <span className={`${css.dot} ${priceData.priceClass}`} />
@@ -75,6 +76,7 @@ function Country(props) {
     });
     return (
       <div className={css.countryContainer}>
+        <hr className={props.first ? css.hiddenHr : css.hr} />
         <div className={css.country}>
           <div className={`${css.name} ${css.nameWithBZs}`}>
             <Link to={`/country/${props.name}`}>{props.name}</Link>

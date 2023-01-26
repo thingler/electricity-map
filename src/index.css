@@ -10,6 +10,7 @@ body {
 
 body {
   font-family: latoRegular, sans-serif;
+  font-size: 1rem;
   background-color: #eff4ff;
   color: #848484;
   line-height: 1.4;

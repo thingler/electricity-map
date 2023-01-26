@@ -47,6 +47,7 @@ function EuropeMapDetails() {
       (countryName, index) => (
         <Country
           key={index}
+          first={index === 0}
           name={countryName}
           country={countries[countryName]}
         />
