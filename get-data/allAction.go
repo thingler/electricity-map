@@ -33,13 +33,17 @@ func (a *AllAction) Do() (string, error) {
 
 	priceData := make(map[string][]dayAheadPriceData)
 
-	// Loop trough bidding zones and update DynamoDB if there are new price data for the bidding zone
-	for _, biddingZone := range a.BiddingZones {
-		// Get current pirce information for bidding zone from DynamoDB
-		priceData[biddingZone.BiddingZone], err = a.Price.GetDBPrice(biddingZone.BiddingZone, firstDay, firstDay, -1, -1)
-		if err != nil {
-			return "", err
-		}
+	priceDataSlice, err := a.Price.GetAllZonesDBPrice(firstDay, firstDay, -1, -1)
+	if err != nil {
+		return "", err
+	}
+	for _, priceDataHour := range priceDataSlice {
+		biddingZone := priceDataHour.BiddingZone
+		priceData[biddingZone] = append(priceData[biddingZone], dayAheadPriceData{
+			Time:       priceDataHour.Time,
+			Resolution: priceDataHour.Resolution,
+			Price:      priceDataHour.Price,
+		})
 	}
 
 	json, _ := json.Marshal(priceData)

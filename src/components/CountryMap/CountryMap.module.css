@@ -1,6 +1,7 @@
 .map {
   max-height: calc(100vh - 5rem);
-  background-color: #dddfd4;
+  /* background-color: #dddfd4; */
+  background-color: #E5DEDA;
 }
 
 .energyPriceLevels {

@@ -7,7 +7,8 @@
 .map {
   flex: 0 0 65%;
   align-self: auto;
-  background-color: #dddfd4;
+  /* background-color: #dddfd4; */
+  background-color: #E5DEDA;
   text-align: right;
 }
 
