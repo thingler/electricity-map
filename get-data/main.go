@@ -18,10 +18,6 @@ type BiddingZones struct {
 	Code        string
 }
 
-type LambdaSchedulerEvent struct {
-	BiddingZone string `json:"BiddingZone"`
-}
-
 type LogLine struct {
 	Path         string `json:"path"`
 	Method       string `json:"method"`

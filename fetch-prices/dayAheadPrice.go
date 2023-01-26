@@ -30,6 +30,7 @@ type dayAheadPriceData struct {
 type DayAheadPrice struct {
 	Code                          string
 	BiddingZone                   string
+	MaxRequestItemSize            int
 	Token                         *string
 	TableName                     *string
 	TimeIndexName                 *string
@@ -170,9 +171,8 @@ func (price *DayAheadPrice) GetDBPrice(fromDay string) error {
 }
 
 // UpdateDB Update the DynamoDB table with price data generated grom the ENTSO-E API
-func (price *DayAheadPrice) UpdateDB() (int, error) {
+func (price *DayAheadPrice) UpdateDB(elementsAlreadyUpdated int) (int, error) {
 	const maxBatchWriteSize = 25 // DynamoDB can handel max 25 records in BatchWrite
-	const maxRequestItemSize = 50
 
 	if price.publicationMarketDocument == nil {
 		return 0, nil
@@ -238,7 +238,7 @@ func (price *DayAheadPrice) UpdateDB() (int, error) {
 			},
 		})
 		requestItemSize = len(requestItems[*price.TableName])
-		if requestItemSize == maxRequestItemSize {
+		if (requestItemSize + elementsAlreadyUpdated) == price.MaxRequestItemSize {
 			break
 		}
 	}

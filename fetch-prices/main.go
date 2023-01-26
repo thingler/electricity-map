@@ -23,6 +23,19 @@ type LambdaSchedulerEvent struct {
 	BiddingZone string `json:"BiddingZone"`
 }
 
+func GetCapacity(svc *dynamodb.Client, tableName *string) (*int64, *int64, error) {
+	describetableInput := &dynamodb.DescribeTableInput{
+		TableName: tableName,
+	}
+	describeTableOutput, err := svc.DescribeTable(context.TODO(), describetableInput)
+	if err != nil {
+		return nil, nil, err
+	}
+	return describeTableOutput.Table.ProvisionedThroughput.ReadCapacityUnits,
+		describeTableOutput.Table.ProvisionedThroughput.WriteCapacityUnits,
+		err
+}
+
 // HandleRequest lambda init functions
 func HandleRequest(ctx context.Context, lambdaEvent LambdaSchedulerEvent) error {
 	// AWS CLI configuration
@@ -93,16 +106,25 @@ func HandleRequest(ctx context.Context, lambdaEvent LambdaSchedulerEvent) error 
 		return err
 	}
 
+	_, writeCapacity, err := GetCapacity(dynamDBSvc, tableName)
+	if err != nil {
+		return err
+	}
+
+	maxRequestItemSize := 50 * int(*writeCapacity)
+	totalElementsUpdated := 0
+
 	// Loop trough bidding zones and update DynamoDB if there are new price data for the bidding zone
 	for i := bzIndex; i < len(biddingZones); i++ {
 		biddingZone := biddingZones[i]
 		price := &DayAheadPrice{
-			Svc:           dynamDBSvc,
-			Token:         token,
-			BiddingZone:   biddingZone.BiddingZone,
-			Code:          biddingZone.Code,
-			TableName:     tableName,
-			TimeIndexName: timeIndexName,
+			Svc:                dynamDBSvc,
+			Token:              token,
+			BiddingZone:        biddingZone.BiddingZone,
+			Code:               biddingZone.Code,
+			TableName:          tableName,
+			TimeIndexName:      timeIndexName,
+			MaxRequestItemSize: maxRequestItemSize,
 		}
 
 		// Get current pirce information for bidding zone from DynamoDB
@@ -118,13 +140,15 @@ func HandleRequest(ctx context.Context, lambdaEvent LambdaSchedulerEvent) error 
 		}
 
 		// Update DynamoDB table with new price information
-		elementsUpdated, err := price.UpdateDB()
+		elementsUpdated, err := price.UpdateDB(totalElementsUpdated)
 		if err != nil {
 			return err
 		}
 
+		totalElementsUpdated += elementsUpdated
+
 		// Update EventBridge Schedule to continue next minute if there was any new price data
-		if elementsUpdated > 0 {
+		if totalElementsUpdated >= maxRequestItemSize {
 			// nextExcecution := fmt.Sprintf("at(%s)", date.Today().IncMinutes(1).RoundMinute().Format("2006-01-02T15:04:05"))
 			nextExcecution := fmt.Sprintf("at(%s)", date.Today().IncMinutes(1).Format("2006-01-02T15:04:05"))
 			err = eventScheduler.UpdateSchedule(&nextExcecution, &biddingZone.BiddingZone)
