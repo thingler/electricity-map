@@ -1,0 +1,22 @@
+.section {
+  background-color: #f7f6f4;
+  margin: 1.5rem;
+  padding: 1rem 1rem 2rem 1rem;
+}
+
+.section .about {
+  text-align: center;
+  margin: auto;
+  width: 95%;
+}
+
+@media (min-width: 55em) {
+    .section {
+      margin: 3rem;
+      padding: 2rem 2rem 3rem 2rem;
+    }
+
+    .section .about {
+      width: 60%;
+    }
+}

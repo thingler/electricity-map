@@ -170,7 +170,7 @@ function CountryPage() {
         <CountryMap country={countryName} zones={countryBzs} />
       </div>
       <div className={css.details}>
-        <h2>{countryName ? countryName : "Country not found!"}</h2>
+        <h1>{countryName ? countryName : "Country not found!"}</h1>
         <div className={css.actionContainer}>
           <div className={css.timeZone}>
             <TimeZone />
