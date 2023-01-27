@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import DateContext from "../../store/DateContext";
+import { analyticsEventTracker } from "../analyticsTracker";
 
 import css from "./DateSelector.module.css";
 
 function DateSelector() {
+  const gaEventTracker = analyticsEventTracker("Date picker");
   const dateCtx = useContext(DateContext);
 
   function getDataString(dayOffset) {
@@ -15,11 +17,13 @@ function DateSelector() {
   }
 
   function setDateToday() {
+    gaEventTracker("today");
     const today = getDataString(0);
     dateCtx.updateDate(today);
   }
 
   function setDateTomorrow() {
+    gaEventTracker("tomorrow");
     const tomorrow = getDataString(1);
     dateCtx.updateDate(tomorrow);
   }

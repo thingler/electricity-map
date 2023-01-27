@@ -4,6 +4,10 @@ import MapPage from "./pages/Map";
 import CountryPage from "./pages/Country";
 import Layout from "./components/layout/Layout";
 
+import ReactGA from "react-ga4";
+const TRACKING_ID = "G-XW9YHLXB38";
+ReactGA.initialize(TRACKING_ID);
+
 function App() {
   return (
     <Layout>

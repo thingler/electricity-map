@@ -8,6 +8,7 @@ import MapPageContext from "../store/MapPageContext";
 import CountryPriceContext from "../store/CountryPriceContext";
 import DateContext from "../store/DateContext";
 import TimeZoneContext from "../store/TimeZoneContext";
+import analyticsPageView from "../components/analyticsTracker";
 
 import BiddingZoneList from "../components/BiddingZoneList";
 import EnergyPriceLevels from "../components/EnergyPriceLevels";
@@ -31,6 +32,10 @@ function CountryPage() {
   const mapPageCtx = useContext(MapPageContext);
   const dateCtx = useContext(DateContext);
   const timeZoneCtx = useContext(TimeZoneContext);
+
+  useEffect(() => {
+    analyticsPageView();
+  }, []);
 
   useEffect(() => {
     mapPageCtx.setMapPage(false);

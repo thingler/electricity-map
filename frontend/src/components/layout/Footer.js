@@ -9,7 +9,7 @@ function Footer() {
         The pricing information displayed is sourced from ENTSO-E - the European
         Network of Transmission System Operators for Electricity. All prices are
         originally in Central European Time (CET/CEST).
-        <Nav />
+        <Nav layout="Footer" />
       </div>
     </footer>
   );
