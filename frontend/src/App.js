@@ -41,7 +41,7 @@ function App() {
         <Route
           path="/about"
           element={
-            <Page title="About">
+            <Page title="About Thingler Electricity Prices">
               <AboutPage />
             </Page>
           }
