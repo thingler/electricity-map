@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState, useContext } from "react";
 import MapPageContext from "../../store/MapPageContext";
 import { analyticsEventTracker } from "../analyticsTracker";
@@ -20,6 +21,10 @@ function Header() {
     setMenuIsOpen(false);
   }
 
+  function logoClicked() {
+    gaEventTracker(`header logo`);
+  }
+
   const header = mapPageCtx.isMapPage
     ? `${css.header} ${css.headerMapPage}`
     : css.header;
@@ -27,7 +32,11 @@ function Header() {
   return (
     <header className={menuIsOpen ? `${header} ${css.menuIsOpen}` : header}>
       <div className={css.flexContainer}>
-        <div className={css.logo}>Thingler</div>
+        <div className={css.logo}>
+          <Link onClick={logoClicked} to={`/map`}>
+            Thingler
+          </Link>
+        </div>
         {!menuIsOpen && <Nav layout="Header" closeMenu={closeMenu} />}
         <div className={css.menuIcon} onClick={toggleMenu}>
           <span className={css.navIcon}></span>

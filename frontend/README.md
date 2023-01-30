@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Thingler's Electricity Country Map React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -20,9 +20,6 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.
 
-### Deployment
+### `./deploy.sh`
 
-The following command will build and deploy the application to Amazon S3
-```bash
-./deploy.sh
-```
+Build a production build and deploy the application to Amazon S3. Cache-control is set to one week for all files except for `index.html`, which is cached for 15 minutes.

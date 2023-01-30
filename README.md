@@ -16,7 +16,9 @@ Thingler's Electricity Country Map, an interactive and up-to-date map for explor
 * AWS Lambda for running the back-end.
 * Amazon EventBridge for scheduled lambda invocations for fetching the price data from ENTSO-E.
 * Amazon DynamoDB for storing and searching trough price data.
+* Amazon API Gateway for getting the price data for bidding zones (from DynamoDB).
 * Amazon CloudFront for caching static and dynamic content (front-end and API requests).
+* AWS Systems Manager - Parameter Store for storing parameters and secrets.
 * and Amazon, CloudWatch, Amazon Route53, AWS Certificate Manager for monitoring, logging, DNS, encryption in flight and so on...
 
 ## Getting started
@@ -28,7 +30,7 @@ Thingler's Electricity Country Map, an interactive and up-to-date map for explor
 * [AWS Command Line Interface](https://aws.amazon.com/cli/)
 
 ### Build
-* [Fornt-end instructions](front-end/README.md)
+* [Fornt-end instructions](frontend/README.md)
 * [Get data API instructions](get-data/README.md)
 * [Fetch data from ENTSO-E instructions](fetch-data/README.md)
 

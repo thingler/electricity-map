@@ -31,6 +31,15 @@
   align-self: auto;
 }
 
+.header .logo a,
+.header .logo a:hover,
+.header .logo a:active,
+.header .logo a.active {
+  text-decoration: none;
+  color: #000000;
+}
+
+
 .header ul {
   list-style: none;
   margin: 0;
