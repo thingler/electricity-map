@@ -66,13 +66,21 @@ function EuropeMapDetails() {
         kilowatt-hour.
       </p>
       <DateSelector />
-      <div className={css.priceContainer}>
-        <div className={`${css.country} ${css.header}`}>
-          <div className={css.name}>Country</div>
-          <div className={css.price}>€ cent / kWh</div>
+      {countryJSX.length === 0 && (
+        <>
+          Please be aware that the day-ahead prices for <b>tomorrow</b> are{" "}
+          <b>not yet available</b>!
+        </>
+      )}
+      {countryJSX.length > 0 && (
+        <div className={css.priceContainer}>
+          <div className={`${css.country} ${css.header}`}>
+            <div className={css.name}>Country</div>
+            <div className={css.price}>€ cent / kWh</div>
+          </div>
+          {countryJSX}
         </div>
-        {countryJSX}
-      </div>
+      )}
     </section>
   );
 }

@@ -47,6 +47,7 @@ function CountryMap(props) {
         <PriceLevels />
       </div>
       <svg
+        width="100%"
         version="1.0"
         viewBox={viewBox ? viewBox : "0 0 1190 1245"}
         xmlns="http://www.w3.org/2000/svg"

@@ -5,13 +5,14 @@
 }
 
 .map {
-  flex: 0 0 33%;
+  flex: 0 0 38%;
   align-self: auto;
   padding: 0 0.5rem 0;
+  text-align: right;
 }
 
 .details {
-  flex: 1 0 65%;
+  flex: 1 0 60%;
   align-self: auto;
   padding: 0 0.5rem 0;
   margin: 0 0.5rem 0;
@@ -71,6 +72,9 @@
 @media (min-width: 55em) {
   .flexContainer {
     flex-direction: row;
+  }
+  .details {
+    padding: 0 2rem 0;
   }
   .details .chartBox {
     padding: 1rem;

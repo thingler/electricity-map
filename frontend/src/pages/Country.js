@@ -211,7 +211,7 @@ function CountryPage() {
         {countryName && (
           <>
             <div className={css.description}>
-              The table{chartJsx.length > 1 && "s"} below displays the hourly
+              The chart{chartJsx.length > 1 && "s"} below displays the hourly
               electricity prices for {countryName}.
               {now.date === dateCtx.date && infoJsx.length === 1 && (
                 <div className={css.info}>
