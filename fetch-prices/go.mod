@@ -1,4 +1,4 @@
-module github.com/thingler/fetch-prices
+module github.com/thingler/electricity/fetch-prices
 
 go 1.19
 

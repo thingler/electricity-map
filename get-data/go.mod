@@ -1,4 +1,4 @@
-module github.com/thingler/get-data
+module github.com/thingler/electricity/get-data
 
 go 1.19
 
