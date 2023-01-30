@@ -18,6 +18,29 @@
   background-color: #f7f6f4;
 }
 
+.details .description {
+  padding-bottom: 1rem;
+}
+
+.details .description .note {
+  padding: 1rem 0;
+}
+
+.details .description .info {
+  padding: 1rem 0;
+}
+
+
+.details .description .oneBz {
+  display: inline;
+}
+
+.details .description .manyBzs {
+  font-size: 0.8rem;
+  padding: 0.1rem 0 0 1rem;
+  display: block;
+}
+
 .actionContainer {
   display: flex;
   flex-direction: row;
@@ -34,7 +57,9 @@
 }
 
 .details .chartBox {
-  padding-bottom: 2.5rem;
+  background-color: #f4eeee;
+  padding: 0.5rem;
+  margin-bottom: 2.5rem;
 }
 
 @media (max-width: 55em) {
@@ -48,6 +73,7 @@
     flex-direction: row;
   }
   .details .chartBox {
+    padding: 1rem;
     aspect-ratio: 2 / 1;
   }
 }

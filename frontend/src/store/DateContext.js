@@ -3,6 +3,7 @@ import { createContext, useState, useEffect } from "react";
 const DateContext = createContext({
   date: "",
   updateDate: (date) => {},
+  now: () => {},
 });
 
 export function DateContextProvider(props) {
@@ -17,6 +18,18 @@ export function DateContextProvider(props) {
     setDate(selectedDate);
   }
 
+  function now() {
+    const d = new Date();
+    const year = d.getFullYear();
+    const month = `${d.getMonth() + 1}`.padStart(2, "0");
+    const day = `${d.getDate()}`.padStart(2, "0");
+
+    return {
+      date: `${year}-${month}-${day}`,
+      currentHourUTC: d.getUTCHours(),
+    };
+  }
+
   useEffect(() => {
     const d = new Date();
     const now = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
@@ -26,6 +39,7 @@ export function DateContextProvider(props) {
   const context = {
     date: date,
     updateDate: updateDate,
+    now: now,
   };
 
   return (

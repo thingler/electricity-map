@@ -68,12 +68,20 @@ function CountryPage() {
   );
 
   const offset = timeZoneCtx.getOffset();
+  const now = dateCtx.now();
+  const currentHour = now.currentHourUTC - offset;
+  let enoughNewDataExist = false;
 
   const countryBzs = biddingZoneList.reduce((previous, zone) => {
     const bzPriceData = countryPriceCtx.getBiddingZonePrice(
       zone.bz,
       dateCtx.date
     );
+
+    if (bzPriceData && bzPriceData.length > 12) {
+      enoughNewDataExist = true;
+    }
+
     if (zone.country === countryName && bzPriceData) {
       let bzData = bzPriceData.reduce((previous, data) => {
         if (data.resolution === "PT60M") {
@@ -89,6 +97,8 @@ function CountryPage() {
         bz: zone.bz,
         description: zone.description,
         data: bzData,
+        currentHourPrice:
+          currentHour in bzData ? bzData[currentHour].price : null,
       });
     }
     return previous;
@@ -101,15 +111,13 @@ function CountryPage() {
       </div>
     );
   }
-
   const chartJsx = countryBzs.map((zone, index) => {
     const labels = zone.data.map((timeRange) => {
       const time = timeRange.time.replace(" ", "T");
       const d = new Date(time);
       d.setHours(d.getHours() + offset * -1);
-      const hour = d.getHours() < 10 ? `0${d.getHours()}` : d.getHours();
-      const minute =
-        d.getMinutes() < 10 ? `0${d.getMinutes()}` : d.getMinutes();
+      const hour = `${d.getHours()}`.padStart(2, "0");
+      const minute = `${d.getMinutes()}`.padStart(2, "0");
       const chartTime = `${hour}:${minute}`;
       return chartTime;
     });
@@ -150,6 +158,9 @@ function CountryPage() {
       responsive: true,
       maintainAspectRatio: false,
       plugins: {
+        tooltip: {
+          displayColors: false,
+        },
         legend: {
           display: false,
           position: "top",
@@ -157,11 +168,37 @@ function CountryPage() {
         title: {
           display: true,
           text: zone.description ? `${zone.description} (c / kWh)` : "c / kWh",
+          font: {
+            size: "16",
+            family: "latoRegular, sans-serif",
+          },
         },
       },
     };
 
     return <ChartBar key={index} options={options} data={chartData} />;
+  });
+
+  function CountryInfo(props) {
+    return (
+      <div className={props.biddingZones > 1 ? css.manyBzs : css.oneBz}>
+        <b>{props.name}</b> {props.biddingZones > 1 ? "at" : "is"}{" "}
+        <b>{((props.currentHourPrice * 10) / 100).toFixed(2)} cents</b> per
+        kilowatt-hour (<b>kWh</b>).
+      </div>
+    );
+  }
+
+  const infoJsx = countryBzs.map((zone, index) => {
+    const name = zone.description ? zone.description : countryName;
+    return (
+      <CountryInfo
+        key={index}
+        name={name}
+        biddingZones={countryBzs.length}
+        currentHourPrice={zone.currentHourPrice}
+      />
+    );
   });
 
   return (
@@ -171,14 +208,42 @@ function CountryPage() {
       </div>
       <div className={css.details}>
         <h1>{countryName ? countryName : "Country not found!"}</h1>
-        <div className={css.actionContainer}>
-          <div className={css.timeZone}>
-            <TimeZone />
-          </div>
-          <div className={css.dateSelector}>
-            <DateSelector />
-          </div>
-        </div>
+        {countryName && (
+          <>
+            <div className={css.description}>
+              The table{chartJsx.length > 1 && "s"} below displays the hourly
+              electricity prices for {countryName}.
+              {now.date === dateCtx.date && infoJsx.length === 1 && (
+                <div className={css.info}>
+                  The current price of electricity in {infoJsx}
+                </div>
+              )}
+              {now.date === dateCtx.date && infoJsx.length > 1 && (
+                <div className={css.info}>
+                  <div>
+                    The current prices for the bidding zones of{" "}
+                    <b>{countryName}</b> are:
+                  </div>
+                  {infoJsx}
+                </div>
+              )}
+              {!enoughNewDataExist && now.date < dateCtx.date && (
+                <div className={css.note}>
+                  Please be aware that the day-ahead prices for tomorrow are{" "}
+                  <b>not yet availabless</b> for {countryName}!
+                </div>
+              )}
+            </div>
+            <div className={css.actionContainer}>
+              <div className={css.timeZone}>
+                <TimeZone />
+              </div>
+              <div className={css.dateSelector}>
+                <DateSelector />
+              </div>
+            </div>
+          </>
+        )}
         {chartJsx}
       </div>
     </div>
