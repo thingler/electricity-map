@@ -32,7 +32,7 @@ Thingler's Electricity Country Map, an interactive and up-to-date map for explor
 ### Build
 * [Fornt-end instructions](frontend/README.md)
 * [Get data API instructions](get-data/README.md)
-* [Fetch data from ENTSO-E instructions](fetch-data/README.md)
+* [Fetch data from ENTSO-E instructions](fetch-prices/README.md)
 
 ## Contributing
 
