@@ -24,4 +24,4 @@ The build is minified and the filenames include the hashes.
 
 ### `./deploy.sh`
 
-Build a production build and deploy the application to Amazon S3. Cache-control is set to one week for all files except for `index.html`, which is cached for 15 minutes.
+Build a production build and deploy the application to Amazon S3. Cache-control is set to one week for all files except for `index.html`, which is cached for 10 minutes.
