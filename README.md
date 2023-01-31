@@ -19,7 +19,7 @@ Thingler's Electricity Country Map, an interactive and up-to-date map for explor
 * Amazon API Gateway for getting the price data for bidding zones (from DynamoDB).
 * Amazon CloudFront for caching static and dynamic content (front-end and API requests).
 * AWS Systems Manager - Parameter Store for storing parameters and secrets.
-* and Amazon, CloudWatch, Amazon Route53, AWS Certificate Manager for monitoring, logging, DNS, encryption in flight and so on...
+* and Amazon CloudWatch, Amazon Route53, AWS Certificate Manager for monitoring, logging, DNS, encryption in flight and so on...
 
 ## Getting started
 

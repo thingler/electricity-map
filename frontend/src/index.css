@@ -12,7 +12,7 @@ body {
   font-family: latoRegular, sans-serif;
   font-size: 1rem;
   background-color: #eff4ff;
-  color: #848484;
+  color: #5f6367;
   line-height: 1.4;
 }
 
@@ -28,14 +28,17 @@ b {
 @font-face {
   font-family: latoRegular;
   src: url(./fonts/Lato-Regular.ttf);
+  font-display: swap;
 }
 
 @font-face {
   font-family: latoBold;
   src: url(./fonts/Lato-Bold.ttf);
+  font-display: swap;
 }
 
 @font-face {
   font-family: loraBoldItalic;
   src: url(./fonts/Lora-BoldItalic.ttf);
+  font-display: swap;
 }

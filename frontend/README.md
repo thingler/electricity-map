@@ -4,6 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+Before running any scripts, please create two environment variable files, `.env.development.local` and `.env.production.local` with the same environemtn variables as in [.env.example.local](.env.example.local).
+
 In the project directory, you can run:
 
 ### `npm start`

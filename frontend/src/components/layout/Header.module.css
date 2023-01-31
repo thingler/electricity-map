@@ -22,7 +22,7 @@
 
 .logo {
   font-size: 2rem;
-  font-family: loraBoldItalic;
+  font-family: loraBoldItalic, sans-serif;
   color: #000000;
   /* color: #8a5574; */
   font-weight: bold;
@@ -75,7 +75,7 @@
 
 .menuIsOpen ul li {
   font-size: 1.6rem;
-  margin: 15px 0;
+  margin: 1rem 0;
 }
 
 .header a {
@@ -93,17 +93,25 @@
   flex: 0 1 auto;
   cursor: pointer;
   display: inline-block;
-  padding: 28px 20px;
+  padding: 1.9rem 1.3rem;
   position: relative;
   user-select: none;
+  border: none;
+  margin: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
 }
 
 .menuIcon .navIcon {
   background: #333;
   display: block;
-  height: 2px;
   position: relative;
-  width: 18px;
+  height: 0.14rem;
+  width: 1.2rem;
 }
 
 .menuIcon .navIcon:before,
@@ -118,11 +126,11 @@
 }
 
 .menuIcon .navIcon:before {
-  top: 5px;
+  top: 0.35rem;
 }
 
 .menuIcon .navIcon:after {
-  top: -5px;
+  top: -0.35rem;
 }
 
 .menuIsOpen .navIcon {

@@ -8,7 +8,7 @@ section .description {
 }
 
 .priceContainer .header {
-  font-family: latoBold;
+  font-family: latoBold, sans-serif;
   font-weight: bold;
   /* font-size: 0.9rem; */
   padding: 1rem 1rem;

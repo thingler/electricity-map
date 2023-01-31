@@ -32,7 +32,10 @@ function BiddingZone(props) {
   }
 
   return (
-    <Link to={`/country/${props.country}`}>
+    <Link
+      aria-label={`Electricity prices for ${props.country}`}
+      to={`/country/${props.country}`}
+    >
       <path className={className} d={props.d} />
       {price !== null && (
         <text x={props.textX} y={props.textY}>

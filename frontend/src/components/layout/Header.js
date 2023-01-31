@@ -33,14 +33,22 @@ function Header() {
     <header className={menuIsOpen ? `${header} ${css.menuIsOpen}` : header}>
       <div className={css.flexContainer}>
         <div className={css.logo}>
-          <Link onClick={logoClicked} to={`/map`}>
+          <Link
+            aria-label="Logo, link to first page"
+            onClick={logoClicked}
+            to={`/map`}
+          >
             Thingler
           </Link>
         </div>
         {!menuIsOpen && <Nav layout="Header" closeMenu={closeMenu} />}
-        <div className={css.menuIcon} onClick={toggleMenu}>
+        <button
+          className={css.menuIcon}
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
           <span className={css.navIcon}></span>
-        </div>
+        </button>
       </div>
       {menuIsOpen && <Nav layout="Header" closeMenu={closeMenu} />}
     </header>

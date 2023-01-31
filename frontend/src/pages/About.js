@@ -32,7 +32,7 @@ function AboutPage() {
         <p>
           The source code is available on GitHub,{" "}
           <a href="https://github.com/thingler/electricity-map">
-            github.com/thingler/electricity
+            github.com/thingler/electricity-map
           </a>
           . <br />
           If you have any questions or feedback, please don't hesitate to

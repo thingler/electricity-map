@@ -29,7 +29,9 @@ export function CountryPriceContextProvider(props) {
 
     if (biddingZones.length > 0) {
       fetch(
-        `https://thingler.io/day-ahead?date=${date}&bz=${biddingZones.toString()}`
+        `${
+          process.env.REACT_APP_API
+        }/day-ahead?date=${date}&bz=${biddingZones.toString()}`
       )
         .then((response) => {
           return response.json();
