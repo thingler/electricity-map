@@ -24,10 +24,10 @@ function AboutPage() {
           to the most accurate information.
         </p>
         <p>
-          The map displays average electricity prices by country, presented in
-          the CET/CEST time zone. You can also access more detailed information
-          by clicking on any of the countries on the map or by browsing the
-          table.
+          The map displays average electricity prices by country, expressed in
+          Euro cents per kilowatt-hour and presented in the Central European
+          Time Zone (CET/CEST). You can also access more detailed information by
+          clicking on any of the countries on the map or by browsing the table.
         </p>
         <p>
           The source code is available on GitHub,{" "}

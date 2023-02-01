@@ -8,23 +8,23 @@ function PriceLevels() {
     <div className={classes.energyPriceLevels}>
       <div className={classes.level}>
         <span className={`${classes.dot} ${classes.trivial}`} />
-        {`≤ ${priceLevels.low / 10}`} / kWh
+        {`≤ ${priceLevels.low / 10}`} c / kWh
       </div>
       <div className={classes.level}>
         <span className={`${classes.dot} ${classes.low}`} />
-        &gt; {priceLevels.low / 10} / kWh
+        &gt; {priceLevels.low / 10} c / kWh
       </div>
       <div className={classes.level}>
         <span className={`${classes.dot} ${classes.medium}`} />
-        &gt; {priceLevels.medium / 10} / kWh
+        &gt; {priceLevels.medium / 10} c / kWh
       </div>
       <div className={classes.level}>
         <span className={`${classes.dot} ${classes.concerning}`} />
-        &gt; {priceLevels.concerning / 10} / kWh
+        &gt; {priceLevels.concerning / 10} c / kWh
       </div>
       <div className={classes.level}>
         <span className={`${classes.dot} ${classes.high}`} />
-        &gt; {priceLevels.high / 10} / kWh
+        &gt; {priceLevels.high / 10} c / kWh
       </div>
     </div>
   );
