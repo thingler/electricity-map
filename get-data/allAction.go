@@ -16,11 +16,13 @@ func (a *AllAction) Name() string {
 	return "all"
 }
 
+// Do returns one day of Bidding Zone prices for (CET/CEST) but with UTC time stamps
 func (a *AllAction) Do() (string, error) {
 	var err error
 
+	// The official time zone for ENTSO-E is CET/CEST (Brussels time zone)
 	date := &Date{
-		Location: "UTC",
+		Location: "Europe/Brussels",
 	}
 	firstDay := date.Today().Format("2006-01-02")
 
@@ -31,9 +33,16 @@ func (a *AllAction) Do() (string, error) {
 		}
 	}
 
+	// CET
+	offset := -1
+	if date.IsDST() {
+		// CEST
+		offset = -2
+	}
+
 	priceData := make(map[string][]dayAheadPriceData)
 
-	priceDataSlice, err := a.Price.GetAllZonesDBPrice(firstDay, firstDay, -1, -1)
+	priceDataSlice, err := a.Price.GetAllZonesDBPrice(firstDay, firstDay, offset, offset)
 	if err != nil {
 		return "", err
 	}

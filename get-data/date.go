@@ -26,12 +26,8 @@ func (d *Date) GetTimeInstance() time.Time {
 
 // Today set the time object to current time
 func (d *Date) Today() *Date {
-	d.timeInstance = time.Now()
-
-	if d.Location == "UTC" {
-		d.timeInstance = d.timeInstance.UTC()
-	}
-
+	loc, _ := time.LoadLocation(d.Location)
+	d.timeInstance = time.Now().In(loc)
 	return d
 }
 
@@ -40,12 +36,9 @@ func (d *Date) Today() *Date {
 // dateString: 2022-12-31
 // timeString: 15:59:59
 func (d *Date) SetDate(dateString string, timeString string) (*Date, error) {
-	var loc *time.Location
-
-	if d.Location == "UTC" {
-		loc = time.UTC
-	} else {
-		loc = time.Local
+	loc, err := time.LoadLocation(d.Location)
+	if err != nil {
+		return d, err
 	}
 
 	goodDateFormat, err := regexp.MatchString(`^[0-9]{4}-[0-9]{2}-[0-9]{2}$`, dateString)
@@ -109,4 +102,9 @@ func (d *Date) RoundMinute() *Date {
 	duration := (60 * time.Second)
 	d.timeInstance = d.timeInstance.Round(duration)
 	return d
+}
+
+// IsDST reports whether the time in the configured location is in Daylight Savings Time.
+func (d *Date) IsDST() bool {
+	return d.timeInstance.IsDST()
 }
