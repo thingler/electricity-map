@@ -74,19 +74,17 @@ func (price *DayAheadPrice) GetDBPrice(biddingZone string, fromDay string, toDay
 }
 
 // GetDBPrice query DynamoDB table for price data
-func (price *DayAheadPrice) GetAllZonesDBPrice(fromDay string, toDay string, fromOffset int, toOffset int) ([]dayAheadPriceDataAllBz, error) {
+func (price *DayAheadPrice) GetAllZonesDBPrice(fromDay string, toDay string, loc string) ([]dayAheadPriceDataAllBz, error) {
 	var priceData []dayAheadPriceDataAllBz
 	startDate := &Date{
-		Location: "UTC",
+		Location: loc,
 	}
 	startDate.SetDate(fromDay, "00:00:00")
-	startDate.IncHour(fromOffset)
 
 	endDate := &Date{
-		Location: "UTC",
+		Location: loc,
 	}
 	endDate.SetDate(toDay, "23:59:59")
-	endDate.IncHour(toOffset)
 
 	params := &dynamodb.QueryInput{
 		TableName:              price.TableName,
@@ -94,8 +92,8 @@ func (price *DayAheadPrice) GetAllZonesDBPrice(fromDay string, toDay string, fro
 		KeyConditionExpression: aws.String("resolution = :hashKey AND #time BETWEEN :sdate AND :edate"),
 		ExpressionAttributeValues: map[string]types.AttributeValue{
 			":hashKey": &types.AttributeValueMemberS{Value: "PT60M"},
-			":sdate":   &types.AttributeValueMemberS{Value: startDate.Format("2006-01-02 15:04:05")},
-			":edate":   &types.AttributeValueMemberS{Value: endDate.Format("2006-01-02 15:04:05")},
+			":sdate":   &types.AttributeValueMemberS{Value: startDate.UTCFormat("2006-01-02 15:04:05")},
+			":edate":   &types.AttributeValueMemberS{Value: endDate.UTCFormat("2006-01-02 15:04:05")},
 		},
 		ExpressionAttributeNames: map[string]string{
 			"#time": "time",

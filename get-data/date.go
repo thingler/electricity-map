@@ -14,9 +14,14 @@ type Date struct {
 	timeInstance time.Time
 }
 
-// Format set the time format
+// Format set the time format and return
 func (d *Date) Format(format string) string {
 	return d.timeInstance.Format(format)
+}
+
+// Format set the time format and return in UTC
+func (d *Date) UTCFormat(format string) string {
+	return d.timeInstance.UTC().Format(format)
 }
 
 // GetTimeInstance return the time object

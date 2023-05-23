@@ -21,8 +21,9 @@ func (a *AllAction) Do() (string, error) {
 	var err error
 
 	// The official time zone for ENTSO-E is CET/CEST (Brussels time zone)
+	loc := "Europe/Brussels"
 	date := &Date{
-		Location: "Europe/Brussels",
+		Location: loc,
 	}
 	firstDay := date.Today().Format("2006-01-02")
 
@@ -33,16 +34,9 @@ func (a *AllAction) Do() (string, error) {
 		}
 	}
 
-	// CET
-	offset := -1
-	if date.IsDST() {
-		// CEST
-		offset = -2
-	}
-
 	priceData := make(map[string][]dayAheadPriceData)
 
-	priceDataSlice, err := a.Price.GetAllZonesDBPrice(firstDay, firstDay, offset, offset)
+	priceDataSlice, err := a.Price.GetAllZonesDBPrice(firstDay, firstDay, loc)
 	if err != nil {
 		return "", err
 	}
