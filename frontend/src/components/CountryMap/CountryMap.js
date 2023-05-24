@@ -22,8 +22,7 @@ function CountryMap(props) {
         }, 0);
         return priceSum / cZone.data.length;
       }, []);
-
-      if (averagePrice > 0) {
+      if (props.zones.length > 0) {
         price = averagePrice;
       }
     }
