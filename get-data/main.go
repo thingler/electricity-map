@@ -117,9 +117,14 @@ func HandleRequest(ctx context.Context, request events.APIGatewayV2HTTPRequest) 
 		Parameters: &request.QueryStringParameters,
 	}
 
+	levels := &LevelsAction{
+		Price:        price,
+	}
+
 	action := NewActionFactory().
 		AddAction(all).
 		AddAction(bz).
+		AddAction(levels).
 		GetAction(&request.QueryStringParameters)
 
 	body, err := action.Do()

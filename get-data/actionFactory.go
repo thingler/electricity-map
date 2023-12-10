@@ -30,10 +30,13 @@ func (factory *actionFactory) GetAction(queryStringParameters *map[string]string
 	var name string
 
 	_, bzExist := (*queryStringParameters)["bz"]
+	_, levelsExist := (*queryStringParameters)["levels"]
 
 	switch {
 	case bzExist:
 		name = "bz"
+	case levelsExist:
+		name = "levels"
 	default:
 		name = "all"
 	}

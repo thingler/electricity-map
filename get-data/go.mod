@@ -28,5 +28,6 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/ssooidc v1.13.11 // indirect
 	github.com/aws/aws-sdk-go-v2/service/sts v1.17.7 // indirect
 	github.com/aws/smithy-go v1.13.5 // indirect
+	github.com/montanaflynn/stats v0.7.1
 	golang.org/x/exp v0.0.0-20221227203929-1b447090c38c
 )

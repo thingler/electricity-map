@@ -11,13 +11,13 @@ The software is designed to operate as an AWS Lambda function, triggered by Amaz
 The software should be built using the following command.
 
 ```bash
-GOOS=linux GOARCH=amd64 go build .
+GOOS=linux GOARCH=arm64 go build -o bootstrap
 ```
 
 Zip the binary and the `bidding_zones.json` file together.
 
 ```bash
-zip -r get-data bidding_zones.json get-data
+zip -r get-data.zip bidding_zones.json bootstrap
 ```
 
 ### Deploy

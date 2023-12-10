@@ -11,13 +11,13 @@ The software is designed to run on AWS Lambda, triggered by Amazon EventBridge.
 The software should be built using the following command.
 
 ```bash
-GOOS=linux GOARCH=amd64 go build .
+GOOS=linux GOARCH=arm64 go build -o bootstrap
 ```
 
 Zip the binary and the `bidding_zones.json` file together.
 
 ```bash
-zip -r fetch-prices bidding_zones.json fetch-prices
+zip -r fetch-prices.zip bidding_zones.json bootstrap
 ```
 
 ### Deploy

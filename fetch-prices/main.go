@@ -85,8 +85,9 @@ func HandleRequest(ctx context.Context, lambdaEvent LambdaSchedulerEvent) error 
 	date := &Date{
 		Location: "UTC",
 	}
-	firstDay := date.Today().Format("2006-01-02")
-	lastDay := date.IncDays(+2).Format("2006-01-02")
+	date.Today().Format("2006-01-02")
+	firstDay := date.IncDays(-1).Format("2006-01-02")
+	lastDay := date.IncDays(+3).Format("2006-01-02")
 
 	// DynamoDB clients
 	dynamDBSvc := dynamodb.NewFromConfig(cfg)
