@@ -44,12 +44,14 @@
 
 .actionContainer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .actionContainer .timeZone {
   flex: 1 0 auto;
   align-self: auto;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .actionContainer .dateSelector {
@@ -80,4 +82,12 @@
     padding: 1rem;
     aspect-ratio: 2 / 1;
   }
+  .actionContainer {
+    flex-direction: row;
+  }
+  .actionContainer .timeZone {
+    margin-bottom: 0;
+    text-align: left;
+  }
+
 }

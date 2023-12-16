@@ -14,17 +14,22 @@
   color: #000000;
 }
 
-.date .value:hover {
-  color: #848484;
+.date .button {
+  appearance: none;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 0.8rem;
+  color: #24292E;
+  background-color: #e5deda;
   cursor: pointer;
+  font-size: 0.9rem;
+  list-style: none;
+  padding: 0.3rem;
+  -webkit-appearance: initial;
+  min-width: 6rem;
 }
 
 .date .value:nth-child(2n) {
   text-align: left;
-}
-
-.selected {
-  text-decoration: underline;
 }
 
 @media (min-width: 55em) {

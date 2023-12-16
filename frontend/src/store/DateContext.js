@@ -2,12 +2,22 @@ import { createContext, useState, useEffect } from "react";
 
 const DateContext = createContext({
   date: "",
+  getDateObject: () => {},
   updateDate: (date) => {},
   now: () => {},
 });
 
 export function DateContextProvider(props) {
   const [date, setDate] = useState("");
+
+  function getDateObject() {
+    if (date === "") return new Date();
+    const dateParts = date.split("-");
+    const year = dateParts[0];
+    const month = dateParts[1];
+    const day = dateParts[2];
+    return new Date(year, month - 1, day);
+  }
 
   function updateDate(date) {
     const dateParts = date.split("-");
@@ -38,6 +48,7 @@ export function DateContextProvider(props) {
 
   const context = {
     date: date,
+    getDateObject: getDateObject,
     updateDate: updateDate,
     now: now,
   };
