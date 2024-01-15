@@ -33,6 +33,7 @@ section .description {
 
 .countryContainer {
   background-color: #E5DEDA;
+  padding-bottom: 0.15rem;
 }
 
 .countryContainer:last-child {
@@ -60,7 +61,7 @@ section .description {
 
 .countryWithBZs {
   padding: 0;
-  padding-bottom: 0.25rem;
+  padding-bottom: 0.35rem;
 }
 
 .country .name {
@@ -116,7 +117,6 @@ section .description {
 .country .price {
   flex: 0 0 30%;
   text-align: left;
-  padding-top: 0.15rem;
 }
 
 .country .vat {
@@ -125,7 +125,6 @@ section .description {
 }
 
 .country a {
-  /* text-decoration: none; */
   color: #173e43;
 }
 
