@@ -26,4 +26,4 @@ yarn-error.log*
 /fetch-prices/bootstrap
 /get-data/*.zip
 /get-data/get-data
-/fetch-prices/bootstrap
+/get-data/bootstrap

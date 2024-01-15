@@ -34,6 +34,7 @@ function CountryMap(props) {
         d={zone.d}
         textX={zone.textX}
         textY={zone.textY}
+        vat={props.vat}
       >
         {price}
       </BiddingZone>
@@ -43,7 +44,7 @@ function CountryMap(props) {
   return (
     <>
       <div className={css.energyPriceLevels}>
-        <PriceLevels />
+        <PriceLevels vat={props.vat} />
       </div>
       <svg
         width="100%"

@@ -49,10 +49,10 @@ func (l *LevelsAction) Do() (string, error) {
 
 	data := stats.Float64Data(priceData)
 
-	low, _ := data.Percentile(20)
+	low, _ := data.Percentile(10)
 	medium, _ := data.Percentile(60)
-	concerning, _ := data.Percentile(80)
-	high, _ := data.Percentile(95)
+	concerning, _ := data.Percentile(85)
+	high, _ := data.Percentile(97)
 
 	json, _ := json.Marshal(Levels{
 		Low:       	strconv.FormatFloat(math.Round(low/10)*10, 'f', -1, 64),

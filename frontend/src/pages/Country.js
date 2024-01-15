@@ -4,11 +4,14 @@ import { useContext, useEffect } from "react";
 
 import DateSelector from "../components/DateSelector/DateSelector";
 import TimeZone from "../components/TimeZone/TimeZone";
+import VatToggle from "../components/VatToggle/VatToggle";
 import MapPageContext from "../store/MapPageContext";
 import CountryPriceContext from "../store/CountryPriceContext";
 import DateContext from "../store/DateContext";
 import TimeZoneContext from "../store/TimeZoneContext";
 import analyticsPageView from "../components/analyticsTracker";
+import VATContext from "../store/VATContext";
+import { countryList } from "../components/countryList";
 
 import BiddingZoneList from "../components/BiddingZoneList";
 import EnergyPriceLevels from "../components/EnergyPriceLevels";
@@ -32,6 +35,7 @@ function CountryPage() {
   const mapPageCtx = useContext(MapPageContext);
   const dateCtx = useContext(DateContext);
   const timeZoneCtx = useContext(TimeZoneContext);
+  const vatCtx = useContext(VATContext);
 
   useEffect(() => {
     analyticsPageView();
@@ -71,6 +75,7 @@ function CountryPage() {
   const now = dateCtx.now();
   const currentHour = now.currentHourUTC - offset;
   let enoughNewDataExist = false;
+  const vat = vatCtx.vat ? countryList[countryName].vat / 100 + 1 : 1;
 
   const countryBzs = biddingZoneList.reduce((previous, zone) => {
     const bzPriceData = countryPriceCtx.getBiddingZonePrice(
@@ -123,11 +128,11 @@ function CountryPage() {
     });
 
     const data = zone.data.map((timeRange) =>
-      (Math.round(timeRange.price * 10) / 100).toFixed(2)
+      (Math.round(timeRange.price * 10 * vat) / 100).toFixed(2)
     );
 
     const backgroundColor = data.map((price) => {
-      const priceMWh = price * 10;
+      const priceMWh = (price * 10) / vat;
       if (priceMWh > priceLevels.high) {
         return "#8a5574";
       }
@@ -183,8 +188,8 @@ function CountryPage() {
     return (
       <div className={props.biddingZones > 1 ? css.manyBzs : css.oneBz}>
         <b>{props.name}</b> {props.biddingZones > 1 ? "at" : "is"}{" "}
-        <b>{((props.currentHourPrice * 10) / 100).toFixed(2)} cents</b> per
-        kilowatt-hour (<b>kWh</b>).
+        <b>{((props.currentHourPrice * 10 * vat) / 100).toFixed(2)} cents</b>{" "}
+        per kilowatt-hour (<b>kWh</b>).
       </div>
     );
   }
@@ -204,7 +209,7 @@ function CountryPage() {
   return (
     <div className={css.flexContainer}>
       <div className={css.map}>
-        <CountryMap country={countryName} zones={countryBzs} />
+        <CountryMap country={countryName} zones={countryBzs} vat={vat} />
       </div>
       <div className={css.details}>
         <h1>{countryName ? countryName : "Country not found!"}</h1>
@@ -237,6 +242,9 @@ function CountryPage() {
             <div className={css.actionContainer}>
               <div className={css.timeZone}>
                 <TimeZone />
+              </div>
+              <div className={css.vatSelector}>
+                <VatToggle country={countryName} />
               </div>
               <div className={css.dateSelector}>
                 <DateSelector />

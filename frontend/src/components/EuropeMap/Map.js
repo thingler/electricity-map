@@ -1,6 +1,8 @@
 import { useState, useEffect, useContext } from "react";
 
 import BzPriceContext from "../../store/BzPriceContext";
+import VATContext from "../../store/VATContext";
+import { countryList } from "../../components/countryList";
 
 import BiddingZoneList from "../BiddingZoneList";
 
@@ -10,6 +12,7 @@ import PriceLevels from "../PriceLevels/PriceLevels";
 
 function EuropeMap() {
   const bzPriceCtx = useContext(BzPriceContext);
+  const vatCtx = useContext(VATContext);
 
   const biddingZoneList = BiddingZoneList();
   const [smallWidth, setSmallWidth] = useState(true);
@@ -28,6 +31,7 @@ function EuropeMap() {
 
   const mapData = biddingZoneList.map((zone) => {
     let averagePrice = null;
+    const vat = vatCtx.vat ? countryList[zone.country].vat / 100 + 1 : 1;
     if (
       zone.bz in bzPriceCtx.bzPrice &&
       bzPriceCtx.bzPrice[zone.bz].length > 0
@@ -54,6 +58,7 @@ function EuropeMap() {
         d={zone.d}
         textX={zone.textX}
         textY={zone.textY}
+        vat={vat}
       >
         {averagePrice}
       </BiddingZone>
@@ -63,7 +68,7 @@ function EuropeMap() {
   return (
     <>
       <div className={classes.energyPriceLevels}>
-        <PriceLevels />
+        <PriceLevels vat={vatCtx.vat ? 1.21 : 1} />
       </div>
       <svg
         version="1.0"

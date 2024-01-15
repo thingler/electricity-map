@@ -28,7 +28,7 @@ function BiddingZone(props) {
   if (price === null) {
     className = css.noPriceData;
   } else {
-    price = (Math.round(price * 10) / 100).toFixed(2);
+    price = (Math.round(price * 10 * props.vat) / 100).toFixed(2);
   }
 
   return (

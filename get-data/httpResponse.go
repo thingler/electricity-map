@@ -13,7 +13,7 @@ type HTTPResponse struct {
 }
 
 // GetSuccess returns eather an 304 - not modified or an 200 - ok response
-// Cache-Control is set to one week for old data, and 15 minutes for data that we are still waiting for
+// Cache-Control is set to three hours for old data, and 15 minutes for data that we are still waiting for
 func (r *HTTPResponse) GetSuccess(body string) events.APIGatewayV2HTTPResponse {
 
 	eTag := fmt.Sprintf(`W/"%x"`, md5.Sum([]byte(body)))
@@ -51,8 +51,8 @@ func (r *HTTPResponse) GetSuccess(body string) events.APIGatewayV2HTTPResponse {
 		// Cache for 15 minutes
 		response.Headers["cache-control"] = "max-age=900"
 	} else {
-		// Cache for one week
-		response.Headers["cache-control"] = "max-age=604800"
+		// Cache for three hours
+		response.Headers["cache-control"] = "max-age=10800"
 	}
 
 	response.Body = body

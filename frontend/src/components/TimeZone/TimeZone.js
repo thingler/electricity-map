@@ -16,7 +16,7 @@ function TimeZone(props) {
   return (
     <form>
       <label htmlFor="timeZone" className={css.label}>
-        Time zone:
+        Time zone
       </label>
       <select
         className={css.timeZone}

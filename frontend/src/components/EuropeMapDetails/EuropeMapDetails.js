@@ -1,6 +1,9 @@
 import { useContext } from "react";
 
 import BzPriceContext from "../../store/BzPriceContext";
+import VATContext from "../../store/VATContext";
+import { countryList } from "../../components/countryList";
+import VatToggle from "../../components/VatToggle/VatToggle";
 
 import BiddingZoneList from "../BiddingZoneList";
 
@@ -10,6 +13,7 @@ import css from "./EuropeMapDetails.module.css";
 
 function EuropeMapDetails() {
   const bzPriceCtx = useContext(BzPriceContext);
+  const vatCtx = useContext(VATContext);
   const biddingZoneList = BiddingZoneList();
 
   const countries = biddingZoneList.reduce((previous, zone) => {
@@ -35,6 +39,7 @@ function EuropeMapDetails() {
           biddingZone: zone.bz,
           description: zone.description,
           averagePrice: finalPrice.sum / finalPrice.elements,
+          vat: vatCtx.vat ? countryList[zone.country].vat : 0,
         });
       }
     }
@@ -65,7 +70,14 @@ function EuropeMapDetails() {
         European time (<b>CET/CEST</b>) and are expressed in Euro cents per
         kilowatt-hour.
       </p>
-      <DateSelector />
+      <div className={css.actionContainer}>
+        <div className={css.vatSelector}>
+          <VatToggle />
+        </div>
+        <div className={css.dateSelector}>
+          <DateSelector />
+        </div>
+      </div>
       {countryJSX.length === 0 && (
         <>
           Please be aware that the day-ahead prices for <b>tomorrow</b> are{" "}
@@ -77,6 +89,7 @@ function EuropeMapDetails() {
           <div className={`${css.country} ${css.header}`}>
             <div className={css.name}>Country</div>
             <div className={css.price}>€ cent / kWh</div>
+            <div className={css.vat}>VAT %</div>
           </div>
           {countryJSX}
         </div>

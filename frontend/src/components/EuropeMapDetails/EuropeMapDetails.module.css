@@ -2,6 +2,23 @@ section .description {
   font-size: 0.9rem;
 }
 
+.actionContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.actionContainer .vatSelector {
+  flex: 1 0 auto;
+  align-self: auto;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.actionContainer .dateSelector {
+  flex: 1 0 auto;
+  align-self: auto;
+}
+
 .priceContainer {
   display: flex;
   flex-direction: column;
@@ -10,8 +27,7 @@ section .description {
 .priceContainer .header {
   font-family: latoBold, sans-serif;
   font-weight: bold;
-  /* font-size: 0.9rem; */
-  padding: 1rem 1rem;
+  padding: 1rem 0;
   background-color: #E8D8D2;
 }
 
@@ -48,8 +64,11 @@ section .description {
 }
 
 .country .name {
-  flex: 0 0 60%;
+  flex: 0 0 50%;
   white-space: nowrap;
+}
+.priceContainer .header .name {
+  padding-left: 1rem;
 }
 
 .country .nameWithBZs {
@@ -95,9 +114,14 @@ section .description {
 }
 
 .country .price {
-  flex: 0 0 auto;
-  text-align: center;
-  padding-top: 0.15rem
+  flex: 0 0 30%;
+  text-align: left;
+  padding-top: 0.15rem;
+}
+
+.country .vat {
+  flex: 0 0 20%;
+  text-align: left;
 }
 
 .country a {
@@ -109,4 +133,13 @@ section .description {
 .country a:active,
 .country a.active {
   color: #848484;
+}
+
+@media (min-width: 78em) {
+  .actionContainer {
+    flex-direction: row;
+  }
+  .actionContainer .vatSelector {
+    margin-bottom: 0;
+  }
 }

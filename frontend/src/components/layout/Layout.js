@@ -1,6 +1,7 @@
 import { TimeZoneContextProvider } from "../../store/TimeZoneContext";
 import { DateContextProvider } from "../../store/DateContext";
 import { BzPriceContextProvider } from "../../store/BzPriceContext";
+import { VATContextProvider } from "../../store/VATContext";
 import { CountryPriceContextProvider } from "../../store/CountryPriceContext";
 import { MapPageContextProvider } from "../../store/MapPageContext";
 
@@ -12,13 +13,15 @@ function Layout(props) {
     <TimeZoneContextProvider>
       <DateContextProvider>
         <BzPriceContextProvider>
-          <CountryPriceContextProvider>
-            <MapPageContextProvider>
-              <Header />
-              <main>{props.children}</main>
-              <Footer />
-            </MapPageContextProvider>
-          </CountryPriceContextProvider>
+          <VATContextProvider>
+            <CountryPriceContextProvider>
+              <MapPageContextProvider>
+                <Header />
+                <main>{props.children}</main>
+                <Footer />
+              </MapPageContextProvider>
+            </CountryPriceContextProvider>
+          </VATContextProvider>
         </BzPriceContextProvider>
       </DateContextProvider>
     </TimeZoneContextProvider>
