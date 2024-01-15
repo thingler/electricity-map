@@ -18,10 +18,10 @@ export const countryList = {
     vat: 20,
   },
   "United Kingdom": {
-    vat: 20,
+    vat: 5,
   },
   Latvia: {
-    vat: 21,
+    vat: 0,
   },
   Denmark: {
     vat: 25,
@@ -30,10 +30,10 @@ export const countryList = {
     vat: 20,
   },
   Lithuania: {
-    vat: 21,
+    vat: 0,
   },
   Ireland: {
-    vat: 23,
+    vat: 9,
   },
   "Northern Ireland": {
     vat: 20,
@@ -51,7 +51,7 @@ export const countryList = {
     vat: 21,
   },
   Belgium: {
-    vat: 21,
+    vat: 6,
   },
   France: {
     vat: 20,
@@ -78,16 +78,16 @@ export const countryList = {
     vat: 7.7,
   },
   Italy: {
-    vat: 22,
+    vat: 10,
   },
   Malta: {
-    vat: 18,
+    vat: 5,
   },
   Slovenia: {
     vat: 22,
   },
   Croatia: {
-    vat: 25,
+    vat: 13,
   },
   Serbia: {
     vat: 20,
@@ -105,7 +105,7 @@ export const countryList = {
     vat: 20,
   },
   Spain: {
-    vat: 21,
+    vat: 5,
   },
   Montenegro: {
     vat: 21,
@@ -120,7 +120,7 @@ export const countryList = {
     vat: 18,
   },
   Greece: {
-    vat: 24,
+    vat: 6,
   },
   Albania: {
     vat: 20,
