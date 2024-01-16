@@ -5,8 +5,6 @@ import EnergyPriceLevels from "../../components/EnergyPriceLevels";
 import css from "./EuropeMapDetails.module.css";
 
 function Country(props) {
-  const priceLevels = EnergyPriceLevels();
-
   function BiddingZone(bz) {
     return (
       <div className={bz.countryClass}>
@@ -21,8 +19,11 @@ function Country(props) {
   }
 
   function getPriceClass(price, vat) {
+    const priceLevels = EnergyPriceLevels(props.priceLevelVAT);
     let priceClass = null;
-
+    if (price !== null) {
+      price *= vat / 100 + 1;
+    }
     if (price <= priceLevels.low) {
       priceClass = css.trivial;
     }
@@ -41,7 +42,7 @@ function Country(props) {
     if (price === null) {
       priceClass = css.noPriceData;
     } else {
-      price = (Math.round(price * 10 * (vat / 100 + 1)) / 100).toFixed(2);
+      price = (Math.round(price * 10) / 100).toFixed(2);
     }
     return { price: price, priceClass: priceClass };
   }

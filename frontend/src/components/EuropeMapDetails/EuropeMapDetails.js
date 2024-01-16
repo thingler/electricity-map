@@ -55,6 +55,7 @@ function EuropeMapDetails() {
           first={index === 0}
           name={countryName}
           country={countries[countryName]}
+          priceLevelVAT={vatCtx.vat ? 1.21 : 1}
         />
       ),
       []

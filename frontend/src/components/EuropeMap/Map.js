@@ -59,6 +59,7 @@ function EuropeMap() {
         textX={zone.textX}
         textY={zone.textY}
         vat={vat}
+        priceLevelVAT={vatCtx.vat ? 1.21 : 1}
       >
         {averagePrice}
       </BiddingZone>

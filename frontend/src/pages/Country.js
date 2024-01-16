@@ -45,16 +45,16 @@ function CountryPage() {
     mapPageCtx.setMapPage(false);
   });
 
-  const { country } = useParams();
-
   const countryPriceCtx = useContext(CountryPriceContext);
   const biddingZoneList = BiddingZoneList();
-  const priceLevels = EnergyPriceLevels();
-
+  const { country } = useParams();
   const countryName = biddingZoneList.reduce(
     (previous, zone) => (zone.country === country ? zone.country : previous),
     null
   );
+
+  const vat = vatCtx.vat ? countryList[countryName].vat / 100 + 1 : 1;
+  const priceLevels = EnergyPriceLevels(vat);
 
   useEffect(() => {
     if (dateCtx.date) {
@@ -75,7 +75,6 @@ function CountryPage() {
   const now = dateCtx.now();
   const currentHour = now.currentHourUTC - offset;
   let enoughNewDataExist = false;
-  const vat = vatCtx.vat ? countryList[countryName].vat / 100 + 1 : 1;
 
   const countryBzs = biddingZoneList.reduce((previous, zone) => {
     const bzPriceData = countryPriceCtx.getBiddingZonePrice(
@@ -132,7 +131,7 @@ function CountryPage() {
     );
 
     const backgroundColor = data.map((price) => {
-      const priceMWh = (price * 10) / vat;
+      const priceMWh = price * 10;
       if (priceMWh > priceLevels.high) {
         return "#8a5574";
       }

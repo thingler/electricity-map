@@ -35,6 +35,7 @@ function CountryMap(props) {
         textX={zone.textX}
         textY={zone.textY}
         vat={props.vat}
+        priceLevelVAT={props.vat}
       >
         {price}
       </BiddingZone>

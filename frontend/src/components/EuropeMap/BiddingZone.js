@@ -5,9 +5,13 @@ import EnergyPriceLevels from "../../components/EnergyPriceLevels";
 import css from "./BiddingZone.module.css";
 
 function BiddingZone(props) {
-  const priceLevels = EnergyPriceLevels();
+  const priceLevels = EnergyPriceLevels(props.priceLevelVAT);
 
   let price = props.children;
+  if (price !== null) {
+    price *= props.vat;
+  }
+
   let className = null;
 
   if (price <= priceLevels.low) {
@@ -28,7 +32,7 @@ function BiddingZone(props) {
   if (price === null) {
     className = css.noPriceData;
   } else {
-    price = (Math.round(price * 10 * props.vat) / 100).toFixed(2);
+    price = (Math.round(price * 10) / 100).toFixed(2);
   }
 
   return (

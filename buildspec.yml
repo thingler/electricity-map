@@ -13,9 +13,6 @@ phases:
       - echo "REACT_APP_API=https://thingler.io" > .env.production.local
       - PRICE_LEVELS=$(curl -s -X GET "https://api.thingler.io/day-ahead?levels")
       - FILE_PATH="src/components/EnergyPriceLevels.js"
-      - |
-        sed -i '/return/,/^}/c\
-        return '"$PRICE_LEVELS"'\
-        }' "$FILE_PATH"
+      - sed -i "/const basePriceLevels = {/,/};/c const basePriceLevels = ${PRICE_LEVELS};" "$FILE_PATH"
       - npm install
       - ./deploy.sh
