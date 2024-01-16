@@ -75,7 +75,7 @@ export const countryList = {
     vat: 20,
   },
   Switzerland: {
-    vat: 7.7,
+    vat: 0,
   },
   Italy: {
     vat: 10,
