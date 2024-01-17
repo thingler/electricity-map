@@ -6,11 +6,11 @@ import { analyticsEventTracker } from "../analyticsTracker";
 import css from "./VatToggle.module.css";
 
 function VatToggle(props) {
-  const gaEventTracker = analyticsEventTracker("Vat Toggle");
+  const gaEventTracker = analyticsEventTracker("VAT Toggle");
   const vatCtx = useContext(VATContext);
 
-  function toggle(event) {
-    gaEventTracker(event.target.value);
+  function toggle() {
+    gaEventTracker("VAT Toggle");
     vatCtx.toggle();
   }
 
