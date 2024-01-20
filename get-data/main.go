@@ -36,8 +36,14 @@ func LogRequest(request events.APIGatewayV2HTTPRequest, response uint16) {
 	log.Println(string(logJson))
 }
 
-// HandleRequest lambda init functions
-func HandleRequest(ctx context.Context, request events.APIGatewayV2HTTPRequest) (events.APIGatewayV2HTTPResponse, error) {
+// HandleWarmingRequest to keep lambda function warm
+func HandleWarmingRequest(ctx context.Context) (error) {
+	log.Println("Warming request")
+	return nil
+}
+
+// HandleAPIGatewayRequest lambda init functions
+func HandleAPIGatewayRequest(ctx context.Context, request events.APIGatewayV2HTTPRequest) (events.APIGatewayV2HTTPResponse, error) {
 	// log.Println("Version", request.Version)
 	// log.Println("RouteKey", request.RouteKey)
 	// log.Println("RawPath", request.RawPath)
@@ -137,6 +143,22 @@ func HandleRequest(ctx context.Context, request events.APIGatewayV2HTTPRequest) 
 	resp := response.GetSuccess(body)
 	LogRequest(request, uint16(resp.StatusCode))
 	return resp, nil
+}
+
+// Universal handler function
+func HandleRequest(ctx context.Context, event json.RawMessage) (interface{}, error) {
+    var apiGatewayEvent events.APIGatewayV2HTTPRequest
+	err := json.Unmarshal(event, &apiGatewayEvent)
+	if err != nil {
+		return nil, err
+	}
+	if apiGatewayEvent.Version != "" {
+		// It's an API Gateway event
+		return HandleAPIGatewayRequest(ctx, apiGatewayEvent)
+	} else {
+		// keep lambda function warm
+		return nil, HandleWarmingRequest(ctx)
+	}
 }
 
 func main() {
