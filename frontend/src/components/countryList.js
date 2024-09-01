@@ -6,7 +6,7 @@ export const countryList = {
     vat: 25,
   },
   Finland: {
-    vat: 24,
+    vat: 25.5,
   },
   Sweden: {
     vat: 25,
