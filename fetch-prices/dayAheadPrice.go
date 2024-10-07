@@ -121,7 +121,7 @@ func (price *DayAheadPrice) GetAPIPrice(firstDay string, lastDay string) error {
 		return err
 	}
 
-	if resp.StatusCode != http.StatusOK || strings.Contains(string(body), "No matching data found for Data item Day-ahead Prices") {
+	if resp.StatusCode != http.StatusOK || strings.Contains(string(body), "Acknowledgement_MarketDocument") {
 		if err := xml.Unmarshal(body, &price.acknowledgementMarketDocument); err != nil {
 			return err
 		}
