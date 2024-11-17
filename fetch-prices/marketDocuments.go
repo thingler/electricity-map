@@ -83,7 +83,7 @@ type PublicationMarketDocument struct {
 		CurrencyUnitName     string `xml:"currency_Unit.name"`
 		PriceMeasureUnitName string `xml:"price_Measure_Unit.name"`
 		CurveType            string `xml:"curveType"`
-		Period               struct {
+		Period               []struct {
 			TimeInterval struct {
 				Start string `xml:"start"`
 				End   string `xml:"end"`

@@ -185,41 +185,77 @@ func (price *DayAheadPrice) UpdateDB(elementsAlreadyUpdated int) (int, error) {
 	}
 
 	for _, timeSerie := range price.publicationMarketDocument.TimeSeries {
-		startTime := strings.Split(strings.TrimSuffix(timeSerie.Period.TimeInterval.Start, "Z"), "T")
-		timePrice.SetDate(startTime[0], startTime[1]+":00")
-		resolution := timeSerie.Period.Resolution
+		for _, period := range timeSerie.Period {
+			startTime := strings.Split(strings.TrimSuffix(period.TimeInterval.Start, "Z"), "T")
+			timePrice.SetDate(startTime[0], startTime[1]+":00")
+			resolution := period.Resolution
 
-		for _, point := range timeSerie.Period.Point {
-			priceAmountFloat, _ := strconv.ParseFloat(point.PriceAmount, 32)
-			priceAmount := float32(priceAmountFloat)
-			timeStamp := timePrice.Format("2006-01-02 15:04:05")
-
-			priceIndex := slices.IndexFunc(
-				price.existingDayAheadPriceData,
-				func(c dayAheadPriceData) bool {
-					return c.BiddingZone == price.BiddingZone && c.Composite == timeStamp+resolution && c.Price == priceAmount
-				},
-			)
-
-			if priceIndex == -1 {
-				priceData = append(priceData, dayAheadPriceData{
-					BiddingZone: price.BiddingZone,
-					Composite:   timeStamp + resolution,
-					Time:        timeStamp,
-					Resolution:  resolution,
-					Price:       priceAmount,
-				})
-			}
+			var nrOfPoints int
+			var priceAmountString string
 
 			switch resolution {
 			case "PT60M":
-				timePrice.IncHour(1)
+				nrOfPoints = 24
 			case "PT30M":
-				timePrice.IncMinutes(30)
+				nrOfPoints = 48
 			case "PT15M":
-				timePrice.IncMinutes(15)
+				nrOfPoints = 96
 			default:
-				timePrice.IncHour(1)
+				nrOfPoints = 24
+			}
+
+			// This is needed because the API does not return all points for each period in case the price is the same as the previous point
+			// We can't simply iterate over period.Point
+			for i := 0; i < nrOfPoints; i++ {
+				pointIndex := slices.IndexFunc(period.Point, func(fp struct {
+					Position    string `xml:"position"`
+					PriceAmount string `xml:"price.amount"`
+				}) bool {
+					return fp.Position == strconv.Itoa(i + 1)
+				})
+
+				if pointIndex == -1 {
+					// In other cases (i > 0) we use the price amount from the previous point (set in previous iteration)
+					if i == 0 {
+						priceAmountString = period.Point[i].PriceAmount
+					}
+				} else {
+					priceAmountString = period.Point[pointIndex].PriceAmount
+				}
+
+				// Convert price amount to float32
+				priceAmountFloat64, _ := strconv.ParseFloat(priceAmountString, 32)
+				priceAmount := float32(priceAmountFloat64)
+
+				timeStamp := timePrice.Format("2006-01-02 15:04:05")
+
+				priceIndex := slices.IndexFunc(
+					price.existingDayAheadPriceData,
+					func(c dayAheadPriceData) bool {
+						return c.BiddingZone == price.BiddingZone && c.Composite == timeStamp+resolution && c.Price == priceAmount
+					},
+				)
+
+				if priceIndex == -1 {
+					priceData = append(priceData, dayAheadPriceData{
+						BiddingZone: price.BiddingZone,
+						Composite:   timeStamp + resolution,
+						Time:        timeStamp,
+						Resolution:  resolution,
+						Price:       priceAmount,
+					})
+				}
+
+				switch resolution {
+				case "PT60M":
+					timePrice.IncHour(1)
+				case "PT30M":
+					timePrice.IncMinutes(30)
+				case "PT15M":
+					timePrice.IncMinutes(15)
+				default:
+					timePrice.IncHour(1)
+				}
 			}
 		}
 	}
