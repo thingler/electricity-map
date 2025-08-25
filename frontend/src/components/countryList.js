@@ -15,7 +15,7 @@ export const countryList = {
     vat: 24,
   },
   Estonia: {
-    vat: 20,
+    vat: 24,
   },
   "United Kingdom": {
     vat: 5,
