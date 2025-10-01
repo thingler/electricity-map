@@ -73,7 +73,6 @@ function CountryPage() {
 
   const offset = timeZoneCtx.getOffset();
   const now = dateCtx.now();
-  const currentHour = now.currentHourUTC - offset;
   let enoughNewDataExist = false;
 
   const countryBzs = biddingZoneList.reduce((previous, zone) => {
@@ -87,22 +86,48 @@ function CountryPage() {
     }
 
     if (zone.country === countryName && bzPriceData) {
-      let bzData = bzPriceData.reduce((previous, data) => {
+      let bzData60M = bzPriceData.reduce((previous, data) => {
         if (data.resolution === "PT60M") {
           previous.push(data);
         }
         return previous;
       }, []);
-      bzData.splice(0, 3 + offset);
-      if (bzData.length > 24) {
-        bzData.length = 24;
+
+      let bzData15M = bzPriceData.reduce((previous, data) => {
+        if (data.resolution === "PT15M") {
+          previous.push(data);
+        }
+        return previous;
+      }, []);
+
+      bzData60M.splice(0, 3 + offset);
+      bzData15M.splice(0, 3 * 4 + offset * 4);
+
+      if (bzData60M.length > 24) {
+        bzData60M.length = 24;
       }
+
+      if (bzData15M.length > 96) {
+        bzData15M.length = 96;
+      }
+
+      const bzData =
+        bzData15M.length >= bzData60M.length ? bzData15M : bzData60M;
+
+      // Find the current price by matching the time property
+      // Use appropriate time format based on data resolution
+      const timeToMatch =
+        bzData15M.length >= bzData60M.length
+          ? now.currentTime15MUTC
+          : now.currentTime60MUTC;
+      const currentPriceItem = bzData.find((item) => item.time === timeToMatch);
+      const currentPrice = currentPriceItem ? currentPriceItem.price : null;
+
       previous.push({
         bz: zone.bz,
         description: zone.description,
         data: bzData,
-        currentHourPrice:
-          currentHour in bzData ? bzData[currentHour].price : null,
+        currentPrice: currentPrice,
       });
     }
     return previous;
@@ -187,8 +212,8 @@ function CountryPage() {
     return (
       <div className={props.biddingZones > 1 ? css.manyBzs : css.oneBz}>
         <b>{props.name}</b> {props.biddingZones > 1 ? "at" : "is"}{" "}
-        <b>{((props.currentHourPrice * 10 * vat) / 100).toFixed(2)} cents</b>{" "}
-        per kilowatt-hour (<b>kWh</b>).
+        <b>{((props.currentPrice * 10 * vat) / 100).toFixed(2)} cents</b> per
+        kilowatt-hour (<b>kWh</b>).
       </div>
     );
   }
@@ -200,7 +225,7 @@ function CountryPage() {
         key={index}
         name={name}
         biddingZones={countryBzs.length}
-        currentHourPrice={zone.currentHourPrice}
+        currentPrice={zone.currentPrice}
       />
     );
   });

@@ -74,7 +74,7 @@ func (price *DayAheadPrice) GetDBPrice(biddingZone string, fromDay string, toDay
 }
 
 // GetDBPrice query DynamoDB table for price data
-func (price *DayAheadPrice) GetAllZonesDBPrice(fromDay string, toDay string, loc string) ([]dayAheadPriceDataAllBz, error) {
+func (price *DayAheadPrice) GetAllZonesDBPrice(fromDay string, toDay string, loc string, resolution string) ([]dayAheadPriceDataAllBz, error) {
 	var priceData []dayAheadPriceDataAllBz
 	startDate := &Date{
 		Location: loc,
@@ -91,7 +91,7 @@ func (price *DayAheadPrice) GetAllZonesDBPrice(fromDay string, toDay string, loc
 		IndexName:              price.ResolutionTimeIndexName,
 		KeyConditionExpression: aws.String("resolution = :hashKey AND #time BETWEEN :sdate AND :edate"),
 		ExpressionAttributeValues: map[string]types.AttributeValue{
-			":hashKey": &types.AttributeValueMemberS{Value: "PT60M"},
+			":hashKey": &types.AttributeValueMemberS{Value: resolution},
 			":sdate":   &types.AttributeValueMemberS{Value: startDate.UTCFormat("2006-01-02 15:04:05")},
 			":edate":   &types.AttributeValueMemberS{Value: endDate.UTCFormat("2006-01-02 15:04:05")},
 		},

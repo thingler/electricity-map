@@ -36,16 +36,25 @@ func (a *AllAction) Do() (string, error) {
 
 	priceData := make(map[string][]dayAheadPriceData)
 
-	priceDataSlice, err := a.Price.GetAllZonesDBPrice(firstDay, firstDay, loc)
+	priceDataSlice15Min, err := a.Price.GetAllZonesDBPrice(firstDay, firstDay, loc, "PT15M")
 	if err != nil {
 		return "", err
 	}
-	for _, priceDataHour := range priceDataSlice {
-		biddingZone := priceDataHour.BiddingZone
+
+	priceDataSlice60Min, err := a.Price.GetAllZonesDBPrice(firstDay, firstDay, loc, "PT60M")
+	if err != nil {
+		return "", err
+	}
+
+	// Combine both slices
+	allPriceData := append(priceDataSlice15Min, priceDataSlice60Min...)
+
+	for _, priceDataItem := range allPriceData {
+		biddingZone := priceDataItem.BiddingZone
 		priceData[biddingZone] = append(priceData[biddingZone], dayAheadPriceData{
-			Time:       priceDataHour.Time,
-			Resolution: priceDataHour.Resolution,
-			Price:      priceDataHour.Price,
+			Time:       priceDataItem.Time,
+			Resolution: priceDataItem.Resolution,
+			Price:      priceDataItem.Price,
 		})
 	}
 

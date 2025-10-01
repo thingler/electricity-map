@@ -142,6 +142,7 @@ func HandleAPIGatewayRequest(ctx context.Context, request events.APIGatewayV2HTT
 
 	resp := response.GetSuccess(body)
 	LogRequest(request, uint16(resp.StatusCode))
+	// fmt.Println(resp.Body)
 	return resp, nil
 }
 
@@ -163,4 +164,12 @@ func HandleRequest(ctx context.Context, event json.RawMessage) (interface{}, err
 
 func main() {
 	lambda.Start(HandleRequest)
+	// mockReq := events.APIGatewayV2HTTPRequest{
+	// 	RawPath:  "/day-ahead",
+	// 	RawQueryString: "date=2025-10-01",
+	// 	QueryStringParameters: map[string]string{
+	// 		"date": "2025-10-01",
+	// 	},
+	// }
+	// HandleAPIGatewayRequest(context.TODO(), mockReq)
 }

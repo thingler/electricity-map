@@ -39,12 +39,12 @@ func (l *LevelsAction) Do() (string, error) {
 
 	var priceData []float64
 
-	priceDataSlice, err := l.Price.GetAllZonesDBPrice(firstDay, lastDay, loc)
+	priceDataSlice, err := l.Price.GetAllZonesDBPrice(firstDay, lastDay, loc, "PT15M")
 	if err != nil {
 		return "", err
 	}
-	for _, priceDataHour := range priceDataSlice {
-		priceData = append(priceData, float64(priceDataHour.Price))
+	for _, priceData15M := range priceDataSlice {
+		priceData = append(priceData, float64(priceData15M.Price))
 	}
 
 	data := stats.Float64Data(priceData)

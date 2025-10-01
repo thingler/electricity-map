@@ -21,9 +21,13 @@ function EuropeMapDetails() {
       zone.bz in bzPriceCtx.bzPrice &&
       bzPriceCtx.bzPrice[zone.bz].length > 0
     ) {
+      let resolution = "PT60M";
+      if (bzPriceCtx.bzPrice[zone.bz].length > 24) {
+        resolution = "PT15M";
+      }
       const finalPrice = bzPriceCtx.bzPrice[zone.bz].reduce(
         (previous, bz) =>
-          bz.resolution === "PT60M"
+          bz.resolution === resolution
             ? {
                 sum: previous.sum + bz.price,
                 elements: previous.elements + 1,
