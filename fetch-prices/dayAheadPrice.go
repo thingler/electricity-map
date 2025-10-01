@@ -183,11 +183,17 @@ func (price *DayAheadPrice) UpdateDB(elementsAlreadyUpdated int) (int, error) {
 	timePrice := &Date{
 		Location: "UTC",
 	}
+	endTimePrice := &Date{
+		Location: "UTC",
+	}
 
 	for _, timeSerie := range price.publicationMarketDocument.TimeSeries {
 		for _, period := range timeSerie.Period {
 			startTime := strings.Split(strings.TrimSuffix(period.TimeInterval.Start, "Z"), "T")
+			endTime := strings.Split(strings.TrimSuffix(period.TimeInterval.End, "Z"), "T")
 			timePrice.SetDate(startTime[0], startTime[1]+":00")
+			endTimePrice.SetDate(endTime[0], endTime[1]+":00")
+			duration := endTimePrice.GetTimeInstance().Sub(timePrice.GetTimeInstance())
 			resolution := period.Resolution
 
 			var nrOfPoints int
@@ -195,13 +201,13 @@ func (price *DayAheadPrice) UpdateDB(elementsAlreadyUpdated int) (int, error) {
 
 			switch resolution {
 			case "PT60M":
-				nrOfPoints = 24
+				nrOfPoints = int(duration.Minutes()/60)
 			case "PT30M":
-				nrOfPoints = 48
+				nrOfPoints = int(duration.Minutes()/30)
 			case "PT15M":
-				nrOfPoints = 96
+				nrOfPoints = int(duration.Minutes()/15)
 			default:
-				nrOfPoints = 24
+				nrOfPoints = int(duration.Minutes()/60)
 			}
 
 			// This is needed because the API does not return all points for each period in case the price is the same as the previous point
