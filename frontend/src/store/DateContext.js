@@ -37,10 +37,10 @@ export function DateContextProvider(props) {
     return {
       date: `${year}-${month}-${day}`,
       currentHourUTC: d.getUTCHours(),
-      currentTime15MUTC: `${year}-${month}-${day} ${d.getUTCHours()}:${
-        d.getUTCMinutes() - (d.getUTCMinutes() % 15)
+      currentTime15MUTC: `${year}-${month}-${day} ${d.getUTCHours().toString().padStart(2, "0")}:${
+        (d.getUTCMinutes() - (d.getUTCMinutes() % 15)).toString().padStart(2, "0")
       }:00`,
-      currentTime60MUTC: `${year}-${month}-${day} ${d.getUTCHours()}:00:00`,
+      currentTime60MUTC: `${year}-${month}-${day} ${d.getUTCHours().toString().padStart(2, "0")}:00:00`,
     };
   }
 
