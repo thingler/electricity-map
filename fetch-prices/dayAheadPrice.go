@@ -25,6 +25,7 @@ type dayAheadPriceData struct {
 	Time        string  `dynamodbav:"time"`
 	Resolution  string  `dynamodbav:"resolution"`
 	Price       float32 `dynamodbav:"price"`
+	Sequence    int32   `dynamodbav:"sequence"`
 }
 
 type DayAheadPrice struct {
@@ -79,7 +80,7 @@ func (price *DayAheadPrice) GetAPIPrice(firstDay string, lastDay string) error {
 			CodingScheme: "A01",
 		},
 		ReceiverMarketParticipantMarketRoleType: "A32",
-		CreatedDateTime:                         timeStamp,
+		CreatedDateTime: timeStamp,
 		AttributeInstanceComponent: []struct {
 			Attribute      string `xml:"attribute"`
 			AttributeValue string `xml:"attributeValue"`
@@ -98,7 +99,7 @@ func (price *DayAheadPrice) GetAPIPrice(firstDay string, lastDay string) error {
 			},
 			{
 				Attribute:      "TimeInterval",
-				AttributeValue: fmt.Sprintf("%s/%s", startDate.Format(time.RFC3339), endDate.Format(time.RFC3339)),
+				AttributeValue: fmt.Sprintf("%s/%s", startDate.Format("2006-01-02T15:04Z"), endDate.Format("2006-01-02T15:04Z")),
 			},
 		},
 	}
@@ -188,6 +189,9 @@ func (price *DayAheadPrice) UpdateDB(elementsAlreadyUpdated int) (int, error) {
 	}
 
 	for _, timeSerie := range price.publicationMarketDocument.TimeSeries {
+		sequence64, _ := strconv.ParseInt(timeSerie.ClassificationSequence, 10, 32)
+		sequence := int32(sequence64)
+
 		for _, period := range timeSerie.Period {
 			startTime := strings.Split(strings.TrimSuffix(period.TimeInterval.Start, "Z"), "T")
 			endTime := strings.Split(strings.TrimSuffix(period.TimeInterval.End, "Z"), "T")
@@ -234,21 +238,34 @@ func (price *DayAheadPrice) UpdateDB(elementsAlreadyUpdated int) (int, error) {
 				priceAmount := float32(priceAmountFloat64)
 
 				timeStamp := timePrice.Format("2006-01-02 15:04:05")
+				composite := timeStamp + resolution
 
+				// Check if the existing record matches the current price data
+				// We only update if the sequence number is lower than the existing record
 				priceIndex := slices.IndexFunc(
 					price.existingDayAheadPriceData,
 					func(c dayAheadPriceData) bool {
-						return c.BiddingZone == price.BiddingZone && c.Composite == timeStamp+resolution && c.Price == priceAmount
+						return c.BiddingZone == price.BiddingZone && c.Composite == composite && (c.Sequence < sequence || c.Price == priceAmount)
 					},
 				)
 
-				if priceIndex == -1 {
+				// Check if already added to current batch
+				// This is possible if two sequences contains the same same time resolution
+				batchIndex := slices.IndexFunc(
+					priceData,
+					func(c dayAheadPriceData) bool {
+						return c.BiddingZone == price.BiddingZone && c.Composite == composite
+					},
+				)
+
+				if priceIndex == -1 && batchIndex == -1 {
 					priceData = append(priceData, dayAheadPriceData{
 						BiddingZone: price.BiddingZone,
-						Composite:   timeStamp + resolution,
+						Composite:   composite,
 						Time:        timeStamp,
 						Resolution:  resolution,
 						Price:       priceAmount,
+						Sequence:    sequence,
 					})
 				}
 

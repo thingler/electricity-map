@@ -80,9 +80,10 @@ type PublicationMarketDocument struct {
 			Text         string `xml:",chardata"`
 			CodingScheme string `xml:"codingScheme,attr"`
 		} `xml:"out_Domain.mRID"`
-		CurrencyUnitName     string `xml:"currency_Unit.name"`
-		PriceMeasureUnitName string `xml:"price_Measure_Unit.name"`
-		CurveType            string `xml:"curveType"`
+		CurrencyUnitName       string `xml:"currency_Unit.name"`
+		PriceMeasureUnitName   string `xml:"price_Measure_Unit.name"`
+		ClassificationSequence string `xml:"classificationSequence_AttributeInstanceComponent.position"`
+		CurveType              string `xml:"curveType"`
 		Period               []struct {
 			TimeInterval struct {
 				Start string `xml:"start"`
