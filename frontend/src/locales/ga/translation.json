@@ -1,0 +1,117 @@
+{
+  "countries": {
+    "Russia": "An Rúis",
+    "Norway": "An Iorua",
+    "Finland": "An Fhionlainn",
+    "Sweden": "An tSualainn",
+    "Iceland": "An Íoslainn",
+    "Estonia": "An Eastóin",
+    "United Kingdom": "An Ríocht Aontaithe",
+    "Latvia": "An Laitvia",
+    "Denmark": "An Danmhairg",
+    "Belarus": "An Bhealarúis",
+    "Lithuania": "An Liotuáin",
+    "Ireland": "Éire",
+    "Northern Ireland": "Tuaisceart Éireann",
+    "Poland": "An Pholainn",
+    "Germany & Luxembourg": "An Ghearmáin & Lucsamburg",
+    "Ukraine": "An Úcráin",
+    "Netherlands": "An Ísiltír",
+    "Belgium": "An Bheilg",
+    "France": "An Fhrainc",
+    "Czech Republic": "Poblacht na Seice",
+    "Slovakia": "An tSlóvaic",
+    "Moldova": "An Mholdóiv",
+    "Romania": "An Rómáin",
+    "Hungary": "An Ungáir",
+    "Austria": "An Ostair",
+    "Switzerland": "An Eilvéis",
+    "Italy": "An Iodáil",
+    "Malta": "Málta",
+    "Slovenia": "An tSlóivéin",
+    "Croatia": "An Chróit",
+    "Serbia": "An tSeirbia",
+    "Bulgaria": "An Bhulgáir",
+    "Bosnia-Hertsegovina": "An Bhoisnia agus an Heirseagaivéin",
+    "Turkey": "An Tuirc",
+    "Cyprus": "An Chipir",
+    "Spain": "An Spáinn",
+    "Montenegro": "Montainéagró",
+    "Kosovo": "An Chosaiv",
+    "Portugal": "An Phortaingéil",
+    "North Macedonia": "An Mhacadóin Thuaidh",
+    "Greece": "An Ghréig",
+    "Albania": "An Albáin"
+  },
+  "nav": {
+    "europeMap": "Léarscáil na hEorpa",
+    "about": "Maidir",
+    "language": "Teanga"
+  },
+  "header": {
+    "logoAria": "Lógó, nasc chuig an leathanach baile"
+  },
+  "pageTitle": {
+    "thingler": "Thingler",
+    "europeanElectricityPrices": "Praghsanna leictreachais san Eoraip",
+    "electricityPricesFor": "Praghsanna leictreachais do ",
+    "aboutThingler": "Maidir le praghsanna leictreachais Thingler"
+  },
+  "europeMapDetails": {
+    "title": "Praghsanna leictreachais",
+    "description": "Cuireann an leathanach seo na meánphraghsanna laethúla, gan cánacha, i láthair do thíortha Eorpacha atá ina mbaill de ENTSO-E (European Network of Transmission System Operators for Electricity). Taispeántar na praghsanna in am Lár na hEorpa (<b>CET/CEST</b>) agus léirítear iad i gceinteanna euro in aghaidh an chileavatuair.",
+    "noPricesAvailable": "Tabhair faoi deara nach bhfuil praghsanna day-ahead do <b>amárach</b> <b>ar fáil fós</b>!",
+    "country": "Tír",
+    "priceUnit": "€ cent / kWh",
+    "vat": "CBL %"
+  },
+  "countryPage": {
+    "countryNotFound": "Níor aimsíodh an tír!",
+    "chartDescription": "Taispeánann an chairt thíos praghsanna leictreachais in aghaidh na huaire do {{country}}.",
+    "chartDescriptionPlural": "Taispeánann na cairteacha thíos praghsanna leictreachais in aghaidh na huaire do {{country}}.",
+    "currentPriceSingle": "Praghas reatha an leictreachais i",
+    "currentPriceMultiple": "Is iad seo a leanas na praghsanna reatha do na criosanna tairisceana i <b>{{country}}</b>:",
+    "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} cent</b> in aghaidh an chileavatuair (<b>kWh</b>).",
+    "priceInfoAt": "ag",
+    "priceInfoIs": "is",
+    "noPricesNote": "Tabhair faoi deara nach bhfuil praghsanna day-ahead do amárach <b>ar fáil fós</b> i {{country}}!"
+  },
+  "about": {
+    "title": "Maidir",
+    "paragraph1": "Fáilte go léarscáil praghsanna leictreachais Thingler, léarscáil idirghníomhach agus cothrom le dáta chun praghsanna leictreachais san Eoraip a iniúchadh. Tógadh an léarscáil le React agus tá sí óstáilte ar AWS le réitigh serverless, leis an sprioc costais oibriúcháin a choinneáil chomh híseal agus is féidir. Tagann na sonraí praghsanna ó ENTSO-E agus déantar iad a nuashonrú go rialta.",
+    "paragraph2": "Taispeánann an léarscáil meánphraghsanna leictreachais de réir tíre, curtha in iúl i gceinteanna euro in aghaidh an chileavatuair agus léirithe in am Lár na hEorpa (CET/CEST). Is féidir leat tuilleadh faisnéise a fháil trí chliceáil ar thír ar an léarscáil nó trí bhrabhsáil na tábla.",
+    "paragraph3Start": "Tá an cód foinse ar fáil ar GitHub, ",
+    "paragraph3End": ". Má tá ceisteanna nó aiseolas agat, ná bíodh drogall ort teagmháil a dhéanamh trí GitHub.",
+    "thankYou": "Go raibh maith agat as cuairt a thabhairt ar ár suíomh."
+  },
+  "footer": {
+    "attribution": "Tagann an fhaisnéis praghsanna a thaispeántar ó ENTSO-E, European Network of Transmission System Operators for Electricity. Taispeántar na praghsanna go léir ar dtús in am Lár na hEorpa (CET/CEST)."
+  },
+  "vatToggle": {
+    "localVat": "CBL áitiúil",
+    "vat": "CBL"
+  },
+  "timeZone": {
+    "label": "Crios ama"
+  },
+  "dateSelector": {
+    "today": "Inniu",
+    "tomorrow": "Amárach",
+    "todayPrices": "Praghsanna an lae inniu",
+    "tomorrowPrices": "Praghsanna an lae amárach",
+    "months": [
+      "Eanáir",
+      "Feabhra",
+      "Márta",
+      "Aibreán",
+      "Bealtaine",
+      "Meitheamh",
+      "Iúil",
+      "Lúnasa",
+      "Meán Fómhair",
+      "Deireadh Fómhair",
+      "Samhain",
+      "Nollaig"
+    ]
+  }
+}

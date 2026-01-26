@@ -1,0 +1,117 @@
+{
+  "countries": {
+    "Russia": "Русија",
+    "Norway": "Норвешка",
+    "Finland": "Финска",
+    "Sweden": "Шведска",
+    "Iceland": "Исланд",
+    "Estonia": "Естонија",
+    "United Kingdom": "Уједињено Краљевство",
+    "Latvia": "Летонија",
+    "Denmark": "Данска",
+    "Belarus": "Белорусија",
+    "Lithuania": "Литванија",
+    "Ireland": "Ирска",
+    "Northern Ireland": "Северна Ирска",
+    "Poland": "Пољска",
+    "Germany & Luxembourg": "Немачка & Луксембург",
+    "Ukraine": "Украјина",
+    "Netherlands": "Холандија",
+    "Belgium": "Белгија",
+    "France": "Француска",
+    "Czech Republic": "Чешка",
+    "Slovakia": "Словачка",
+    "Moldova": "Молдавија",
+    "Romania": "Румунија",
+    "Hungary": "Мађарска",
+    "Austria": "Аустрија",
+    "Switzerland": "Швајцарска",
+    "Italy": "Италија",
+    "Malta": "Малта",
+    "Slovenia": "Словенија",
+    "Croatia": "Хрватска",
+    "Serbia": "Србија",
+    "Bulgaria": "Бугарска",
+    "Bosnia-Hertsegovina": "Босна и Херцеговина",
+    "Turkey": "Турска",
+    "Cyprus": "Кипар",
+    "Spain": "Шпанија",
+    "Montenegro": "Црна Гора",
+    "Kosovo": "Косово",
+    "Portugal": "Португалија",
+    "North Macedonia": "Северна Македонија",
+    "Greece": "Грчка",
+    "Albania": "Албанија"
+  },
+  "nav": {
+    "europeMap": "Карта Европе",
+    "about": "О пројекту",
+    "language": "Језик"
+  },
+  "header": {
+    "logoAria": "Логотип, линк ка почетној страници"
+  },
+  "pageTitle": {
+    "thingler": "Thingler",
+    "europeanElectricityPrices": "Цене електричне енергије у Европи",
+    "electricityPricesFor": "Цене електричне енергије за ",
+    "aboutThingler": "О ценама електричне енергије Thingler"
+  },
+  "europeMapDetails": {
+    "title": "Цене електричне енергије",
+    "description": "Ова страница приказује просечне дневне цене електричне енергије без пореза за европске земље које су чланице ENTSO-E (European Network of Transmission System Operators for Electricity). Цене су приказане по средњоевропском времену (<b>CET/CEST</b>) и изражене су у евроцентима по киловат-сату.",
+    "noPricesAvailable": "Напомена: day-ahead цене за <b>сутра</b> <b>још нису доступне</b>!",
+    "country": "Држава",
+    "priceUnit": "€ cent / kWh",
+    "vat": "ПДВ %"
+  },
+  "countryPage": {
+    "countryNotFound": "Држава није пронађена!",
+    "chartDescription": "Графикон испод приказује сатне цене електричне енергије за {{country}}.",
+    "chartDescriptionPlural": "Графикони испод приказују сатне цене електричне енергије за {{country}}.",
+    "currentPriceSingle": "Тренутна цена електричне енергије у",
+    "currentPriceMultiple": "Тренутне цене за тржишне зоне у <b>{{country}}</b> су:",
+    "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} евроценти</b> по киловат-сату (<b>kWh</b>).",
+    "priceInfoAt": "у",
+    "priceInfoIs": "је",
+    "noPricesNote": "Напомена: day-ahead цене за сутра <b>још нису доступне</b> за {{country}}!"
+  },
+  "about": {
+    "title": "О пројекту",
+    "paragraph1": "Добродошли на Thingler мапу цена електричне енергије — интерактивну и ажурирану мапу за истраживање цена електричне енергије у Европи. Мапа је изграђена помоћу React-а и хостована на AWS-у уз коришћење serverless решења, са циљем да оперативни трошкови буду што нижи. Подаци о ценама долазе из ENTSO-E и редовно се ажурирају.",
+    "paragraph2": "Мапа приказује просечне цене електричне енергије по државама, изражене у евроцентима по киловат-сату и представљене по средњоевропском времену (CET/CEST). Детаљније информације можете добити кликом на државу на мапи или прегледом табеле.",
+    "paragraph3Start": "Изворни код је доступан на GitHub-у, ",
+    "paragraph3End": ". Ако имате питања или повратне информације, слободно нас контактирајте преко GitHub-а.",
+    "thankYou": "Хвала што сте посетили наш веб-сајт."
+  },
+  "footer": {
+    "attribution": "Приказане информације о ценама преузете су са ENTSO-E, European Network of Transmission System Operators for Electricity. Све цене су изворно приказане по средњоевропском времену (CET/CEST)."
+  },
+  "vatToggle": {
+    "localVat": "Локални ПДВ",
+    "vat": "ПДВ"
+  },
+  "timeZone": {
+    "label": "Временска зона"
+  },
+  "dateSelector": {
+    "today": "Данас",
+    "tomorrow": "Сутра",
+    "todayPrices": "Данашње цене",
+    "tomorrowPrices": "Сутрашње цене",
+    "months": [
+      "Јануар",
+      "Фебруар",
+      "Март",
+      "Април",
+      "Мај",
+      "Јун",
+      "Јул",
+      "Август",
+      "Септембар",
+      "Октобар",
+      "Новембар",
+      "Децембар"
+    ]
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "countries": {
+    "Russia": "Rússland",
+    "Norway": "Noregur",
+    "Finland": "Finnland",
+    "Sweden": "Svíþjóð",
+    "Iceland": "Ísland",
+    "Estonia": "Eistland",
+    "United Kingdom": "Bretland",
+    "Latvia": "Lettland",
+    "Denmark": "Danmörk",
+    "Belarus": "Hvíta-Rússland",
+    "Lithuania": "Litháen",
+    "Ireland": "Írland",
+    "Northern Ireland": "Norður-Írland",
+    "Poland": "Pólland",
+    "Germany & Luxembourg": "Þýskaland & Lúxemborg",
+    "Ukraine": "Úkraína",
+    "Netherlands": "Holland",
+    "Belgium": "Belgía",
+    "France": "Frakkland",
+    "Czech Republic": "Tékkland",
+    "Slovakia": "Slóvakía",
+    "Moldova": "Moldóva",
+    "Romania": "Rúmenía",
+    "Hungary": "Ungverjaland",
+    "Austria": "Austurríki",
+    "Switzerland": "Sviss",
+    "Italy": "Ítalía",
+    "Malta": "Malta",
+    "Slovenia": "Slóvenía",
+    "Croatia": "Króatía",
+    "Serbia": "Serbía",
+    "Bulgaria": "Búlgaría",
+    "Bosnia-Hertsegovina": "Bosnía og Hersegóvína",
+    "Turkey": "Tyrkland",
+    "Cyprus": "Kýpur",
+    "Spain": "Spánn",
+    "Montenegro": "Svartfjallaland",
+    "Kosovo": "Kósóvó",
+    "Portugal": "Portúgal",
+    "North Macedonia": "Norður-Makedónía",
+    "Greece": "Grikkland",
+    "Albania": "Albanía"
+  },
+  "nav": {
+    "europeMap": "Kort af Evrópu",
+    "about": "Um",
+    "language": "Tungumál"
+  },
+  "header": {
+    "logoAria": "Merki, hlekkur á forsíðu"
+  },
+  "pageTitle": {
+    "thingler": "Thingler",
+    "europeanElectricityPrices": "Raforkuverð í Evrópu",
+    "electricityPricesFor": "Raforkuverð fyrir ",
+    "aboutThingler": "Um raforkuverð Thingler"
+  },
+  "europeMapDetails": {
+    "title": "Raforkuverð",
+    "description": "Þessi síða sýnir daglegt meðalraforkuverð án skatta fyrir evrópsk lönd sem eru aðilar að ENTSO-E (European Network of Transmission System Operators for Electricity). Verðin eru sýnd samkvæmt miðevrópskum tíma (<b>CET/CEST</b>) og eru gefin upp í evrósentum á hverja kílóvattstund.",
+    "noPricesAvailable": "Vinsamlegast athugið að day-ahead verð fyrir <b>morgundaginn</b> <b>eru ekki enn tiltæk</b>!",
+    "country": "Land",
+    "priceUnit": "€ sent / kWh",
+    "vat": "VSK %"
+  },
+  "countryPage": {
+    "countryNotFound": "Land fannst ekki!",
+    "chartDescription": "Grafið hér að neðan sýnir raforkuverð á klukkustund fyrir {{country}}.",
+    "chartDescriptionPlural": "Grafirnar hér að neðan sýna raforkuverð á klukkustund fyrir {{country}}.",
+    "currentPriceSingle": "Núverandi raforkuverð í",
+    "currentPriceMultiple": "Núverandi verð fyrir útboðssvæði í <b>{{country}}</b> eru:",
+    "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} sent</b> á hverja kílóvattstund (<b>kWh</b>).",
+    "priceInfoAt": "kl.",
+    "priceInfoIs": "er",
+    "noPricesNote": "Vinsamlegast athugið að day-ahead verð fyrir morgundaginn <b>eru ekki enn tiltæk</b> fyrir {{country}}!"
+  },
+  "about": {
+    "title": "Um",
+    "paragraph1": "Velkomin á Thingler kortið fyrir raforkuverð – gagnvirkt og uppfært kort til að kanna raforkuverð í Evrópu. Kortið er byggt með React og hýst á AWS með serverless lausnum, með það að markmiði að halda rekstrarkostnaði sem lægstum. Verðgögn eru fengin frá ENTSO-E og uppfærð reglulega.",
+    "paragraph2": "Kortið sýnir meðalraforkuverð eftir löndum, gefið upp í evrósentum á hverja kílóvattstund og sýnt samkvæmt miðevrópskum tíma (CET/CEST). Hægt er að fá nánari upplýsingar með því að smella á land á kortinu eða skoða töfluna.",
+    "paragraph3Start": "Grunnkóðinn er aðgengilegur á GitHub, ",
+    "paragraph3End": ". Ef þú hefur spurningar eða ábendingar, ekki hika við að hafa samband í gegnum GitHub.",
+    "thankYou": "Takk fyrir að heimsækja vefsíðuna okkar."
+  },
+  "footer": {
+    "attribution": "Birtingar verðupplýsingar koma frá ENTSO-E, European Network of Transmission System Operators for Electricity. Öll verð eru upphaflega sýnd samkvæmt miðevrópskum tíma (CET/CEST)."
+  },
+  "vatToggle": {
+    "localVat": "Staðbundinn VSK",
+    "vat": "VSK"
+  },
+  "timeZone": {
+    "label": "Tímabelti"
+  },
+  "dateSelector": {
+    "today": "Í dag",
+    "tomorrow": "Á morgun",
+    "todayPrices": "Verð í dag",
+    "tomorrowPrices": "Verð á morgun",
+    "months": [
+      "Janúar",
+      "Febrúar",
+      "Mars",
+      "Apríl",
+      "Maí",
+      "Júní",
+      "Júlí",
+      "Ágúst",
+      "September",
+      "Október",
+      "Nóvember",
+      "Desember"
+    ]
+  }
+}

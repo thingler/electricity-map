@@ -1,0 +1,117 @@
+{
+  "countries": {
+    "Russia": "Rússia",
+    "Norway": "Noruega",
+    "Finland": "Finlândia",
+    "Sweden": "Suécia",
+    "Iceland": "Islândia",
+    "Estonia": "Estónia",
+    "United Kingdom": "Reino Unido",
+    "Latvia": "Letónia",
+    "Denmark": "Dinamarca",
+    "Belarus": "Bielorrússia",
+    "Lithuania": "Lituânia",
+    "Ireland": "Irlanda",
+    "Northern Ireland": "Irlanda do Norte",
+    "Poland": "Polónia",
+    "Germany & Luxembourg": "Alemanha & Luxemburgo",
+    "Ukraine": "Ucrânia",
+    "Netherlands": "Países Baixos",
+    "Belgium": "Bélgica",
+    "France": "França",
+    "Czech Republic": "Chéquia",
+    "Slovakia": "Eslováquia",
+    "Moldova": "Moldávia",
+    "Romania": "Roménia",
+    "Hungary": "Hungria",
+    "Austria": "Áustria",
+    "Switzerland": "Suíça",
+    "Italy": "Itália",
+    "Malta": "Malta",
+    "Slovenia": "Eslovénia",
+    "Croatia": "Croácia",
+    "Serbia": "Sérvia",
+    "Bulgaria": "Bulgária",
+    "Bosnia-Hertsegovina": "Bósnia e Herzegovina",
+    "Turkey": "Turquia",
+    "Cyprus": "Chipre",
+    "Spain": "Espanha",
+    "Montenegro": "Montenegro",
+    "Kosovo": "Kosovo",
+    "Portugal": "Portugal",
+    "North Macedonia": "Macedónia do Norte",
+    "Greece": "Grécia",
+    "Albania": "Albânia"
+  },
+  "nav": {
+    "europeMap": "Mapa da Europa",
+    "about": "Sobre",
+    "language": "Idioma"
+  },
+  "header": {
+    "logoAria": "Logótipo, ligação para a página inicial"
+  },
+  "pageTitle": {
+    "thingler": "Thingler",
+    "europeanElectricityPrices": "Preços da eletricidade na Europa",
+    "electricityPricesFor": "Preços da eletricidade para ",
+    "aboutThingler": "Sobre os preços da eletricidade do Thingler"
+  },
+  "europeMapDetails": {
+    "title": "Preços da eletricidade",
+    "description": "Esta página apresenta os preços médios diários, sem impostos, dos países europeus que são membros da ENTSO-E (European Network of Transmission System Operators for Electricity). Os preços são apresentados em hora da Europa Central (<b>CET/CEST</b>) e expressos em cêntimos de euro por quilowatt-hora.",
+    "noPricesAvailable": "Tenha em atenção que os preços day-ahead para <b>amanhã</b> <b>ainda não estão disponíveis</b>!",
+    "country": "País",
+    "priceUnit": "€ cent / kWh",
+    "vat": "IVA %"
+  },
+  "countryPage": {
+    "countryNotFound": "País não encontrado!",
+    "chartDescription": "O gráfico abaixo mostra os preços horários da eletricidade em {{country}}.",
+    "chartDescriptionPlural": "Os gráficos abaixo mostram os preços horários da eletricidade em {{country}}.",
+    "currentPriceSingle": "O preço atual da eletricidade em",
+    "currentPriceMultiple": "Os preços atuais para as zonas de oferta em <b>{{country}}</b> são:",
+    "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} cêntimos</b> por quilowatt-hora (<b>kWh</b>).",
+    "priceInfoAt": "às",
+    "priceInfoIs": "é",
+    "noPricesNote": "Tenha em atenção que os preços day-ahead para amanhã <b>ainda não estão disponíveis</b> em {{country}}!"
+  },
+  "about": {
+    "title": "Sobre",
+    "paragraph1": "Bem-vindo ao mapa de preços da eletricidade do Thingler — um mapa interativo e atualizado para explorar os preços da eletricidade na Europa. O mapa foi desenvolvido com React e está alojado na AWS utilizando soluções serverless, com o objetivo de manter os custos operacionais o mais baixos possível. Os dados de preços provêm da ENTSO-E e são atualizados regularmente.",
+    "paragraph2": "O mapa apresenta os preços médios da eletricidade por país, expressos em cêntimos de euro por quilowatt-hora e apresentados em hora da Europa Central (CET/CEST). Pode obter informações mais detalhadas clicando num país no mapa ou consultando a tabela.",
+    "paragraph3Start": "O código-fonte está disponível no GitHub, ",
+    "paragraph3End": ". Se tiver questões ou comentários, não hesite em contactar-nos através do GitHub.",
+    "thankYou": "Obrigado por visitar o nosso site."
+  },
+  "footer": {
+    "attribution": "As informações de preços apresentadas provêm da ENTSO-E, European Network of Transmission System Operators for Electricity. Todos os preços são originalmente apresentados em hora da Europa Central (CET/CEST)."
+  },
+  "vatToggle": {
+    "localVat": "IVA local",
+    "vat": "IVA"
+  },
+  "timeZone": {
+    "label": "Fuso horário"
+  },
+  "dateSelector": {
+    "today": "Hoje",
+    "tomorrow": "Amanhã",
+    "todayPrices": "Preços de hoje",
+    "tomorrowPrices": "Preços de amanhã",
+    "months": [
+      "Janeiro",
+      "Fevereiro",
+      "Março",
+      "Abril",
+      "Maio",
+      "Junho",
+      "Julho",
+      "Agosto",
+      "Setembro",
+      "Outubro",
+      "Novembro",
+      "Dezembro"
+    ]
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "countries": {
+    "Russia": "Rusia",
+    "Norway": "Norvegia",
+    "Finland": "Finlanda",
+    "Sweden": "Suedia",
+    "Iceland": "Islanda",
+    "Estonia": "Estonia",
+    "United Kingdom": "Regatul Unit",
+    "Latvia": "Letonia",
+    "Denmark": "Danemarca",
+    "Belarus": "Belarus",
+    "Lithuania": "Lituania",
+    "Ireland": "Irlanda",
+    "Northern Ireland": "Irlanda de Nord",
+    "Poland": "Polonia",
+    "Germany & Luxembourg": "Germania & Luxemburg",
+    "Ukraine": "Ucraina",
+    "Netherlands": "Țările de Jos",
+    "Belgium": "Belgia",
+    "France": "Franța",
+    "Czech Republic": "Cehia",
+    "Slovakia": "Slovacia",
+    "Moldova": "Moldova",
+    "Romania": "România",
+    "Hungary": "Ungaria",
+    "Austria": "Austria",
+    "Switzerland": "Elveția",
+    "Italy": "Italia",
+    "Malta": "Malta",
+    "Slovenia": "Slovenia",
+    "Croatia": "Croația",
+    "Serbia": "Serbia",
+    "Bulgaria": "Bulgaria",
+    "Bosnia-Hertsegovina": "Bosnia și Herțegovina",
+    "Turkey": "Turcia",
+    "Cyprus": "Cipru",
+    "Spain": "Spania",
+    "Montenegro": "Muntenegru",
+    "Kosovo": "Kosovo",
+    "Portugal": "Portugalia",
+    "North Macedonia": "Macedonia de Nord",
+    "Greece": "Grecia",
+    "Albania": "Albania"
+  },
+  "nav": {
+    "europeMap": "Harta Europei",
+    "about": "Despre",
+    "language": "Limbă"
+  },
+  "header": {
+    "logoAria": "Siglă, link către pagina principală"
+  },
+  "pageTitle": {
+    "thingler": "Thingler",
+    "europeanElectricityPrices": "Prețurile energiei electrice în Europa",
+    "electricityPricesFor": "Prețurile energiei electrice pentru ",
+    "aboutThingler": "Despre prețurile energiei electrice Thingler"
+  },
+  "europeMapDetails": {
+    "title": "Prețurile energiei electrice",
+    "description": "Această pagină prezintă prețurile medii zilnice, fără taxe, pentru țările europene care sunt membre ale ENTSO-E (European Network of Transmission System Operators for Electricity). Prețurile sunt afișate în ora Europei Centrale (<b>CET/CEST</b>) și sunt exprimate în eurocenți pe kilowatt-oră.",
+    "noPricesAvailable": "Vă rugăm să rețineți că prețurile day-ahead pentru <b>mâine</b> <b>nu sunt încă disponibile</b>!",
+    "country": "Țară",
+    "priceUnit": "€ cent / kWh",
+    "vat": "TVA %"
+  },
+  "countryPage": {
+    "countryNotFound": "Țara nu a fost găsită!",
+    "chartDescription": "Graficul de mai jos afișează prețurile orare ale energiei electrice pentru {{country}}.",
+    "chartDescriptionPlural": "Graficele de mai jos afișează prețurile orare ale energiei electrice pentru {{country}}.",
+    "currentPriceSingle": "Prețul actual al energiei electrice în",
+    "currentPriceMultiple": "Prețurile actuale pentru zonele de ofertă din <b>{{country}}</b> sunt:",
+    "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} eurocenți</b> pe kilowatt-oră (<b>kWh</b>).",
+    "priceInfoAt": "la",
+    "priceInfoIs": "este",
+    "noPricesNote": "Vă rugăm să rețineți că prețurile day-ahead pentru mâine <b>nu sunt încă disponibile</b> în {{country}}!"
+  },
+  "about": {
+    "title": "Despre",
+    "paragraph1": "Bine ați venit pe harta prețurilor energiei electrice Thingler — o hartă interactivă și actualizată pentru explorarea prețurilor energiei electrice din Europa. Harta este construită cu React și este găzduită pe AWS folosind soluții serverless, cu scopul de a menține costurile operaționale cât mai scăzute posibil. Datele de preț provin de la ENTSO-E și sunt actualizate periodic.",
+    "paragraph2": "Harta afișează prețurile medii ale energiei electrice pe țări, exprimate în eurocenți pe kilowatt-oră și prezentate în ora Europei Centrale (CET/CEST). Puteți obține informații mai detaliate făcând clic pe o țară pe hartă sau consultând tabelul.",
+    "paragraph3Start": "Codul sursă este disponibil pe GitHub, ",
+    "paragraph3End": ". Dacă aveți întrebări sau feedback, nu ezitați să ne contactați prin GitHub.",
+    "thankYou": "Vă mulțumim pentru vizitarea site-ului nostru."
+  },
+  "footer": {
+    "attribution": "Informațiile despre prețuri afișate provin de la ENTSO-E, European Network of Transmission System Operators for Electricity. Toate prețurile sunt prezentate inițial în ora Europei Centrale (CET/CEST)."
+  },
+  "vatToggle": {
+    "localVat": "TVA local",
+    "vat": "TVA"
+  },
+  "timeZone": {
+    "label": "Fus orar"
+  },
+  "dateSelector": {
+    "today": "Astăzi",
+    "tomorrow": "Mâine",
+    "todayPrices": "Prețurile de astăzi",
+    "tomorrowPrices": "Prețurile de mâine",
+    "months": [
+      "Ianuarie",
+      "Februarie",
+      "Martie",
+      "Aprilie",
+      "Mai",
+      "Iunie",
+      "Iulie",
+      "August",
+      "Septembrie",
+      "Octombrie",
+      "Noiembrie",
+      "Decembrie"
+    ]
+  }
+}

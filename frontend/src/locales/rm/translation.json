@@ -1,0 +1,117 @@
+{
+  "countries": {
+    "Russia": "Russia",
+    "Norway": "Norvegia",
+    "Finland": "Finlanda",
+    "Sweden": "Svezia",
+    "Iceland": "Islanda",
+    "Estonia": "Estonia",
+    "United Kingdom": "Reginavel Unì",
+    "Latvia": "Lettonia",
+    "Denmark": "Danemarca",
+    "Belarus": "Belarus",
+    "Lithuania": "Lituania",
+    "Ireland": "Irlanda",
+    "Northern Ireland": "Irlanda dal Nord",
+    "Poland": "Pologna",
+    "Germany & Luxembourg": "Germania & Luxemburg",
+    "Ukraine": "Ucraina",
+    "Netherlands": "Pajais Bass",
+    "Belgium": "Belgia",
+    "France": "Frantscha",
+    "Czech Republic": "Tschechia",
+    "Slovakia": "Slovachia",
+    "Moldova": "Moldavia",
+    "Romania": "Rumenia",
+    "Hungary": "Ungaria",
+    "Austria": "Austria",
+    "Switzerland": "Svizra",
+    "Italy": "Italia",
+    "Malta": "Malta",
+    "Slovenia": "Slovenia",
+    "Croatia": "Croazia",
+    "Serbia": "Serbia",
+    "Bulgaria": "Bulgaria",
+    "Bosnia-Hertsegovina": "Bosnia ed Erzegovina",
+    "Turkey": "Tirchia",
+    "Cyprus": "Cipra",
+    "Spain": "Spagna",
+    "Montenegro": "Montenegro",
+    "Kosovo": "Kosovo",
+    "Portugal": "Portugal",
+    "North Macedonia": "Macedonia dal Nord",
+    "Greece": "Grecia",
+    "Albania": "Albania"
+  },
+  "nav": {
+    "europeMap": "Charta da l’Europa",
+    "about": "Davart",
+    "language": "Lingua"
+  },
+  "header": {
+    "logoAria": "Logo, colliaziun a la pagina principala"
+  },
+  "pageTitle": {
+    "thingler": "Thingler",
+    "europeanElectricityPrices": "Pretschs da l’energia electrica en l’Europa",
+    "electricityPricesFor": "Pretschs da l’energia electrica per ",
+    "aboutThingler": "Davart ils pretschs da l’energia electrica da Thingler"
+  },
+  "europeMapDetails": {
+    "title": "Pretschs da l’energia electrica",
+    "description": "Questa pagina mussa ils pretschs mesauns quotidians, senza taglias, per pajais europeics che èn commembers da ENTSO-E (European Network of Transmission System Operators for Electricity). Ils pretschs vegnan mussads en temp da l’Europa Centrala (<b>CET/CEST</b>) ed èn inditgads en eurocents per kilowattura.",
+    "noPricesAvailable": "Per plaschair resguardai che ils pretschs day-ahead per <b>damaun</b> <b>na èn anc betg disponibels</b>!",
+    "country": "Pajais",
+    "priceUnit": "€ cent / kWh",
+    "vat": "TVA %"
+  },
+  "countryPage": {
+    "countryNotFound": "Pajais betg chattà!",
+    "chartDescription": "La grafica sutvart mussa ils pretschs d’energia electrica per ura en {{country}}.",
+    "chartDescriptionPlural": "Las graficas sutvart mussan ils pretschs d’energia electrica per ura en {{country}}.",
+    "currentPriceSingle": "Il pretsch actual da l’energia electrica en",
+    "currentPriceMultiple": "Ils pretschs actuals per las zonas d’offerta en <b>{{country}}</b> èn:",
+    "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} eurocents</b> per kilowattura (<b>kWh</b>).",
+    "priceInfoAt": "a las",
+    "priceInfoIs": "è",
+    "noPricesNote": "Per plaschair resguardai che ils pretschs day-ahead per damaun <b>na èn anc betg disponibels</b> en {{country}}!"
+  },
+  "about": {
+    "title": "Davart",
+    "paragraph1": "Bainvegni sin la charta dals pretschs da l’energia electrica da Thingler — ina charta interactiva ed actualisada per explorar ils pretschs da l’energia electrica en l’Europa. La charta è sviluppada cun React ed è hospedada sin AWS cun soluziuns serverless, cun la finamira da tegnair ils custs operativs uschè bass sco pussaivel. Las datas dals pretschs derivan da ENTSO-E e vegnan actualisadas regularmain.",
+    "paragraph2": "La charta mussa ils pretschs mesauns da l’energia electrica per pajais, inditgads en eurocents per kilowattura e preschentads en temp da l’Europa Centrala (CET/CEST). Infurmaziuns pli detagliadas survegnis Vus cun cliccar sin in pajais sin la charta u cun consultar la tabella.",
+    "paragraph3Start": "Il code funtauna è disponibel sin GitHub, ",
+    "paragraph3End": ". Sche Vus avais dumondas u resuns, As sentai libers da ans contactar via GitHub.",
+    "thankYou": "Grazia fitg per Vossa visita sin nossa pagina d’internet."
+  },
+  "footer": {
+    "attribution": "Las infurmaziuns da pretschs mussadas derivan da ENTSO-E, European Network of Transmission System Operators for Electricity. Tut ils pretschs vegnan oriundamain mussads en temp da l’Europa Centrala (CET/CEST)."
+  },
+  "vatToggle": {
+    "localVat": "TVA locala",
+    "vat": "TVA"
+  },
+  "timeZone": {
+    "label": "Zona da temp"
+  },
+  "dateSelector": {
+    "today": "Oz",
+    "tomorrow": "Damaun",
+    "todayPrices": "Pretschs dad oz",
+    "tomorrowPrices": "Pretschs da damaun",
+    "months": [
+      "Schaner",
+      "Favrer",
+      "Mars",
+      "Avrigl",
+      "Matg",
+      "Zercladur",
+      "Fanadur",
+      "Avust",
+      "Settember",
+      "October",
+      "November",
+      "December"
+    ]
+  }
+}

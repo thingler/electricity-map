@@ -1,0 +1,117 @@
+{
+  "countries": {
+    "Russia": "Ryssland",
+    "Norway": "Norge",
+    "Finland": "Finland",
+    "Sweden": "Sverige",
+    "Iceland": "Island",
+    "Estonia": "Estland",
+    "United Kingdom": "Förenade kungariket",
+    "Latvia": "Lettland",
+    "Denmark": "Danmark",
+    "Belarus": "Vitryssland",
+    "Lithuania": "Litauen",
+    "Ireland": "Irland",
+    "Northern Ireland": "Nordirland",
+    "Poland": "Polen",
+    "Germany & Luxembourg": "Tyskland & Luxemburg",
+    "Ukraine": "Ukraina",
+    "Netherlands": "Nederländerna",
+    "Belgium": "Belgien",
+    "France": "Frankrike",
+    "Czech Republic": "Tjeckien",
+    "Slovakia": "Slovakien",
+    "Moldova": "Moldavien",
+    "Romania": "Rumänien",
+    "Hungary": "Ungern",
+    "Austria": "Österrike",
+    "Switzerland": "Schweiz",
+    "Italy": "Italien",
+    "Malta": "Malta",
+    "Slovenia": "Slovenien",
+    "Croatia": "Kroatien",
+    "Serbia": "Serbien",
+    "Bulgaria": "Bulgarien",
+    "Bosnia-Hertsegovina": "Bosnien och Hercegovina",
+    "Turkey": "Turkiet",
+    "Cyprus": "Cypern",
+    "Spain": "Spanien",
+    "Montenegro": "Montenegro",
+    "Kosovo": "Kosovo",
+    "Portugal": "Portugal",
+    "North Macedonia": "Nordmakedonien",
+    "Greece": "Grekland",
+    "Albania": "Albanien"
+  },
+  "nav": {
+    "europeMap": "Europakarta",
+    "about": "Om",
+    "language": "Språk"
+  },
+  "header": {
+    "logoAria": "Logotyp, länk till startsidan"
+  },
+  "pageTitle": {
+    "thingler": "Thingler",
+    "europeanElectricityPrices": "Europeiska elpriser",
+    "electricityPricesFor": "Elpriser för ",
+    "aboutThingler": "Om Thingler elpriser"
+  },
+  "europeMapDetails": {
+    "title": "Elpriser",
+    "description": "Den här sidan visar de dagliga genomsnittspriserna, utan skatt, för europeiska länder som är medlemmar i ENTSO-E (European Network of Transmission System Operators for Electricity). Priserna visas i Centraleuropeisk tid (<b>CET/CEST</b>) och anges i eurocent per kilowattimme.",
+    "noPricesAvailable": "Observera att day-ahead-priserna för <b>imorgon</b> <b>ännu inte är tillgängliga</b>!",
+    "country": "Land",
+    "priceUnit": "€ cent / kWh",
+    "vat": "Moms %"
+  },
+  "countryPage": {
+    "countryNotFound": "Landet hittades inte!",
+    "chartDescription": "Diagrammet nedan visar timvisa elpriser för {{country}}.",
+    "chartDescriptionPlural": "Diagrammen nedan visar timvisa elpriser för {{country}}.",
+    "currentPriceSingle": "Det aktuella elpriset i",
+    "currentPriceMultiple": "De aktuella priserna för budområdena i <b>{{country}}</b> är:",
+    "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} cent</b> per kilowattimme (<b>kWh</b>).",
+    "priceInfoAt": "kl",
+    "priceInfoIs": "är",
+    "noPricesNote": "Observera att day-ahead-priserna för imorgon <b>ännu inte är tillgängliga</b> för {{country}}!"
+  },
+  "about": {
+    "title": "Om",
+    "paragraph1": "Välkommen till Thinglers elpriskarta, en interaktiv och uppdaterad karta för att utforska elpriser i Europa. Kartan är byggd med React och hostad på AWS med serverless-lösningar, med målet att hålla driftkostnaderna så låga som möjligt. Prisdata hämtas från ENTSO-E och uppdateras regelbundet så att du får tillgång till så korrekta uppgifter som möjligt.",
+    "paragraph2": "Kartan visar genomsnittliga elpriser per land, uttryckta i eurocent per kilowattimme och presenterade i Centraleuropeisk tid (CET/CEST). Du kan få mer detaljerad information genom att klicka på ett land på kartan eller genom att bläddra i tabellen.",
+    "paragraph3Start": "Källkoden finns på GitHub, ",
+    "paragraph3End": ". Om du har frågor eller feedback, tveka inte att kontakta via GitHub.",
+    "thankYou": "Tack för att du besöker vår webbplats."
+  },
+  "footer": {
+    "attribution": "Prisuppgifterna som visas kommer från ENTSO-E, European Network of Transmission System Operators for Electricity. Alla priser är ursprungligen i Centraleuropeisk tid (CET/CEST)."
+  },
+  "vatToggle": {
+    "localVat": "Lokal moms",
+    "vat": "Moms"
+  },
+  "timeZone": {
+    "label": "Tidszon"
+  },
+  "dateSelector": {
+    "today": "Idag",
+    "tomorrow": "Imorgon",
+    "todayPrices": "Dagens priser",
+    "tomorrowPrices": "Morgondagens priser",
+    "months": [
+      "Januari",
+      "Februari",
+      "Mars",
+      "April",
+      "Maj",
+      "Juni",
+      "Juli",
+      "Augusti",
+      "September",
+      "Oktober",
+      "November",
+      "December"
+    ]
+  }
+}

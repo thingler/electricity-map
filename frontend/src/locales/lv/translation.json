@@ -1,0 +1,117 @@
+{
+  "countries": {
+    "Russia": "Krievija",
+    "Norway": "Norvēģija",
+    "Finland": "Somija",
+    "Sweden": "Zviedrija",
+    "Iceland": "Islande",
+    "Estonia": "Igaunija",
+    "United Kingdom": "Apvienotā Karaliste",
+    "Latvia": "Latvija",
+    "Denmark": "Dānija",
+    "Belarus": "Baltkrievija",
+    "Lithuania": "Lietuva",
+    "Ireland": "Īrija",
+    "Northern Ireland": "Ziemeļīrija",
+    "Poland": "Polija",
+    "Germany & Luxembourg": "Vācija & Luksemburga",
+    "Ukraine": "Ukraina",
+    "Netherlands": "Nīderlande",
+    "Belgium": "Beļģija",
+    "France": "Francija",
+    "Czech Republic": "Čehija",
+    "Slovakia": "Slovākija",
+    "Moldova": "Moldova",
+    "Romania": "Rumānija",
+    "Hungary": "Ungārija",
+    "Austria": "Austrija",
+    "Switzerland": "Šveice",
+    "Italy": "Itālija",
+    "Malta": "Malta",
+    "Slovenia": "Slovēnija",
+    "Croatia": "Horvātija",
+    "Serbia": "Serbija",
+    "Bulgaria": "Bulgārija",
+    "Bosnia-Hertsegovina": "Bosnija un Hercegovina",
+    "Turkey": "Turcija",
+    "Cyprus": "Kipra",
+    "Spain": "Spānija",
+    "Montenegro": "Melnkalne",
+    "Kosovo": "Kosova",
+    "Portugal": "Portugāle",
+    "North Macedonia": "Ziemeļmaķedonija",
+    "Greece": "Grieķija",
+    "Albania": "Albānija"
+  },
+  "nav": {
+    "europeMap": "Eiropas karte",
+    "about": "Par",
+    "language": "Valoda"
+  },
+  "header": {
+    "logoAria": "Logotips, saite uz sākumlapu"
+  },
+  "pageTitle": {
+    "thingler": "Thingler",
+    "europeanElectricityPrices": "Elektroenerģijas cenas Eiropā",
+    "electricityPricesFor": "Elektroenerģijas cenas ",
+    "aboutThingler": "Par Thingler elektroenerģijas cenām"
+  },
+  "europeMapDetails": {
+    "title": "Elektroenerģijas cenas",
+    "description": "Šajā lapā ir parādītas Eiropas valstu dienas vidējās elektroenerģijas cenas bez nodokļiem, kas ir ENTSO-E (European Network of Transmission System Operators for Electricity) dalībvalstis. Cenas tiek rādītas Centrāleiropas laikā (<b>CET/CEST</b>) un izteiktas eirocentos par kilovatstundu.",
+    "noPricesAvailable": "Lūdzu, ņemiet vērā, ka day-ahead cenas <b>rītdienai</b> <b>vēl nav pieejamas</b>!",
+    "country": "Valsts",
+    "priceUnit": "€ cent / kWh",
+    "vat": "PVN %"
+  },
+  "countryPage": {
+    "countryNotFound": "Valsts nav atrasta!",
+    "chartDescription": "Zemāk redzamā diagramma parāda stundas elektroenerģijas cenas valstī {{country}}.",
+    "chartDescriptionPlural": "Zemāk redzamās diagrammas parāda stundas elektroenerģijas cenas valstī {{country}}.",
+    "currentPriceSingle": "Pašreizējā elektroenerģijas cena",
+    "currentPriceMultiple": "Pašreizējās cenas piedāvājuma zonām valstī <b>{{country}}</b> ir:",
+    "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} centi</b> par kilovatstundu (<b>kWh</b>).",
+    "priceInfoAt": "plkst.",
+    "priceInfoIs": "ir",
+    "noPricesNote": "Lūdzu, ņemiet vērā, ka day-ahead cenas rītdienai <b>vēl nav pieejamas</b> valstī {{country}}!"
+  },
+  "about": {
+    "title": "Par",
+    "paragraph1": "Laipni lūdzam Thingler elektroenerģijas cenu kartē — interaktīvā un regulāri atjauninātā kartē, kas ļauj izpētīt elektroenerģijas cenas Eiropā. Karte ir izstrādāta ar React un mitināta AWS, izmantojot serverless risinājumus, lai samazinātu uzturēšanas izmaksas. Cenu dati tiek iegūti no ENTSO-E un regulāri atjaunināti.",
+    "paragraph2": "Karte parāda vidējās elektroenerģijas cenas pa valstīm, izteiktas eirocentos par kilovatstundu un attēlotas Centrāleiropas laikā (CET/CEST). Detalizētāku informāciju var iegūt, noklikšķinot uz valsts kartē vai apskatot tabulu.",
+    "paragraph3Start": "Pirmkods ir pieejams GitHub, ",
+    "paragraph3End": ". Ja jums ir jautājumi vai atsauksmes, droši sazinieties ar mums, izmantojot GitHub.",
+    "thankYou": "Paldies, ka apmeklējāt mūsu vietni."
+  },
+  "footer": {
+    "attribution": "Attēlotā cenu informācija ir iegūta no ENTSO-E, European Network of Transmission System Operators for Electricity. Visas cenas sākotnēji ir norādītas Centrāleiropas laikā (CET/CEST)."
+  },
+  "vatToggle": {
+    "localVat": "Vietējais PVN",
+    "vat": "PVN"
+  },
+  "timeZone": {
+    "label": "Laika josla"
+  },
+  "dateSelector": {
+    "today": "Šodien",
+    "tomorrow": "Rīt",
+    "todayPrices": "Šodienas cenas",
+    "tomorrowPrices": "Rītdienas cenas",
+    "months": [
+      "Janvāris",
+      "Februāris",
+      "Marts",
+      "Aprīlis",
+      "Maijs",
+      "Jūnijs",
+      "Jūlijs",
+      "Augusts",
+      "Septembris",
+      "Oktobris",
+      "Novembris",
+      "Decembris"
+    ]
+  }
+}

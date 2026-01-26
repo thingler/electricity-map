@@ -1,0 +1,117 @@
+{
+  "countries": {
+    "Russia": "Russland",
+    "Norway": "Norwegen",
+    "Finland": "Finnland",
+    "Sweden": "Schweden",
+    "Iceland": "Island",
+    "Estonia": "Estland",
+    "United Kingdom": "Vereenegt Kinnekräich",
+    "Latvia": "Lettland",
+    "Denmark": "Dänemark",
+    "Belarus": "Belarus",
+    "Lithuania": "Litauen",
+    "Ireland": "Irland",
+    "Northern Ireland": "Nordirland",
+    "Poland": "Polen",
+    "Germany & Luxembourg": "Däitschland & Lëtzebuerg",
+    "Ukraine": "Ukrain",
+    "Netherlands": "Nidderlanden",
+    "Belgium": "Belsch",
+    "France": "Frankräich",
+    "Czech Republic": "Tschechien",
+    "Slovakia": "Slowakei",
+    "Moldova": "Moldau",
+    "Romania": "Rumänien",
+    "Hungary": "Ungarn",
+    "Austria": "Éisträich",
+    "Switzerland": "Schwäiz",
+    "Italy": "Italien",
+    "Malta": "Malta",
+    "Slovenia": "Slowenien",
+    "Croatia": "Kroatien",
+    "Serbia": "Serbien",
+    "Bulgaria": "Bulgarien",
+    "Bosnia-Hertsegovina": "Bosnien an Herzegowina",
+    "Turkey": "Tierkei",
+    "Cyprus": "Zypern",
+    "Spain": "Spuenien",
+    "Montenegro": "Montenegro",
+    "Kosovo": "Kosovo",
+    "Portugal": "Portugal",
+    "North Macedonia": "Nordmazedonien",
+    "Greece": "Griicheland",
+    "Albania": "Albanien"
+  },
+  "nav": {
+    "europeMap": "Europa-Kaart",
+    "about": "Iwwer",
+    "language": "Sprooch"
+  },
+  "header": {
+    "logoAria": "Logo, Link op d’Startsäit"
+  },
+  "pageTitle": {
+    "thingler": "Thingler",
+    "europeanElectricityPrices": "Europäesch Stroumpräisser",
+    "electricityPricesFor": "Stroumpräisser fir ",
+    "aboutThingler": "Iwwer d’Stroumpräisser vu Thingler"
+  },
+  "europeMapDetails": {
+    "title": "Stroumpräisser",
+    "description": "Dës Säit weist déi deeglech Duerchschnëttspräisser ouni Steieren fir europäesch Länner, déi Member vum ENTSO-E (European Network of Transmission System Operators for Electricity) sinn. D’Präisser ginn an der Mëtteleuropäescher Zäit (<b>CET/CEST</b>) ugewisen an a Eurocent pro Kilowattstonn uginn.",
+    "noPricesAvailable": "W.e.g. notéieren, datt d’day-ahead Präisser fir <b>muer</b> <b>nach net verfügbar sinn</b>!",
+    "country": "Land",
+    "priceUnit": "€ cent / kWh",
+    "vat": "TVA %"
+  },
+  "countryPage": {
+    "countryNotFound": "Land net fonnt!",
+    "chartDescription": "D’Diagramm hei ënnen weist déi stonnweis Stroumpräisser fir {{country}}.",
+    "chartDescriptionPlural": "D’Diagrammer hei ënnen weisen déi stonnweis Stroumpräisser fir {{country}}.",
+    "currentPriceSingle": "Den aktuelle Stroumpräis a",
+    "currentPriceMultiple": "Déi aktuell Präisser fir d’Offerezone vu <b>{{country}}</b> sinn:",
+    "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} Cent</b> pro Kilowattstonn (<b>kWh</b>).",
+    "priceInfoAt": "um",
+    "priceInfoIs": "ass",
+    "noPricesNote": "W.e.g. notéieren, datt d’day-ahead Präisser fir muer <b>nach net verfügbar sinn</b> a {{country}}!"
+  },
+  "about": {
+    "title": "Iwwer",
+    "paragraph1": "Wëllkomm op der Thingler Stroumpräiskaart – enger interaktiver an aktueller Kaart fir Stroumpräisser an Europa z’erfuerschen. D’Kaart gouf mat React entwéckelt a gëtt op AWS mat serverless Léisungen gehost, mam Zil d’Betribskäschten esou niddreg wéi méiglech ze halen. D’Präisdonnéeë kommen vun ENTSO-E a ginn reegelméisseg aktualiséiert.",
+    "paragraph2": "D’Kaart weist duerchschnëttlech Stroumpräisser no Länner, ausgedréckt a Eurocent pro Kilowattstonn an an der Mëtteleuropäescher Zäit (CET/CEST) duergestallt. Méi detailléiert Informatioune kritt Dir andeems Dir op e Land op der Kaart klickt oder d’Tabell consultéiert.",
+    "paragraph3Start": "De Quellcode ass op GitHub verfügbar, ",
+    "paragraph3End": ". Wann Dir Froen oder Feedback hutt, zéckt net eis iwwer GitHub ze kontaktéieren.",
+    "thankYou": "Merci fir Äre Besuch op eiser Websäit."
+  },
+  "footer": {
+    "attribution": "Déi ugewisen Präisinformatioune kommen vun ENTSO-E, European Network of Transmission System Operators for Electricity. All Präisser ginn ursprénglech an der Mëtteleuropäescher Zäit (CET/CEST) uginn."
+  },
+  "vatToggle": {
+    "localVat": "Lokal TVA",
+    "vat": "TVA"
+  },
+  "timeZone": {
+    "label": "Zäitzon"
+  },
+  "dateSelector": {
+    "today": "Haut",
+    "tomorrow": "Muer",
+    "todayPrices": "Haut Präisser",
+    "tomorrowPrices": "Muer Präisser",
+    "months": [
+      "Januar",
+      "Februar",
+      "Mäerz",
+      "Abrëll",
+      "Mee",
+      "Juni",
+      "Juli",
+      "August",
+      "September",
+      "Oktober",
+      "November",
+      "Dezember"
+    ]
+  }
+}
