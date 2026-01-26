@@ -1,16 +1,19 @@
-import { Link } from "react-router-dom";
-
+import { useTranslation } from "react-i18next";
 import EnergyPriceLevels from "../../components/EnergyPriceLevels";
+import LocalizedLink from "../LocalizedLink";
 
 import css from "./EuropeMapDetails.module.css";
 
 function Country(props) {
+  const { t } = useTranslation();
+  const translatedName = t(`countries.${props.name}`, props.name);
+
   function BiddingZone(bz) {
     return (
       <div className={bz.countryClass}>
         <div className={bz.nameClass}>
           <span className={bz.dotClass} />
-          <Link to={`/country/${props.name}`}>{bz.biddingZone}</Link>
+          <LocalizedLink to={`/country/${props.name}`}>{bz.biddingZone}</LocalizedLink>
         </div>
         <div className={bz.priceClass}>{bz.price}</div>
         <div className={bz.vatClass}>{bz.vat}</div>
@@ -58,7 +61,7 @@ function Country(props) {
         <div className={css.country}>
           <div className={css.name}>
             <span className={`${css.dot} ${priceData.priceClass}`} />
-            <Link to={`/country/${props.name}`}>{props.name}</Link>
+            <LocalizedLink to={`/country/${props.name}`}>{translatedName}</LocalizedLink>
           </div>
           <div className={css.price}>{priceData.price}</div>
           <div className={css.vat}>{props.country[0].vat}</div>
@@ -87,7 +90,7 @@ function Country(props) {
         <hr className={props.first ? css.hiddenHr : css.hr} />
         <div className={css.country}>
           <div className={`${css.name} ${css.nameWithBZs}`}>
-            <Link to={`/country/${props.name}`}>{props.name}</Link>
+            <LocalizedLink to={`/country/${props.name}`}>{translatedName}</LocalizedLink>
           </div>
         </div>
         {biddingZones}

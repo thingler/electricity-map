@@ -1,10 +1,12 @@
 import { useContext } from "react";
+import { useTranslation } from "react-i18next";
 import TimeZoneContext from "../../store/TimeZoneContext";
 import { analyticsEventTracker } from "../analyticsTracker";
 
 import css from "./TimeZone.module.css";
 
 function TimeZone(props) {
+  const { t } = useTranslation();
   const gaEventTracker = analyticsEventTracker("Time Zone");
   const timeZoneCtx = useContext(TimeZoneContext);
 
@@ -16,7 +18,7 @@ function TimeZone(props) {
   return (
     <form>
       <label htmlFor="timeZone" className={css.label}>
-        Time zone
+        {t("timeZone.label")}
       </label>
       <select
         className={css.timeZone}

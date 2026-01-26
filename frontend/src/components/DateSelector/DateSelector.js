@@ -1,15 +1,49 @@
-import DatePicker from "react-datepicker";
+import DatePicker, { registerLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { fi, sv, enUS } from "date-fns/locale";
 
-import { useContext, forwardRef } from "react";
+import { useContext, forwardRef, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import DateContext from "../../store/DateContext";
 import { analyticsEventTracker } from "../analyticsTracker";
 
 import css from "./DateSelector.module.css";
 
 function DateSelector() {
+  const { t, i18n } = useTranslation();
   const gaEventTracker = analyticsEventTracker("Date picker");
   const dateCtx = useContext(DateContext);
+
+  // Get months from translation
+  const months = t("dateSelector.months", { returnObjects: true });
+
+  // Create locales with translated month names
+  useMemo(() => {
+    const fiLocale = {
+      ...fi,
+      localize: {
+        ...fi.localize,
+        month: (n) => months[n],
+      },
+    };
+    const svLocale = {
+      ...sv,
+      localize: {
+        ...sv.localize,
+        month: (n) => months[n],
+      },
+    };
+    const enLocale = {
+      ...enUS,
+      localize: {
+        ...enUS.localize,
+        month: (n) => months[n],
+      },
+    };
+    registerLocale("fi", fiLocale);
+    registerLocale("sv", svLocale);
+    registerLocale("en", enLocale);
+  }, [months]);
 
   function getDateString(dateObject, dayOffset) {
     dateObject.setDate(dateObject.getDate() + dayOffset);
@@ -61,6 +95,7 @@ function DateSelector() {
           dateFormat="dd.MM.yyyy"
           maxDate={tomorrowDateObject}
           customInput={<CustomInput />}
+          locale={i18n.language}
         />
       </li>
       <li className={css.value}>
@@ -68,11 +103,15 @@ function DateSelector() {
           className={css.button}
           onClick={dateCtx.date !== today ? setDateToday : setDateTomorrow}
           aria-label={
-            dateCtx.date !== today ? "Today's prices" : "Tomorrow's prices"
+            dateCtx.date !== today
+              ? t("dateSelector.todayPrices")
+              : t("dateSelector.tomorrowPrices")
           }
         >
           {dateCtx.date > today ? "← " : ""}
-          {dateCtx.date !== today ? "Today" : "Tomorrow"}
+          {dateCtx.date !== today
+            ? t("dateSelector.today")
+            : t("dateSelector.tomorrow")}
           {dateCtx.date <= today ? " →" : ""}
         </button>
       </li>

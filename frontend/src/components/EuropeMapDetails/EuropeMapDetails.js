@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { useTranslation, Trans } from "react-i18next";
 
 import BzPriceContext from "../../store/BzPriceContext";
 import VATContext from "../../store/VATContext";
@@ -12,6 +13,7 @@ import DateSelector from "../DateSelector/DateSelector";
 import css from "./EuropeMapDetails.module.css";
 
 function EuropeMapDetails() {
+  const { t } = useTranslation();
   const bzPriceCtx = useContext(BzPriceContext);
   const vatCtx = useContext(VATContext);
   const biddingZoneList = BiddingZoneList();
@@ -51,7 +53,11 @@ function EuropeMapDetails() {
   }, {});
 
   const countryJSX = Object.keys(countries)
-    .sort()
+    .sort((a, b) => {
+      const nameA = t(`countries.${a}`, a);
+      const nameB = t(`countries.${b}`, b);
+      return nameA.localeCompare(nameB);
+    })
     .map(
       (countryName, index) => (
         <Country
@@ -67,13 +73,9 @@ function EuropeMapDetails() {
 
   return (
     <section>
-      <h1>Electricity prices</h1>
+      <h1>{t("europeMapDetails.title")}</h1>
       <p className={css.description}>
-        This page presents the daily average prices, tax-free, for European
-        countries that are members of ENTSO-E - European Network of Transmission
-        System Operators for Electricity. The prices are displayed in Central
-        European time (<b>CET/CEST</b>) and are expressed in Euro cents per
-        kilowatt-hour.
+        <Trans i18nKey="europeMapDetails.description" components={{ b: <b /> }} />
       </p>
       <div className={css.actionContainer}>
         <div className={css.vatSelector}>
@@ -84,17 +86,14 @@ function EuropeMapDetails() {
         </div>
       </div>
       {countryJSX.length === 0 && (
-        <>
-          Please be aware that the day-ahead prices for <b>tomorrow</b> are{" "}
-          <b>not yet available</b>!
-        </>
+        <Trans i18nKey="europeMapDetails.noPricesAvailable" components={{ b: <b /> }} />
       )}
       {countryJSX.length > 0 && (
         <div className={css.priceContainer}>
           <div className={`${css.country} ${css.header}`}>
-            <div className={css.name}>Country</div>
-            <div className={css.price}>€ cent / kWh</div>
-            <div className={css.vat}>VAT %</div>
+            <div className={css.name}>{t("europeMapDetails.country")}</div>
+            <div className={css.price}>{t("europeMapDetails.priceUnit")}</div>
+            <div className={css.vat}>{t("europeMapDetails.vat")}</div>
           </div>
           {countryJSX}
         </div>
