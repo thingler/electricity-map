@@ -10,43 +10,100 @@ import ReactGA from "react-ga4";
 const TRACKING_ID = "G-XW9YHLXB38";
 ReactGA.initialize(TRACKING_ID);
 
+const supportedLangs = [
+  "fi", "sv", "sq", "bs", "bg", "hr", "cs", "da", "nl",
+  "et", "fr", "de", "el", "hu", "is", "ga", "it", "lv", "lt",
+  "lb", "mk", "mt", "cnr", "no", "pl", "pt", "ro", "rm", "ru",
+  "sr", "sk", "sl", "es", "tr", "uk"
+];
+
+function AppRoutes() {
+  return (
+    <Routes>
+      {/* English routes (default, no prefix) */}
+      <Route
+        path="/"
+        element={
+          <Page titleKey="pageTitle.thingler">
+            <RootPage />
+          </Page>
+        }
+      />
+      <Route
+        path="/map"
+        element={
+          <Page titleKey="pageTitle.europeanElectricityPrices">
+            <MapPage />
+          </Page>
+        }
+      />
+      <Route
+        path="/country/:country"
+        element={
+          <Page titleKey="pageTitle.electricityPricesFor">
+            <CountryPage />
+          </Page>
+        }
+      />
+      <Route
+        path="/about"
+        element={
+          <Page titleKey="pageTitle.aboutThingler">
+            <AboutPage />
+          </Page>
+        }
+      />
+      {/* Language-prefixed routes */}
+      {supportedLangs.map((lang) => (
+        <Route key={lang} path={`/${lang}/*`} element={<LanguageRoutes />} />
+      ))}
+    </Routes>
+  );
+}
+
+function LanguageRoutes() {
+  return (
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <Page titleKey="pageTitle.thingler">
+            <RootPage />
+          </Page>
+        }
+      />
+      <Route
+        path="/map"
+        element={
+          <Page titleKey="pageTitle.europeanElectricityPrices">
+            <MapPage />
+          </Page>
+        }
+      />
+      <Route
+        path="/country/:country"
+        element={
+          <Page titleKey="pageTitle.electricityPricesFor">
+            <CountryPage />
+          </Page>
+        }
+      />
+      <Route
+        path="/about"
+        element={
+          <Page titleKey="pageTitle.aboutThingler">
+            <AboutPage />
+          </Page>
+        }
+      />
+    </Routes>
+  );
+}
+
 function App() {
   return (
     <Layout>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Page title="Thingler">
-              <RootPage />
-            </Page>
-          }
-        />
-        <Route
-          path="/map"
-          element={
-            <Page title="European Electricity Prices">
-              <MapPage />
-            </Page>
-          }
-        />
-        <Route
-          path="/country/:country"
-          element={
-            <Page title="Electricity Prices for ">
-              <CountryPage />
-            </Page>
-          }
-        />
-        <Route
-          path="/about"
-          element={
-            <Page title="About Thingler Electricity Prices">
-              <AboutPage />
-            </Page>
-          }
-        />
-      </Routes>
+      <AppRoutes />
     </Layout>
   );
 }
