@@ -210,6 +210,18 @@ function CountryPage() {
           },
         },
       },
+      scales: {
+        x: {
+          ticks: {
+            maxRotation: 90,
+            callback: function (value, index) {
+              const label = labels[index];
+              // Only show full hours (ending with :00)
+              return label && label.endsWith(":00") ? label : null;
+            },
+          },
+        },
+      },
     };
 
     return <ChartBar key={index} options={options} data={chartData} />;
