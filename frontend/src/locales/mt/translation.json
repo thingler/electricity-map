@@ -1,0 +1,117 @@
+{
+  "countries": {
+    "Russia": "Ir-Russja",
+    "Norway": "In-Norveġja",
+    "Finland": "Il-Finlandja",
+    "Sweden": "L-Iżvezja",
+    "Iceland": "L-Iżlanda",
+    "Estonia": "L-Estonja",
+    "United Kingdom": "Ir-Renju Unit",
+    "Latvia": "Il-Latvja",
+    "Denmark": "Id-Danimarka",
+    "Belarus": "Il-Belarussja",
+    "Lithuania": "Il-Litwanja",
+    "Ireland": "L-Irlanda",
+    "Northern Ireland": "L-Irlanda ta’ Fuq",
+    "Poland": "Il-Polonja",
+    "Germany & Luxembourg": "Il-Ġermanja & Il-Lussemburgu",
+    "Ukraine": "L-Ukrajna",
+    "Netherlands": "L-Olanda",
+    "Belgium": "Il-Belġju",
+    "France": "Franza",
+    "Czech Republic": "Iċ-Ċekja",
+    "Slovakia": "Is-Slovakkja",
+    "Moldova": "Il-Moldova",
+    "Romania": "Ir-Rumanija",
+    "Hungary": "L-Ungerija",
+    "Austria": "L-Awstrija",
+    "Switzerland": "L-Iżvizzera",
+    "Italy": "L-Italja",
+    "Malta": "Malta",
+    "Slovenia": "Is-Slovenja",
+    "Croatia": "Il-Kroazja",
+    "Serbia": "Is-Serbja",
+    "Bulgaria": "Il-Bulgarija",
+    "Bosnia-Hertsegovina": "Il-Bożnija u Ħerzegovina",
+    "Turkey": "It-Turkija",
+    "Cyprus": "Ċipru",
+    "Spain": "Spanja",
+    "Montenegro": "Montenegro",
+    "Kosovo": "Il-Kosovo",
+    "Portugal": "Il-Portugall",
+    "North Macedonia": "Il-Maċedonja ta’ Fuq",
+    "Greece": "Il-Greċja",
+    "Albania": "L-Albanija"
+  },
+  "nav": {
+    "europeMap": "Mappa tal-Ewropa",
+    "about": "Dwar",
+    "language": "Lingwa"
+  },
+  "header": {
+    "logoAria": "Logo, link għall-paġna ewlenija"
+  },
+  "pageTitle": {
+    "thingler": "Thingler",
+    "europeanElectricityPrices": "Prezzijiet tal-elettriku fl-Ewropa",
+    "electricityPricesFor": "Prezzijiet tal-elettriku għal ",
+    "aboutThingler": "Dwar il-prezzijiet tal-elettriku ta’ Thingler"
+  },
+  "europeMapDetails": {
+    "title": "Prezzijiet tal-elettriku",
+    "description": "Din il-paġna turi l-prezzijiet medji ta’ kuljum, mingħajr taxxi, għall-pajjiżi Ewropej li huma membri ta’ ENTSO-E (European Network of Transmission System Operators for Electricity). Il-prezzijiet jintwerew skont il-ħin tal-Ewropa Ċentrali (<b>CET/CEST</b>) u huma espressi f’ċenteżmi ta’ euro għal kull kilowatt-siegħa.",
+    "noPricesAvailable": "Jekk jogħġbok innota li l-prezzijiet day-ahead għal <b>għada</b> <b>għadhom mhumiex disponibbli</b>!",
+    "country": "Pajjiż",
+    "priceUnit": "€ cent / kWh",
+    "vat": "VAT %"
+  },
+  "countryPage": {
+    "countryNotFound": "Il-pajjiż ma nstabx!",
+    "chartDescription": "Il-grafika hawn taħt turi l-prezzijiet tal-elettriku għal kull siegħa għal {{country}}.",
+    "chartDescriptionPlural": "Il-grafiċi hawn taħt juru l-prezzijiet tal-elettriku għal kull siegħa għal {{country}}.",
+    "currentPriceSingle": "Il-prezz attwali tal-elettriku f’",
+    "currentPriceMultiple": "Il-prezzijiet attwali għaż-żoni tal-offerta f’<b>{{country}}</b> huma:",
+    "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} ċenteżmi</b> għal kull kilowatt-siegħa (<b>kWh</b>).",
+    "priceInfoAt": "fil-",
+    "priceInfoIs": "huwa",
+    "noPricesNote": "Jekk jogħġbok innota li l-prezzijiet day-ahead għal għada <b>għadhom mhumiex disponibbli</b> għal {{country}}!"
+  },
+  "about": {
+    "title": "Dwar",
+    "paragraph1": "Merħba fil-mappa tal-prezzijiet tal-elettriku Thingler, mappa interattiva u aġġornata biex tesplora l-prezzijiet tal-elettriku fl-Ewropa. Il-mappa nbniet b’React u hija hostjata fuq AWS b’soluzzjonijiet serverless, bil-għan li l-ispejjeż operattivi jinżammu kemm jista’ jkun baxxi. Id-dejta tal-prezzijiet ġejja minn ENTSO-E u tiġi aġġornata regolarment.",
+    "paragraph2": "Il-mappa turi l-prezzijiet medji tal-elettriku skont il-pajjiż, espressi f’ċenteżmi ta’ euro għal kull kilowatt-siegħa u ppreżentati skont il-ħin tal-Ewropa Ċentrali (CET/CEST). Tista’ ssib aktar dettalji billi tikklikkja fuq pajjiż fil-mappa jew billi tibbrawżja t-tabella.",
+    "paragraph3Start": "Il-kodiċi tas-sors huwa disponibbli fuq GitHub, ",
+    "paragraph3End": ". Jekk għandek mistoqsijiet jew feedback, tħossokx skomdu tikkuntattjana permezz ta’ GitHub.",
+    "thankYou": "Grazzi talli żort is-sit tagħna."
+  },
+  "footer": {
+    "attribution": "L-informazzjoni tal-prezzijiet murija ġejja minn ENTSO-E, European Network of Transmission System Operators for Electricity. Il-prezzijiet kollha huma oriġinarjament skont il-ħin tal-Ewropa Ċentrali (CET/CEST)."
+  },
+  "vatToggle": {
+    "localVat": "VAT lokali",
+    "vat": "VAT"
+  },
+  "timeZone": {
+    "label": "Żona tal-ħin"
+  },
+  "dateSelector": {
+    "today": "Illum",
+    "tomorrow": "Għada",
+    "todayPrices": "Prezzijiet tal-lum",
+    "tomorrowPrices": "Prezzijiet ta’ għada",
+    "months": [
+      "Jannar",
+      "Frar",
+      "Marzu",
+      "April",
+      "Mejju",
+      "Ġunju",
+      "Lulju",
+      "Awwissu",
+      "Settembru",
+      "Ottubru",
+      "Novembru",
+      "Diċembru"
+    ]
+  }
+}

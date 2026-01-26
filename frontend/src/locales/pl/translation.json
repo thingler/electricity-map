@@ -1,0 +1,117 @@
+{
+  "countries": {
+    "Russia": "Rosja",
+    "Norway": "Norwegia",
+    "Finland": "Finlandia",
+    "Sweden": "Szwecja",
+    "Iceland": "Islandia",
+    "Estonia": "Estonia",
+    "United Kingdom": "Zjednoczone Królestwo",
+    "Latvia": "Łotwa",
+    "Denmark": "Dania",
+    "Belarus": "Białoruś",
+    "Lithuania": "Litwa",
+    "Ireland": "Irlandia",
+    "Northern Ireland": "Irlandia Północna",
+    "Poland": "Polska",
+    "Germany & Luxembourg": "Niemcy & Luksemburg",
+    "Ukraine": "Ukraina",
+    "Netherlands": "Niderlandy",
+    "Belgium": "Belgia",
+    "France": "Francja",
+    "Czech Republic": "Czechy",
+    "Slovakia": "Słowacja",
+    "Moldova": "Mołdawia",
+    "Romania": "Rumunia",
+    "Hungary": "Węgry",
+    "Austria": "Austria",
+    "Switzerland": "Szwajcaria",
+    "Italy": "Włochy",
+    "Malta": "Malta",
+    "Slovenia": "Słowenia",
+    "Croatia": "Chorwacja",
+    "Serbia": "Serbia",
+    "Bulgaria": "Bułgaria",
+    "Bosnia-Hertsegovina": "Bośnia i Hercegowina",
+    "Turkey": "Turcja",
+    "Cyprus": "Cypr",
+    "Spain": "Hiszpania",
+    "Montenegro": "Czarnogóra",
+    "Kosovo": "Kosowo",
+    "Portugal": "Portugalia",
+    "North Macedonia": "Macedonia Północna",
+    "Greece": "Grecja",
+    "Albania": "Albania"
+  },
+  "nav": {
+    "europeMap": "Mapa Europy",
+    "about": "O projekcie",
+    "language": "Język"
+  },
+  "header": {
+    "logoAria": "Logo, link do strony głównej"
+  },
+  "pageTitle": {
+    "thingler": "Thingler",
+    "europeanElectricityPrices": "Ceny energii elektrycznej w Europie",
+    "electricityPricesFor": "Ceny energii elektrycznej dla ",
+    "aboutThingler": "O cenach energii elektrycznej Thingler"
+  },
+  "europeMapDetails": {
+    "title": "Ceny energii elektrycznej",
+    "description": "Ta strona przedstawia średnie dzienne ceny energii elektrycznej bez podatków dla krajów europejskich będących członkami ENTSO-E (European Network of Transmission System Operators for Electricity). Ceny są prezentowane w czasie środkowoeuropejskim (<b>CET/CEST</b>) i wyrażone w eurocentach za kilowatogodzinę.",
+    "noPricesAvailable": "Zwróć uwagę, że ceny day-ahead na <b>jutro</b> <b>nie są jeszcze dostępne</b>!",
+    "country": "Kraj",
+    "priceUnit": "€ cent / kWh",
+    "vat": "VAT %"
+  },
+  "countryPage": {
+    "countryNotFound": "Nie znaleziono kraju!",
+    "chartDescription": "Poniższy wykres pokazuje godzinowe ceny energii elektrycznej w kraju {{country}}.",
+    "chartDescriptionPlural": "Poniższe wykresy pokazują godzinowe ceny energii elektrycznej w kraju {{country}}.",
+    "currentPriceSingle": "Aktualna cena energii elektrycznej w",
+    "currentPriceMultiple": "Aktualne ceny dla stref ofertowych w <b>{{country}}</b> to:",
+    "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} centów</b> za kilowatogodzinę (<b>kWh</b>).",
+    "priceInfoAt": "o",
+    "priceInfoIs": "wynosi",
+    "noPricesNote": "Zwróć uwagę, że ceny day-ahead na jutro <b>nie są jeszcze dostępne</b> w kraju {{country}}!"
+  },
+  "about": {
+    "title": "O projekcie",
+    "paragraph1": "Witamy na mapie cen energii elektrycznej Thingler — interaktywnej i aktualnej mapie umożliwiającej analizę cen energii elektrycznej w Europie. Mapa została zbudowana przy użyciu React i jest hostowana na AWS z wykorzystaniem rozwiązań serverless, aby utrzymać koszty operacyjne na jak najniższym poziomie. Dane cenowe pochodzą z ENTSO-E i są regularnie aktualizowane.",
+    "paragraph2": "Mapa prezentuje średnie ceny energii elektrycznej według krajów, wyrażone w eurocentach za kilowatogodzinę i przedstawione w czasie środkowoeuropejskim (CET/CEST). Szczegółowe informacje można uzyskać, klikając kraj na mapie lub przeglądając tabelę.",
+    "paragraph3Start": "Kod źródłowy jest dostępny na GitHubie, ",
+    "paragraph3End": ". Jeśli masz pytania lub opinie, zapraszamy do kontaktu za pośrednictwem GitHuba.",
+    "thankYou": "Dziękujemy za odwiedzenie naszej strony."
+  },
+  "footer": {
+    "attribution": "Prezentowane informacje o cenach pochodzą z ENTSO-E, European Network of Transmission System Operators for Electricity. Wszystkie ceny są pierwotnie podawane w czasie środkowoeuropejskim (CET/CEST)."
+  },
+  "vatToggle": {
+    "localVat": "Lokalny VAT",
+    "vat": "VAT"
+  },
+  "timeZone": {
+    "label": "Strefa czasowa"
+  },
+  "dateSelector": {
+    "today": "Dziś",
+    "tomorrow": "Jutro",
+    "todayPrices": "Dzisiejsze ceny",
+    "tomorrowPrices": "Jutrzejsze ceny",
+    "months": [
+      "Styczeń",
+      "Luty",
+      "Marzec",
+      "Kwiecień",
+      "Maj",
+      "Czerwiec",
+      "Lipiec",
+      "Sierpień",
+      "Wrzesień",
+      "Październik",
+      "Listopad",
+      "Grudzień"
+    ]
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "countries": {
+    "Russia": "Росія",
+    "Norway": "Норвегія",
+    "Finland": "Фінляндія",
+    "Sweden": "Швеція",
+    "Iceland": "Ісландія",
+    "Estonia": "Естонія",
+    "United Kingdom": "Сполучене Королівство",
+    "Latvia": "Латвія",
+    "Denmark": "Данія",
+    "Belarus": "Білорусь",
+    "Lithuania": "Литва",
+    "Ireland": "Ірландія",
+    "Northern Ireland": "Північна Ірландія",
+    "Poland": "Польща",
+    "Germany & Luxembourg": "Німеччина & Люксембург",
+    "Ukraine": "Україна",
+    "Netherlands": "Нідерланди",
+    "Belgium": "Бельгія",
+    "France": "Франція",
+    "Czech Republic": "Чехія",
+    "Slovakia": "Словаччина",
+    "Moldova": "Молдова",
+    "Romania": "Румунія",
+    "Hungary": "Угорщина",
+    "Austria": "Австрія",
+    "Switzerland": "Швейцарія",
+    "Italy": "Італія",
+    "Malta": "Мальта",
+    "Slovenia": "Словенія",
+    "Croatia": "Хорватія",
+    "Serbia": "Сербія",
+    "Bulgaria": "Болгарія",
+    "Bosnia-Hertsegovina": "Боснія і Герцеговина",
+    "Turkey": "Туреччина",
+    "Cyprus": "Кіпр",
+    "Spain": "Іспанія",
+    "Montenegro": "Чорногорія",
+    "Kosovo": "Косово",
+    "Portugal": "Португалія",
+    "North Macedonia": "Північна Македонія",
+    "Greece": "Греція",
+    "Albania": "Албанія"
+  },
+  "nav": {
+    "europeMap": "Мапа Європи",
+    "about": "Про проєкт",
+    "language": "Мова"
+  },
+  "header": {
+    "logoAria": "Логотип, посилання на головну сторінку"
+  },
+  "pageTitle": {
+    "thingler": "Thingler",
+    "europeanElectricityPrices": "Ціни на електроенергію в Європі",
+    "electricityPricesFor": "Ціни на електроенергію для ",
+    "aboutThingler": "Про ціни на електроенергію Thingler"
+  },
+  "europeMapDetails": {
+    "title": "Ціни на електроенергію",
+    "description": "Ця сторінка показує середні добові ціни на електроенергію без податків для європейських країн, які є членами ENTSO-E (European Network of Transmission System Operators for Electricity). Ціни подано за центральноєвропейським часом (<b>CET/CEST</b>) та виражено в євроцентах за кіловат-годину.",
+    "noPricesAvailable": "Зверніть увагу, що ціни day-ahead на <b>завтра</b> <b>ще недоступні</b>!",
+    "country": "Країна",
+    "priceUnit": "€ cent / kWh",
+    "vat": "ПДВ %"
+  },
+  "countryPage": {
+    "countryNotFound": "Країну не знайдено!",
+    "chartDescription": "Графік нижче показує погодинні ціни на електроенергію для {{country}}.",
+    "chartDescriptionPlural": "Графіки нижче показують погодинні ціни на електроенергію для {{country}}.",
+    "currentPriceSingle": "Поточна ціна на електроенергію в",
+    "currentPriceMultiple": "Поточні ціни для торгових зон у <b>{{country}}</b> такі:",
+    "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} євроцентів</b> за кіловат-годину (<b>kWh</b>).",
+    "priceInfoAt": "о",
+    "priceInfoIs": "становить",
+    "noPricesNote": "Зверніть увагу, що ціни day-ahead на завтра <b>ще недоступні</b> у {{country}}!"
+  },
+  "about": {
+    "title": "Про проєкт",
+    "paragraph1": "Ласкаво просимо на мапу цін на електроенергію Thingler — інтерактивну та регулярно оновлювану мапу для дослідження цін на електроенергію в Європі. Мапу створено з використанням React і розміщено на AWS із застосуванням serverless рішень, щоб зберігати експлуатаційні витрати на мінімальному рівні. Дані про ціни надає ENTSO-E та вони регулярно оновлюються.",
+    "paragraph2": "Мапа відображає середні ціни на електроенергію за країнами, виражені в євроцентах за кіловат-годину та подані за центральноєвропейським часом (CET/CEST). Детальнішу інформацію можна отримати, натиснувши на країну на мапі або переглянувши таблицю.",
+    "paragraph3Start": "Вихідний код доступний на GitHub, ",
+    "paragraph3End": ". Якщо у вас є запитання або відгуки, будь ласка, зв’яжіться з нами через GitHub.",
+    "thankYou": "Дякуємо за відвідування нашого вебсайту."
+  },
+  "footer": {
+    "attribution": "Показана інформація про ціни отримана з ENTSO-E, European Network of Transmission System Operators for Electricity. Усі ціни спочатку подано за центральноєвропейським часом (CET/CEST)."
+  },
+  "vatToggle": {
+    "localVat": "Місцевий ПДВ",
+    "vat": "ПДВ"
+  },
+  "timeZone": {
+    "label": "Часовий пояс"
+  },
+  "dateSelector": {
+    "today": "Сьогодні",
+    "tomorrow": "Завтра",
+    "todayPrices": "Ціни на сьогодні",
+    "tomorrowPrices": "Ціни на завтра",
+    "months": [
+      "Січень",
+      "Лютий",
+      "Березень",
+      "Квітень",
+      "Травень",
+      "Червень",
+      "Липень",
+      "Серпень",
+      "Вересень",
+      "Жовтень",
+      "Листопад",
+      "Грудень"
+    ]
+  }
+}

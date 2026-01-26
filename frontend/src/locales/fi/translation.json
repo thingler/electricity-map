@@ -1,0 +1,117 @@
+{
+  "countries": {
+    "Russia": "Venäjä",
+    "Norway": "Norja",
+    "Finland": "Suomi",
+    "Sweden": "Ruotsi",
+    "Iceland": "Islanti",
+    "Estonia": "Viro",
+    "United Kingdom": "Yhdistynyt kuningaskunta",
+    "Latvia": "Latvia",
+    "Denmark": "Tanska",
+    "Belarus": "Valko Venäjä",
+    "Lithuania": "Liettua",
+    "Ireland": "Irlanti",
+    "Northern Ireland": "Pohjois Irlanti",
+    "Poland": "Puola",
+    "Germany & Luxembourg": "Saksa & Luxemburg",
+    "Ukraine": "Ukraina",
+    "Netherlands": "Alankomaat",
+    "Belgium": "Belgia",
+    "France": "Ranska",
+    "Czech Republic": "Tšekki",
+    "Slovakia": "Slovakia",
+    "Moldova": "Moldova",
+    "Romania": "Romania",
+    "Hungary": "Unkari",
+    "Austria": "Itävalta",
+    "Switzerland": "Sveitsi",
+    "Italy": "Italia",
+    "Malta": "Malta",
+    "Slovenia": "Slovenia",
+    "Croatia": "Kroatia",
+    "Serbia": "Serbia",
+    "Bulgaria": "Bulgaria",
+    "Bosnia-Hertsegovina": "Bosnia ja Hertsegovina",
+    "Turkey": "Turkki",
+    "Cyprus": "Kypros",
+    "Spain": "Espanja",
+    "Montenegro": "Montenegro",
+    "Kosovo": "Kosovo",
+    "Portugal": "Portugali",
+    "North Macedonia": "Pohjois Makedonia",
+    "Greece": "Kreikka",
+    "Albania": "Albania"
+  },
+  "nav": {
+    "europeMap": "Euroopan kartta",
+    "about": "Tietoa",
+    "language": "Kieli"
+  },
+  "header": {
+    "logoAria": "Logo, linkki etusivulle"
+  },
+  "pageTitle": {
+    "thingler": "Thingler",
+    "europeanElectricityPrices": "Euroopan sähkön hinnat",
+    "electricityPricesFor": "Sähkön hinnat maassa ",
+    "aboutThingler": "Tietoa Thinglerin sähkönhinnoista"
+  },
+  "europeMapDetails": {
+    "title": "Sähkön hinnat",
+    "description": "Tällä sivulla esitetään ENTSO-E:n (European Network of Transmission System Operators for Electricity) jäsenmaiden päivittäiset keskimääräiset sähkön hinnat ilman veroja. Hinnat esitetään Keski Euroopan ajassa (<b>CET/CEST</b>) ja eurosentteinä kilowattituntia kohden.",
+    "noPricesAvailable": "Huomioithan, että <b>huomisen</b> päivän day-ahead-hinnat <b>eivät ole vielä saatavilla</b>!",
+    "country": "Maa",
+    "priceUnit": "€ senttiä / kWh",
+    "vat": "ALV %"
+  },
+  "countryPage": {
+    "countryNotFound": "Maata ei löytynyt!",
+    "chartDescription": "Alla oleva kaavio näyttää tuntikohtaiset sähkön hinnat ({{country}}).",
+    "chartDescriptionPlural": "Alla olevat kaaviot näyttävät tuntikohtaiset sähkön hinnat ({{country}}).",
+    "currentPriceSingle": "Sähkön nykyinen hinta maassa",
+    "currentPriceMultiple": "Maan <b>{{country}}</b> tarjousalueiden nykyiset hinnat ovat:",
+    "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} senttiä</b> kilowattitunnilta (<b>kWh</b>).",
+    "priceInfoAt": "klo",
+    "priceInfoIs": "on",
+    "noPricesNote": "Huomioithan, että huomisen päivän day-ahead-hinnat <b>eivät ole vielä saatavilla</b> maassa {{country}}!"
+  },
+  "about": {
+    "title": "Tietoa",
+    "paragraph1": "Tervetuloa Thinglerin sähkön hintakarttaan, interaktiiviseen ja ajantasaiseen karttaan, jonka avulla voit tutkia sähkön hintoja Euroopassa. Kartta on rakennettu Reactilla ja hostattu AWS:ssä serverless-ratkaisujen avulla. Hintatiedot on saatu ENTSO-E:ltä ja niitä päivitetään säännöllisesti.",
+    "paragraph2": "Kartta näyttää maiden keskimääräiset sähkön hinnat eurosentteinä kilowattituntia kohden Keski Euroopan ajassa (CET/CEST). Saat tarkempaa tietoa klikkaamalla maata kartalla tai selaamalla taulukkoa.",
+    "paragraph3Start": "Lähdekoodi on saatavilla GitHubissa, ",
+    "paragraph3End": ". Jos sinulla on kysyttävää tai palautetta, ota rohkeasti yhteyttä GitHubin kautta.",
+    "thankYou": "Kiitos vierailustasi sivustollamme."
+  },
+  "footer": {
+    "attribution": "Esitetyt hintatiedot ovat peräisin ENTSO-E:ltä, Euroopan sähköverkonhaltijoiden yhteistyöjärjestöltä. Kaikki hinnat ovat alkujaan Keski Euroopan ajassa (CET/CEST)."
+  },
+  "vatToggle": {
+    "localVat": "Paikallinen ALV",
+    "vat": "ALV"
+  },
+  "timeZone": {
+    "label": "Aikavyöhyke"
+  },
+  "dateSelector": {
+    "today": "Tänään",
+    "tomorrow": "Huomenna",
+    "todayPrices": "Tämän päivän hinnat",
+    "tomorrowPrices": "Huomisen hinnat",
+    "months": [
+      "Tammikuu",
+      "Helmikuu",
+      "Maaliskuu",
+      "Huhtikuu",
+      "Toukokuu",
+      "Kesäkuu",
+      "Heinäkuu",
+      "Elokuu",
+      "Syyskuu",
+      "Lokakuu",
+      "Marraskuu",
+      "Joulukuu"
+    ]
+  }
+}

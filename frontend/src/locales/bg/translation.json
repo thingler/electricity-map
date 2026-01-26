@@ -1,0 +1,117 @@
+{
+  "countries": {
+    "Russia": "Русия",
+    "Norway": "Норвегия",
+    "Finland": "Финландия",
+    "Sweden": "Швеция",
+    "Iceland": "Исландия",
+    "Estonia": "Естония",
+    "United Kingdom": "Обединено кралство",
+    "Latvia": "Латвия",
+    "Denmark": "Дания",
+    "Belarus": "Беларус",
+    "Lithuania": "Литва",
+    "Ireland": "Ирландия",
+    "Northern Ireland": "Северна Ирландия",
+    "Poland": "Полша",
+    "Germany & Luxembourg": "Германия & Люксембург",
+    "Ukraine": "Украйна",
+    "Netherlands": "Нидерландия",
+    "Belgium": "Белгия",
+    "France": "Франция",
+    "Czech Republic": "Чехия",
+    "Slovakia": "Словакия",
+    "Moldova": "Молдова",
+    "Romania": "Румъния",
+    "Hungary": "Унгария",
+    "Austria": "Австрия",
+    "Switzerland": "Швейцария",
+    "Italy": "Италия",
+    "Malta": "Малта",
+    "Slovenia": "Словения",
+    "Croatia": "Хърватия",
+    "Serbia": "Сърбия",
+    "Bulgaria": "България",
+    "Bosnia-Hertsegovina": "Босна и Херцеговина",
+    "Turkey": "Турция",
+    "Cyprus": "Кипър",
+    "Spain": "Испания",
+    "Montenegro": "Черна гора",
+    "Kosovo": "Косово",
+    "Portugal": "Португалия",
+    "North Macedonia": "Северна Македония",
+    "Greece": "Гърция",
+    "Albania": "Албания"
+  },
+  "nav": {
+    "europeMap": "Карта на Европа",
+    "about": "За проекта",
+    "language": "Език"
+  },
+  "header": {
+    "logoAria": "Лого, връзка към началната страница"
+  },
+  "pageTitle": {
+    "thingler": "Thingler",
+    "europeanElectricityPrices": "Цени на електроенергията в Европа",
+    "electricityPricesFor": "Цени на електроенергията за ",
+    "aboutThingler": "За цените на електроенергията Thingler"
+  },
+  "europeMapDetails": {
+    "title": "Цени на електроенергията",
+    "description": "Тази страница представя средните дневни цени без данъци за европейските държави, които са членове на ENTSO-E (European Network of Transmission System Operators for Electricity). Цените са показани в централноевропейско време (<b>CET/CEST</b>) и са изразени в евроцентове за киловатчас.",
+    "noPricesAvailable": "Моля, имайте предвид, че day-ahead цените за <b>утре</b> <b>все още не са налични</b>!",
+    "country": "Държава",
+    "priceUnit": "€ цент / kWh",
+    "vat": "ДДС %"
+  },
+  "countryPage": {
+    "countryNotFound": "Държавата не е намерена!",
+    "chartDescription": "Графиката по-долу показва почасовите цени на електроенергията за {{country}}.",
+    "chartDescriptionPlural": "Графиките по-долу показват почасовите цени на електроенергията за {{country}}.",
+    "currentPriceSingle": "Текущата цена на електроенергията в",
+    "currentPriceMultiple": "Текущите цени за зоните на търговия в <b>{{country}}</b> са:",
+    "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} цента</b> за киловатчас (<b>kWh</b>).",
+    "priceInfoAt": "в",
+    "priceInfoIs": "е",
+    "noPricesNote": "Моля, имайте предвид, че day-ahead цените за утре <b>все още не са налични</b> за {{country}}!"
+  },
+  "about": {
+    "title": "За проекта",
+    "paragraph1": "Добре дошли в картата на цените на електроенергията Thingler – интерактивна и актуална карта за разглеждане на цените на електроенергията в Европа. Картата е разработена с React и е hostвана в AWS със serverless решения, с цел поддържане на възможно най-ниски разходи за поддръжка. Данните за цените се предоставят от ENTSO-E и се обновяват редовно.",
+    "paragraph2": "Картата показва средните цени на електроенергията по държави, изразени в евроцентове за киловатчас и представени в централноевропейско време (CET/CEST). Можете да получите по-подробна информация, като кликнете върху държава от картата или разгледате таблицата.",
+    "paragraph3Start": "Изходният код е наличен в GitHub, ",
+    "paragraph3End": ". Ако имате въпроси или обратна връзка, не се колебайте да се свържете чрез GitHub.",
+    "thankYou": "Благодарим ви, че посетихте нашия сайт."
+  },
+  "footer": {
+    "attribution": "Показаната информация за цените е предоставена от ENTSO-E, European Network of Transmission System Operators for Electricity. Всички цени първоначално са в централноевропейско време (CET/CEST)."
+  },
+  "vatToggle": {
+    "localVat": "Местен ДДС",
+    "vat": "ДДС"
+  },
+  "timeZone": {
+    "label": "Часова зона"
+  },
+  "dateSelector": {
+    "today": "Днес",
+    "tomorrow": "Утре",
+    "todayPrices": "Днешни цени",
+    "tomorrowPrices": "Утрешни цени",
+    "months": [
+      "Януари",
+      "Февруари",
+      "Март",
+      "Април",
+      "Май",
+      "Юни",
+      "Юли",
+      "Август",
+      "Септември",
+      "Октомври",
+      "Ноември",
+      "Декември"
+    ]
+  }
+}

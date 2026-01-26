@@ -1,0 +1,117 @@
+{
+  "countries": {
+    "Russia": "Oroszország",
+    "Norway": "Norvégia",
+    "Finland": "Finnország",
+    "Sweden": "Svédország",
+    "Iceland": "Izland",
+    "Estonia": "Észtország",
+    "United Kingdom": "Egyesült Királyság",
+    "Latvia": "Lettország",
+    "Denmark": "Dánia",
+    "Belarus": "Belarusz",
+    "Lithuania": "Litvánia",
+    "Ireland": "Írország",
+    "Northern Ireland": "Észak-Írország",
+    "Poland": "Lengyelország",
+    "Germany & Luxembourg": "Németország & Luxemburg",
+    "Ukraine": "Ukrajna",
+    "Netherlands": "Hollandia",
+    "Belgium": "Belgium",
+    "France": "Franciaország",
+    "Czech Republic": "Csehország",
+    "Slovakia": "Szlovákia",
+    "Moldova": "Moldova",
+    "Romania": "Románia",
+    "Hungary": "Magyarország",
+    "Austria": "Ausztria",
+    "Switzerland": "Svájc",
+    "Italy": "Olaszország",
+    "Malta": "Málta",
+    "Slovenia": "Szlovénia",
+    "Croatia": "Horvátország",
+    "Serbia": "Szerbia",
+    "Bulgaria": "Bulgária",
+    "Bosnia-Hertsegovina": "Bosznia-Hercegovina",
+    "Turkey": "Törökország",
+    "Cyprus": "Ciprus",
+    "Spain": "Spanyolország",
+    "Montenegro": "Montenegró",
+    "Kosovo": "Koszovó",
+    "Portugal": "Portugália",
+    "North Macedonia": "Észak-Macedónia",
+    "Greece": "Görögország",
+    "Albania": "Albánia"
+  },
+  "nav": {
+    "europeMap": "Európa térkép",
+    "about": "Névjegy",
+    "language": "Nyelv"
+  },
+  "header": {
+    "logoAria": "Logó, hivatkozás a kezdőoldalra"
+  },
+  "pageTitle": {
+    "thingler": "Thingler",
+    "europeanElectricityPrices": "Európai villamosenergia-árak",
+    "electricityPricesFor": "Villamosenergia-árak itt: ",
+    "aboutThingler": "A Thingler villamosenergia-árairól"
+  },
+  "europeMapDetails": {
+    "title": "Villamosenergia-árak",
+    "description": "Ez az oldal az ENTSO-E (European Network of Transmission System Operators for Electricity) tagországainak napi átlagos, adók nélküli villamosenergia-árait mutatja be. Az árak közép-európai idő szerint (<b>CET/CEST</b>) jelennek meg, és eurocent/kilowattóra egységben vannak megadva.",
+    "noPricesAvailable": "Kérjük, vegye figyelembe, hogy a <b>holnapi</b> day-ahead árak <b>még nem érhetők el</b>!",
+    "country": "Ország",
+    "priceUnit": "€ cent / kWh",
+    "vat": "ÁFA %"
+  },
+  "countryPage": {
+    "countryNotFound": "Az ország nem található!",
+    "chartDescription": "Az alábbi grafikon {{country}} óránkénti villamosenergia-árait mutatja.",
+    "chartDescriptionPlural": "Az alábbi grafikonok {{country}} óránkénti villamosenergia-árait mutatják.",
+    "currentPriceSingle": "Az aktuális villamosenergia-ár",
+    "currentPriceMultiple": "<b>{{country}}</b> ajánlati zónáinak aktuális árai:",
+    "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} cent</b> kilowattóránként (<b>kWh</b>).",
+    "priceInfoAt": "időpont:",
+    "priceInfoIs": "értéke",
+    "noPricesNote": "Kérjük, vegye figyelembe, hogy a holnapi day-ahead árak <b>még nem érhetők el</b> {{country}} esetében!"
+  },
+  "about": {
+    "title": "Névjegy",
+    "paragraph1": "Üdvözöljük a Thingler villamosenergia-ár térképén – egy interaktív és naprakész térképen, amely lehetővé teszi az európai villamosenergia-árak felfedezését. A térkép React segítségével készült, és AWS-en van hosztolva serverless megoldásokkal, az üzemeltetési költségek minimalizálása érdekében. Az áradataok az ENTSO-E-től származnak, és rendszeresen frissülnek.",
+    "paragraph2": "A térkép országonként jeleníti meg az átlagos villamosenergia-árakat, eurocent/kilowattóra egységben, közép-európai idő szerint (CET/CEST). Részletesebb információkért kattintson egy országra a térképen, vagy tekintse meg a táblázatot.",
+    "paragraph3Start": "A forráskód elérhető a GitHubon, ",
+    "paragraph3End": ". Ha kérdése vagy visszajelzése van, forduljon hozzánk bizalommal a GitHubon keresztül.",
+    "thankYou": "Köszönjük, hogy meglátogatta weboldalunkat."
+  },
+  "footer": {
+    "attribution": "A megjelenített áradataok az ENTSO-E-től, a European Network of Transmission System Operators for Electricity szervezettől származnak. Minden ár eredetileg közép-európai idő szerint (CET/CEST) van megadva."
+  },
+  "vatToggle": {
+    "localVat": "Helyi ÁFA",
+    "vat": "ÁFA"
+  },
+  "timeZone": {
+    "label": "Időzóna"
+  },
+  "dateSelector": {
+    "today": "Ma",
+    "tomorrow": "Holnap",
+    "todayPrices": "Mai árak",
+    "tomorrowPrices": "Holnapi árak",
+    "months": [
+      "Január",
+      "Február",
+      "Március",
+      "Április",
+      "Május",
+      "Június",
+      "Július",
+      "Augusztus",
+      "Szeptember",
+      "Október",
+      "November",
+      "December"
+    ]
+  }
+}

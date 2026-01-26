@@ -1,0 +1,117 @@
+{
+  "countries": {
+    "Russia": "Russland",
+    "Norway": "Norge",
+    "Finland": "Finland",
+    "Sweden": "Sverige",
+    "Iceland": "Island",
+    "Estonia": "Estland",
+    "United Kingdom": "Storbritannia",
+    "Latvia": "Latvia",
+    "Denmark": "Danmark",
+    "Belarus": "Hviterussland",
+    "Lithuania": "Litauen",
+    "Ireland": "Irland",
+    "Northern Ireland": "Nord-Irland",
+    "Poland": "Polen",
+    "Germany & Luxembourg": "Tyskland & Luxembourg",
+    "Ukraine": "Ukraina",
+    "Netherlands": "Nederland",
+    "Belgium": "Belgia",
+    "France": "Frankrike",
+    "Czech Republic": "Tsjekkia",
+    "Slovakia": "Slovakia",
+    "Moldova": "Moldova",
+    "Romania": "Romania",
+    "Hungary": "Ungarn",
+    "Austria": "Østerrike",
+    "Switzerland": "Sveits",
+    "Italy": "Italia",
+    "Malta": "Malta",
+    "Slovenia": "Slovenia",
+    "Croatia": "Kroatia",
+    "Serbia": "Serbia",
+    "Bulgaria": "Bulgaria",
+    "Bosnia-Hertsegovina": "Bosnia-Hercegovina",
+    "Turkey": "Tyrkia",
+    "Cyprus": "Kypros",
+    "Spain": "Spania",
+    "Montenegro": "Montenegro",
+    "Kosovo": "Kosovo",
+    "Portugal": "Portugal",
+    "North Macedonia": "Nord-Makedonia",
+    "Greece": "Hellas",
+    "Albania": "Albania"
+  },
+  "nav": {
+    "europeMap": "Europakart",
+    "about": "Om",
+    "language": "Språk"
+  },
+  "header": {
+    "logoAria": "Logo, lenke til forsiden"
+  },
+  "pageTitle": {
+    "thingler": "Thingler",
+    "europeanElectricityPrices": "Europeiske strømpriser",
+    "electricityPricesFor": "Strømpriser for ",
+    "aboutThingler": "Om strømprisene hos Thingler"
+  },
+  "europeMapDetails": {
+    "title": "Strømpriser",
+    "description": "Denne siden viser gjennomsnittlige daglige strømpriser uten avgifter for europeiske land som er medlemmer av ENTSO-E (European Network of Transmission System Operators for Electricity). Prisene vises i sentraleuropeisk tid (<b>CET/CEST</b>) og er oppgitt i eurocent per kilowattime.",
+    "noPricesAvailable": "Merk at day-ahead priser for <b>i morgen</b> <b>ennå ikke er tilgjengelige</b>!",
+    "country": "Land",
+    "priceUnit": "€ cent / kWh",
+    "vat": "MVA %"
+  },
+  "countryPage": {
+    "countryNotFound": "Landet ble ikke funnet!",
+    "chartDescription": "Diagrammet nedenfor viser timepriser for strøm i {{country}}.",
+    "chartDescriptionPlural": "Diagrammene nedenfor viser timepriser for strøm i {{country}}.",
+    "currentPriceSingle": "Gjeldende strømpris i",
+    "currentPriceMultiple": "Gjeldende priser for budområdene i <b>{{country}}</b> er:",
+    "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} cent</b> per kilowattime (<b>kWh</b>).",
+    "priceInfoAt": "kl.",
+    "priceInfoIs": "er",
+    "noPricesNote": "Merk at day-ahead priser for i morgen <b>ennå ikke er tilgjengelige</b> i {{country}}!"
+  },
+  "about": {
+    "title": "Om",
+    "paragraph1": "Velkommen til Thingler sitt strømpriskart – et interaktivt og oppdatert kart for å utforske strømpriser i Europa. Kartet er bygget med React og hostet på AWS ved bruk av serverless løsninger, med mål om å holde driftskostnadene så lave som mulig. Prisdataene hentes fra ENTSO-E og oppdateres jevnlig.",
+    "paragraph2": "Kartet viser gjennomsnittlige strømpriser per land, uttrykt i eurocent per kilowattime og presentert i sentraleuropeisk tid (CET/CEST). Du kan få mer detaljer ved å klikke på et land i kartet eller ved å se tabellen.",
+    "paragraph3Start": "Kildekoden er tilgjengelig på GitHub, ",
+    "paragraph3End": ". Hvis du har spørsmål eller tilbakemeldinger, er du velkommen til å kontakte oss via GitHub.",
+    "thankYou": "Takk for at du besøkte nettstedet vårt."
+  },
+  "footer": {
+    "attribution": "Prisdataene som vises er hentet fra ENTSO-E, European Network of Transmission System Operators for Electricity. Alle priser er opprinnelig angitt i sentraleuropeisk tid (CET/CEST)."
+  },
+  "vatToggle": {
+    "localVat": "Lokal MVA",
+    "vat": "MVA"
+  },
+  "timeZone": {
+    "label": "Tidssone"
+  },
+  "dateSelector": {
+    "today": "I dag",
+    "tomorrow": "I morgen",
+    "todayPrices": "Dagens priser",
+    "tomorrowPrices": "Morgendagens priser",
+    "months": [
+      "Januar",
+      "Februar",
+      "Mars",
+      "April",
+      "Mai",
+      "Juni",
+      "Juli",
+      "August",
+      "September",
+      "Oktober",
+      "November",
+      "Desember"
+    ]
+  }
+}

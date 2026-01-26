@@ -1,0 +1,117 @@
+{
+  "countries": {
+    "Russia": "Rusija",
+    "Norway": "Norvegija",
+    "Finland": "Suomija",
+    "Sweden": "Švedija",
+    "Iceland": "Islandija",
+    "Estonia": "Estija",
+    "United Kingdom": "Jungtinė Karalystė",
+    "Latvia": "Latvija",
+    "Denmark": "Danija",
+    "Belarus": "Baltarusija",
+    "Lithuania": "Lietuva",
+    "Ireland": "Airija",
+    "Northern Ireland": "Šiaurės Airija",
+    "Poland": "Lenkija",
+    "Germany & Luxembourg": "Vokietija & Liuksemburgas",
+    "Ukraine": "Ukraina",
+    "Netherlands": "Nyderlandai",
+    "Belgium": "Belgija",
+    "France": "Prancūzija",
+    "Czech Republic": "Čekija",
+    "Slovakia": "Slovakija",
+    "Moldova": "Moldova",
+    "Romania": "Rumunija",
+    "Hungary": "Vengrija",
+    "Austria": "Austrija",
+    "Switzerland": "Šveicarija",
+    "Italy": "Italija",
+    "Malta": "Malta",
+    "Slovenia": "Slovėnija",
+    "Croatia": "Kroatija",
+    "Serbia": "Serbija",
+    "Bulgaria": "Bulgarija",
+    "Bosnia-Hertsegovina": "Bosnija ir Hercegovina",
+    "Turkey": "Turkija",
+    "Cyprus": "Kipras",
+    "Spain": "Ispanija",
+    "Montenegro": "Juodkalnija",
+    "Kosovo": "Kosovas",
+    "Portugal": "Portugalija",
+    "North Macedonia": "Šiaurės Makedonija",
+    "Greece": "Graikija",
+    "Albania": "Albanija"
+  },
+  "nav": {
+    "europeMap": "Europos žemėlapis",
+    "about": "Apie",
+    "language": "Kalba"
+  },
+  "header": {
+    "logoAria": "Logotipas, nuoroda į pagrindinį puslapį"
+  },
+  "pageTitle": {
+    "thingler": "Thingler",
+    "europeanElectricityPrices": "Elektros energijos kainos Europoje",
+    "electricityPricesFor": "Elektros energijos kainos ",
+    "aboutThingler": "Apie Thingler elektros energijos kainas"
+  },
+  "europeMapDetails": {
+    "title": "Elektros energijos kainos",
+    "description": "Šiame puslapyje pateikiamos Europos šalių, kurios yra ENTSO-E (European Network of Transmission System Operators for Electricity) narės, vidutinės dienos elektros energijos kainos be mokesčių. Kainos rodomos Vidurio Europos laiku (<b>CET/CEST</b>) ir išreiškiamos euro centais už kilovatvalandę.",
+    "noPricesAvailable": "Atkreipkite dėmesį, kad <b>rytojaus</b> day-ahead kainos <b>dar nėra prieinamos</b>!",
+    "country": "Šalis",
+    "priceUnit": "€ cent / kWh",
+    "vat": "PVM %"
+  },
+  "countryPage": {
+    "countryNotFound": "Šalis nerasta!",
+    "chartDescription": "Žemiau pateikta diagrama rodo valandines elektros energijos kainas {{country}}.",
+    "chartDescriptionPlural": "Žemiau pateiktos diagramos rodo valandines elektros energijos kainas {{country}}.",
+    "currentPriceSingle": "Dabartinė elektros energijos kaina",
+    "currentPriceMultiple": "Dabartinės kainos pasiūlymo zonose <b>{{country}}</b>:",
+    "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} centai</b> už kilovatvalandę (<b>kWh</b>).",
+    "priceInfoAt": "val.",
+    "priceInfoIs": "yra",
+    "noPricesNote": "Atkreipkite dėmesį, kad rytojaus day-ahead kainos <b>dar nėra prieinamos</b> {{country}}!"
+  },
+  "about": {
+    "title": "Apie",
+    "paragraph1": "Sveiki atvykę į Thingler elektros energijos kainų žemėlapį – interaktyvų ir nuolat atnaujinamą žemėlapį, leidžiantį tyrinėti elektros energijos kainas Europoje. Žemėlapis sukurtas naudojant React ir talpinamas AWS, pasitelkiant serverless sprendimus, siekiant kuo labiau sumažinti veiklos sąnaudas. Kainų duomenys gaunami iš ENTSO-E ir reguliariai atnaujinami.",
+    "paragraph2": "Žemėlapis rodo vidutines elektros energijos kainas pagal šalis, išreikštas euro centais už kilovatvalandę ir pateiktas Vidurio Europos laiku (CET/CEST). Daugiau informacijos galite gauti spustelėję šalį žemėlapyje arba peržiūrėję lentelę.",
+    "paragraph3Start": "Pradinis kodas pasiekiamas GitHub, ",
+    "paragraph3End": ". Jei turite klausimų ar atsiliepimų, nedvejodami susisiekite per GitHub.",
+    "thankYou": "Ačiū, kad apsilankėte mūsų svetainėje."
+  },
+  "footer": {
+    "attribution": "Rodoma kainų informacija gaunama iš ENTSO-E, European Network of Transmission System Operators for Electricity. Visos kainos iš pradžių pateikiamos Vidurio Europos laiku (CET/CEST)."
+  },
+  "vatToggle": {
+    "localVat": "Vietinis PVM",
+    "vat": "PVM"
+  },
+  "timeZone": {
+    "label": "Laiko juosta"
+  },
+  "dateSelector": {
+    "today": "Šiandien",
+    "tomorrow": "Rytoj",
+    "todayPrices": "Šiandienos kainos",
+    "tomorrowPrices": "Rytojaus kainos",
+    "months": [
+      "Sausis",
+      "Vasaris",
+      "Kovas",
+      "Balandis",
+      "Gegužė",
+      "Birželis",
+      "Liepa",
+      "Rugpjūtis",
+      "Rugsėjis",
+      "Spalis",
+      "Lapkritis",
+      "Gruodis"
+    ]
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "countries": {
+    "Russia": "Russia",
+    "Norway": "Norway",
+    "Finland": "Finland",
+    "Sweden": "Sweden",
+    "Iceland": "Iceland",
+    "Estonia": "Estonia",
+    "United Kingdom": "United Kingdom",
+    "Latvia": "Latvia",
+    "Denmark": "Denmark",
+    "Belarus": "Belarus",
+    "Lithuania": "Lithuania",
+    "Ireland": "Ireland",
+    "Northern Ireland": "Northern Ireland",
+    "Poland": "Poland",
+    "Germany & Luxembourg": "Germany & Luxembourg",
+    "Ukraine": "Ukraine",
+    "Netherlands": "Netherlands",
+    "Belgium": "Belgium",
+    "France": "France",
+    "Czech Republic": "Czech Republic",
+    "Slovakia": "Slovakia",
+    "Moldova": "Moldova",
+    "Romania": "Romania",
+    "Hungary": "Hungary",
+    "Austria": "Austria",
+    "Switzerland": "Switzerland",
+    "Italy": "Italy",
+    "Malta": "Malta",
+    "Slovenia": "Slovenia",
+    "Croatia": "Croatia",
+    "Serbia": "Serbia",
+    "Bulgaria": "Bulgaria",
+    "Bosnia-Hertsegovina": "Bosnia-Hertsegovina",
+    "Turkey": "Turkey",
+    "Cyprus": "Cyprus",
+    "Spain": "Spain",
+    "Montenegro": "Montenegro",
+    "Kosovo": "Kosovo",
+    "Portugal": "Portugal",
+    "North Macedonia": "North Macedonia",
+    "Greece": "Greece",
+    "Albania": "Albania"
+  },
+  "nav": {
+    "europeMap": "Europe Map",
+    "about": "About",
+    "language": "Language"
+  },
+  "header": {
+    "logoAria": "Logo, link to first page"
+  },
+  "pageTitle": {
+    "thingler": "Thingler",
+    "europeanElectricityPrices": "European Electricity Prices",
+    "electricityPricesFor": "Electricity Prices for ",
+    "aboutThingler": "About Thingler Electricity Prices"
+  },
+  "europeMapDetails": {
+    "title": "Electricity prices",
+    "description": "This page presents the daily average prices, tax-free, for European countries that are members of ENTSO-E - European Network of Transmission System Operators for Electricity. The prices are displayed in Central European time (<b>CET/CEST</b>) and are expressed in Euro cents per kilowatt-hour.",
+    "noPricesAvailable": "Please be aware that the day-ahead prices for <b>tomorrow</b> are <b>not yet available</b>!",
+    "country": "Country",
+    "priceUnit": "€ cent / kWh",
+    "vat": "VAT %"
+  },
+  "countryPage": {
+    "countryNotFound": "Country not found!",
+    "chartDescription": "The chart below displays the hourly electricity prices for {{country}}.",
+    "chartDescriptionPlural": "The charts below display the hourly electricity prices for {{country}}.",
+    "currentPriceSingle": "The current price of electricity in",
+    "currentPriceMultiple": "The current prices for the bidding zones of <b>{{country}}</b> are:",
+    "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} cents</b> per kilowatt-hour (<b>kWh</b>).",
+    "priceInfoAt": "at",
+    "priceInfoIs": "is",
+    "noPricesNote": "Please be aware that the day-ahead prices for tomorrow are <b>not yet available</b> for {{country}}!"
+  },
+  "about": {
+    "title": "About",
+    "paragraph1": "Welcome to Thingler's Electricity Country Map, an interactive and up-to-date map for exploring electricity prices in Europe. The map is built using React and hosted on AWS with serverless services, with the goal of keeping hosting costs as low as possible. The pricing data is sourced from ENTSO-E, and updated regularly to ensure you have access to the most accurate information.",
+    "paragraph2": "The map displays average electricity prices by country, expressed in Euro cents per kilowatt-hour and presented in the Central European Time Zone (CET/CEST). You can also access more detailed information by clicking on any of the countries on the map or by browsing the table.",
+    "paragraph3Start": "The source code is available on GitHub, ",
+    "paragraph3End": ". If you have any questions or feedback, please don't hesitate to contact through GitHub.",
+    "thankYou": "Thank you for visiting our site."
+  },
+  "footer": {
+    "attribution": "The pricing information displayed is sourced from ENTSO-E - the European Network of Transmission System Operators for Electricity. All prices are originally in Central European Time (CET/CEST)."
+  },
+  "vatToggle": {
+    "localVat": "Local VAT",
+    "vat": "VAT"
+  },
+  "timeZone": {
+    "label": "Time zone"
+  },
+  "dateSelector": {
+    "today": "Today",
+    "tomorrow": "Tomorrow",
+    "todayPrices": "Today's prices",
+    "tomorrowPrices": "Tomorrow's prices",
+    "months": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ]
+  }
+}

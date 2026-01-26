@@ -1,0 +1,117 @@
+{
+  "countries": {
+    "Russia": "Rusya",
+    "Norway": "Norveç",
+    "Finland": "Finlandiya",
+    "Sweden": "İsveç",
+    "Iceland": "İzlanda",
+    "Estonia": "Estonya",
+    "United Kingdom": "Birleşik Krallık",
+    "Latvia": "Letonya",
+    "Denmark": "Danimarka",
+    "Belarus": "Belarus",
+    "Lithuania": "Litvanya",
+    "Ireland": "İrlanda",
+    "Northern Ireland": "Kuzey İrlanda",
+    "Poland": "Polonya",
+    "Germany & Luxembourg": "Almanya & Lüksemburg",
+    "Ukraine": "Ukrayna",
+    "Netherlands": "Hollanda",
+    "Belgium": "Belçika",
+    "France": "Fransa",
+    "Czech Republic": "Çekya",
+    "Slovakia": "Slovakya",
+    "Moldova": "Moldova",
+    "Romania": "Romanya",
+    "Hungary": "Macaristan",
+    "Austria": "Avusturya",
+    "Switzerland": "İsviçre",
+    "Italy": "İtalya",
+    "Malta": "Malta",
+    "Slovenia": "Slovenya",
+    "Croatia": "Hırvatistan",
+    "Serbia": "Sırbistan",
+    "Bulgaria": "Bulgaristan",
+    "Bosnia-Hertsegovina": "Bosna-Hersek",
+    "Turkey": "Türkiye",
+    "Cyprus": "Kıbrıs",
+    "Spain": "İspanya",
+    "Montenegro": "Karadağ",
+    "Kosovo": "Kosova",
+    "Portugal": "Portekiz",
+    "North Macedonia": "Kuzey Makedonya",
+    "Greece": "Yunanistan",
+    "Albania": "Arnavutluk"
+  },
+  "nav": {
+    "europeMap": "Avrupa Haritası",
+    "about": "Hakkında",
+    "language": "Dil"
+  },
+  "header": {
+    "logoAria": "Logo, ana sayfaya bağlantı"
+  },
+  "pageTitle": {
+    "thingler": "Thingler",
+    "europeanElectricityPrices": "Avrupa elektrik fiyatları",
+    "electricityPricesFor": "Elektrik fiyatları: ",
+    "aboutThingler": "Thingler elektrik fiyatları hakkında"
+  },
+  "europeMapDetails": {
+    "title": "Elektrik fiyatları",
+    "description": "Bu sayfa, ENTSO-E (European Network of Transmission System Operators for Electricity) üyesi olan Avrupa ülkeleri için vergiler hariç günlük ortalama elektrik fiyatlarını göstermektedir. Fiyatlar Orta Avrupa Saati (<b>CET/CEST</b>) üzerinden gösterilir ve kilovat-saat başına euro sent cinsindendir.",
+    "noPricesAvailable": "<b>Yarın</b> için day-ahead fiyatlarının <b>henüz mevcut olmadığını</b> lütfen unutmayın!",
+    "country": "Ülke",
+    "priceUnit": "€ cent / kWh",
+    "vat": "KDV %"
+  },
+  "countryPage": {
+    "countryNotFound": "Ülke bulunamadı!",
+    "chartDescription": "Aşağıdaki grafik {{country}} için saatlik elektrik fiyatlarını göstermektedir.",
+    "chartDescriptionPlural": "Aşağıdaki grafikler {{country}} için saatlik elektrik fiyatlarını göstermektedir.",
+    "currentPriceSingle": "{{country}} için mevcut elektrik fiyatı",
+    "currentPriceMultiple": "<b>{{country}}</b> için teklif bölgelerindeki mevcut fiyatlar:",
+    "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} sent</b> / kilovat-saat (<b>kWh</b>).",
+    "priceInfoAt": "saat",
+    "priceInfoIs": "olarak",
+    "noPricesNote": "{{country}} için yarına ait day-ahead fiyatlarının <b>henüz mevcut olmadığını</b> lütfen unutmayın!"
+  },
+  "about": {
+    "title": "Hakkında",
+    "paragraph1": "Thingler elektrik fiyatları haritasına hoş geldiniz — Avrupa’daki elektrik fiyatlarını keşfetmek için etkileşimli ve güncel bir harita. Harita React ile geliştirilmiş olup AWS üzerinde serverless çözümler kullanılarak barındırılmaktadır. Amaç, işletme maliyetlerini mümkün olduğunca düşük tutmaktır. Fiyat verileri ENTSO-E tarafından sağlanmakta ve düzenli olarak güncellenmektedir.",
+    "paragraph2": "Harita, ülkelere göre ortalama elektrik fiyatlarını kilovat-saat başına euro sent cinsinden ve Orta Avrupa Saati (CET/CEST) üzerinden göstermektedir. Daha ayrıntılı bilgiye harita üzerindeki bir ülkeye tıklayarak veya tabloyu inceleyerek ulaşabilirsiniz.",
+    "paragraph3Start": "Kaynak kodu GitHub’da mevcuttur, ",
+    "paragraph3End": ". Sorularınız veya geri bildiriminiz varsa GitHub üzerinden bizimle iletişime geçebilirsiniz.",
+    "thankYou": "Web sitemizi ziyaret ettiğiniz için teşekkür ederiz."
+  },
+  "footer": {
+    "attribution": "Gösterilen fiyat bilgileri ENTSO-E, European Network of Transmission System Operators for Electricity kaynaklıdır. Tüm fiyatlar başlangıçta Orta Avrupa Saati (CET/CEST) üzerinden sunulmaktadır."
+  },
+  "vatToggle": {
+    "localVat": "Yerel KDV",
+    "vat": "KDV"
+  },
+  "timeZone": {
+    "label": "Saat dilimi"
+  },
+  "dateSelector": {
+    "today": "Bugün",
+    "tomorrow": "Yarın",
+    "todayPrices": "Bugünün fiyatları",
+    "tomorrowPrices": "Yarının fiyatları",
+    "months": [
+      "Ocak",
+      "Şubat",
+      "Mart",
+      "Nisan",
+      "Mayıs",
+      "Haziran",
+      "Temmuz",
+      "Ağustos",
+      "Eylül",
+      "Ekim",
+      "Kasım",
+      "Aralık"
+    ]
+  }
+}

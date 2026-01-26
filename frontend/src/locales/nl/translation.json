@@ -1,0 +1,117 @@
+{
+  "countries": {
+    "Russia": "Rusland",
+    "Norway": "Noorwegen",
+    "Finland": "Finland",
+    "Sweden": "Zweden",
+    "Iceland": "IJsland",
+    "Estonia": "Estland",
+    "United Kingdom": "Verenigd Koninkrijk",
+    "Latvia": "Letland",
+    "Denmark": "Denemarken",
+    "Belarus": "Belarus",
+    "Lithuania": "Litouwen",
+    "Ireland": "Ierland",
+    "Northern Ireland": "Noord-Ierland",
+    "Poland": "Polen",
+    "Germany & Luxembourg": "Duitsland & Luxemburg",
+    "Ukraine": "Oekraïne",
+    "Netherlands": "Nederland",
+    "Belgium": "België",
+    "France": "Frankrijk",
+    "Czech Republic": "Tsjechië",
+    "Slovakia": "Slowakije",
+    "Moldova": "Moldavië",
+    "Romania": "Roemenië",
+    "Hungary": "Hongarije",
+    "Austria": "Oostenrijk",
+    "Switzerland": "Zwitserland",
+    "Italy": "Italië",
+    "Malta": "Malta",
+    "Slovenia": "Slovenië",
+    "Croatia": "Kroatië",
+    "Serbia": "Servië",
+    "Bulgaria": "Bulgarije",
+    "Bosnia-Hertsegovina": "Bosnië en Herzegovina",
+    "Turkey": "Turkije",
+    "Cyprus": "Cyprus",
+    "Spain": "Spanje",
+    "Montenegro": "Montenegro",
+    "Kosovo": "Kosovo",
+    "Portugal": "Portugal",
+    "North Macedonia": "Noord-Macedonië",
+    "Greece": "Griekenland",
+    "Albania": "Albanië"
+  },
+  "nav": {
+    "europeMap": "Europa kaart",
+    "about": "Over",
+    "language": "Taal"
+  },
+  "header": {
+    "logoAria": "Logo, link naar de startpagina"
+  },
+  "pageTitle": {
+    "thingler": "Thingler",
+    "europeanElectricityPrices": "Europese elektriciteitsprijzen",
+    "electricityPricesFor": "Elektriciteitsprijzen voor ",
+    "aboutThingler": "Over Thingler elektriciteitsprijzen"
+  },
+  "europeMapDetails": {
+    "title": "Elektriciteitsprijzen",
+    "description": "Deze pagina toont de dagelijkse gemiddelde prijzen, exclusief belastingen, voor Europese landen die lid zijn van ENTSO-E (European Network of Transmission System Operators for Electricity). De prijzen worden weergegeven in Midden-Europese tijd (<b>CET/CEST</b>) en uitgedrukt in eurocent per kilowattuur.",
+    "noPricesAvailable": "Houd er rekening mee dat de day-ahead prijzen voor <b>morgen</b> <b>nog niet beschikbaar zijn</b>!",
+    "country": "Land",
+    "priceUnit": "€ cent / kWh",
+    "vat": "BTW %"
+  },
+  "countryPage": {
+    "countryNotFound": "Land niet gevonden!",
+    "chartDescription": "De onderstaande grafiek toont de uurlijkse elektriciteitsprijzen voor {{country}}.",
+    "chartDescriptionPlural": "De onderstaande grafieken tonen de uurlijkse elektriciteitsprijzen voor {{country}}.",
+    "currentPriceSingle": "De huidige elektriciteitsprijs in",
+    "currentPriceMultiple": "De huidige prijzen voor de biedzones in <b>{{country}}</b> zijn:",
+    "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} cent</b> per kilowattuur (<b>kWh</b>).",
+    "priceInfoAt": "om",
+    "priceInfoIs": "is",
+    "noPricesNote": "Houd er rekening mee dat de day-ahead prijzen voor morgen <b>nog niet beschikbaar zijn</b> voor {{country}}!"
+  },
+  "about": {
+    "title": "Over",
+    "paragraph1": "Welkom bij de Thingler kaart voor elektriciteitsprijzen, een interactieve en actuele kaart om elektriciteitsprijzen in Europa te verkennen. De kaart is gebouwd met React en gehost op AWS met serverless oplossingen, met als doel de operationele kosten zo laag mogelijk te houden. Prijsgegevens worden afkomstig van ENTSO-E en regelmatig bijgewerkt.",
+    "paragraph2": "De kaart toont gemiddelde elektriciteitsprijzen per land, uitgedrukt in eurocent per kilowattuur en gepresenteerd in Midden-Europese tijd (CET/CEST). U kunt meer gedetailleerde informatie krijgen door op een land op de kaart te klikken of door de tabel te bekijken.",
+    "paragraph3Start": "De broncode is beschikbaar op GitHub, ",
+    "paragraph3End": ". Als u vragen of feedback heeft, neem dan gerust contact op via GitHub.",
+    "thankYou": "Bedankt voor uw bezoek aan onze website."
+  },
+  "footer": {
+    "attribution": "De weergegeven prijsinformatie is afkomstig van ENTSO-E, European Network of Transmission System Operators for Electricity. Alle prijzen zijn oorspronkelijk weergegeven in Midden-Europese tijd (CET/CEST)."
+  },
+  "vatToggle": {
+    "localVat": "Lokale BTW",
+    "vat": "BTW"
+  },
+  "timeZone": {
+    "label": "Tijdzone"
+  },
+  "dateSelector": {
+    "today": "Vandaag",
+    "tomorrow": "Morgen",
+    "todayPrices": "Prijzen van vandaag",
+    "tomorrowPrices": "Prijzen van morgen",
+    "months": [
+      "Januari",
+      "Februari",
+      "Maart",
+      "April",
+      "Mei",
+      "Juni",
+      "Juli",
+      "Augustus",
+      "September",
+      "Oktober",
+      "November",
+      "December"
+    ]
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "countries": {
+    "Russia": "Venemaa",
+    "Norway": "Norra",
+    "Finland": "Soome",
+    "Sweden": "Rootsi",
+    "Iceland": "Island",
+    "Estonia": "Eesti",
+    "United Kingdom": "Ühendkuningriik",
+    "Latvia": "Läti",
+    "Denmark": "Taani",
+    "Belarus": "Valgevene",
+    "Lithuania": "Leedu",
+    "Ireland": "Iirimaa",
+    "Northern Ireland": "Põhja-Iirimaa",
+    "Poland": "Poola",
+    "Germany & Luxembourg": "Saksamaa & Luksemburg",
+    "Ukraine": "Ukraina",
+    "Netherlands": "Holland",
+    "Belgium": "Belgia",
+    "France": "Prantsusmaa",
+    "Czech Republic": "Tšehhi",
+    "Slovakia": "Slovakkia",
+    "Moldova": "Moldova",
+    "Romania": "Rumeenia",
+    "Hungary": "Ungari",
+    "Austria": "Austria",
+    "Switzerland": "Šveits",
+    "Italy": "Itaalia",
+    "Malta": "Malta",
+    "Slovenia": "Sloveenia",
+    "Croatia": "Horvaatia",
+    "Serbia": "Serbia",
+    "Bulgaria": "Bulgaaria",
+    "Bosnia-Hertsegovina": "Bosnia ja Hertsegoviina",
+    "Turkey": "Türgi",
+    "Cyprus": "Küpros",
+    "Spain": "Hispaania",
+    "Montenegro": "Montenegro",
+    "Kosovo": "Kosovo",
+    "Portugal": "Portugal",
+    "North Macedonia": "Põhja-Makedoonia",
+    "Greece": "Kreeka",
+    "Albania": "Albaania"
+  },
+  "nav": {
+    "europeMap": "Euroopa kaart",
+    "about": "Teave",
+    "language": "Keel"
+  },
+  "header": {
+    "logoAria": "Logo, link avalehele"
+  },
+  "pageTitle": {
+    "thingler": "Thingler",
+    "europeanElectricityPrices": "Euroopa elektrihinnad",
+    "electricityPricesFor": "Elektrihinnad riigis ",
+    "aboutThingler": "Thingleri elektrihindade kohta"
+  },
+  "europeMapDetails": {
+    "title": "Elektrihinnad",
+    "description": "See leht kuvab Euroopa riikide päevased keskmised elektrihinnad ilma maksudeta, mis on ENTSO-E (European Network of Transmission System Operators for Electricity) liikmed. Hinnad on esitatud Kesk-Euroopa aja järgi (<b>CET/CEST</b>) ning väljendatud eurosentides kilovatt-tunni kohta.",
+    "noPricesAvailable": "Pane tähele, et <b>homse</b> päeva day-ahead hinnad <b>ei ole veel saadaval</b>!",
+    "country": "Riik",
+    "priceUnit": "€ sent / kWh",
+    "vat": "KM %"
+  },
+  "countryPage": {
+    "countryNotFound": "Riiki ei leitud!",
+    "chartDescription": "Allolev graafik näitab tunnipõhiseid elektrihindu riigis {{country}}.",
+    "chartDescriptionPlural": "Allolevad graafikud näitavad tunnipõhiseid elektrihindu riigis {{country}}.",
+    "currentPriceSingle": "Elektri hetkehind riigis",
+    "currentPriceMultiple": "Riigi <b>{{country}}</b> pakkumispiirkondade hetkehinnad on:",
+    "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} senti</b> kilovatt-tunni kohta (<b>kWh</b>).",
+    "priceInfoAt": "kell",
+    "priceInfoIs": "on",
+    "noPricesNote": "Pane tähele, et homse päeva day-ahead hinnad <b>ei ole veel saadaval</b> riigis {{country}}!"
+  },
+  "about": {
+    "title": "Teave",
+    "paragraph1": "Tere tulemast Thingleri elektrihindade kaardile – interaktiivsele ja ajakohasele kaardile, mis võimaldab uurida Euroopa elektrihindu. Kaart on loodud Reactiga ja majutatud AWS-is, kasutades serverless lahendusi, eesmärgiga hoida tegevuskulud võimalikult madalad. Hinnaandmed pärinevad ENTSO-E-st ja neid uuendatakse regulaarselt.",
+    "paragraph2": "Kaart kuvab riikide keskmised elektrihinnad eurosentides kilovatt-tunni kohta ning esitatuna Kesk-Euroopa aja järgi (CET/CEST). Täpsema teabe saamiseks klõpsa kaardil olevale riigile või vaata tabelit.",
+    "paragraph3Start": "Lähtekood on saadaval GitHubis, ",
+    "paragraph3End": ". Kui sul on küsimusi või tagasisidet, võta julgelt ühendust GitHubi kaudu.",
+    "thankYou": "Täname, et külastasid meie veebisaiti."
+  },
+  "footer": {
+    "attribution": "Kuvatud hinnaandmed pärinevad ENTSO-E-st, European Network of Transmission System Operators for Electricity. Kõik hinnad on algselt esitatud Kesk-Euroopa aja järgi (CET/CEST)."
+  },
+  "vatToggle": {
+    "localVat": "Kohalik KM",
+    "vat": "KM"
+  },
+  "timeZone": {
+    "label": "Ajavöönd"
+  },
+  "dateSelector": {
+    "today": "Täna",
+    "tomorrow": "Homme",
+    "todayPrices": "Tänased hinnad",
+    "tomorrowPrices": "Homsed hinnad",
+    "months": [
+      "Jaanuar",
+      "Veebruar",
+      "Märts",
+      "Aprill",
+      "Mai",
+      "Juuni",
+      "Juuli",
+      "August",
+      "September",
+      "Oktoober",
+      "November",
+      "Detsember"
+    ]
+  }
+}

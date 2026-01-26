@@ -1,0 +1,117 @@
+{
+  "countries": {
+    "Russia": "Rusko",
+    "Norway": "Nórsko",
+    "Finland": "Fínsko",
+    "Sweden": "Švédsko",
+    "Iceland": "Island",
+    "Estonia": "Estónsko",
+    "United Kingdom": "Spojené kráľovstvo",
+    "Latvia": "Lotyšsko",
+    "Denmark": "Dánsko",
+    "Belarus": "Bielorusko",
+    "Lithuania": "Litva",
+    "Ireland": "Írsko",
+    "Northern Ireland": "Severné Írsko",
+    "Poland": "Poľsko",
+    "Germany & Luxembourg": "Nemecko & Luxembursko",
+    "Ukraine": "Ukrajina",
+    "Netherlands": "Holandsko",
+    "Belgium": "Belgicko",
+    "France": "Francúzsko",
+    "Czech Republic": "Česko",
+    "Slovakia": "Slovensko",
+    "Moldova": "Moldavsko",
+    "Romania": "Rumunsko",
+    "Hungary": "Maďarsko",
+    "Austria": "Rakúsko",
+    "Switzerland": "Švajčiarsko",
+    "Italy": "Taliansko",
+    "Malta": "Malta",
+    "Slovenia": "Slovinsko",
+    "Croatia": "Chorvátsko",
+    "Serbia": "Srbsko",
+    "Bulgaria": "Bulharsko",
+    "Bosnia-Hertsegovina": "Bosna a Hercegovina",
+    "Turkey": "Turecko",
+    "Cyprus": "Cyprus",
+    "Spain": "Španielsko",
+    "Montenegro": "Čierna Hora",
+    "Kosovo": "Kosovo",
+    "Portugal": "Portugalsko",
+    "North Macedonia": "Severné Macedónsko",
+    "Greece": "Grécko",
+    "Albania": "Albánsko"
+  },
+  "nav": {
+    "europeMap": "Mapa Európy",
+    "about": "O projekte",
+    "language": "Jazyk"
+  },
+  "header": {
+    "logoAria": "Logo, odkaz na úvodnú stránku"
+  },
+  "pageTitle": {
+    "thingler": "Thingler",
+    "europeanElectricityPrices": "Ceny elektriny v Európe",
+    "electricityPricesFor": "Ceny elektriny pre ",
+    "aboutThingler": "O cenách elektriny Thingler"
+  },
+  "europeMapDetails": {
+    "title": "Ceny elektriny",
+    "description": "Táto stránka zobrazuje priemerné denné ceny bez daní pre európske krajiny, ktoré sú členmi ENTSO-E (European Network of Transmission System Operators for Electricity). Ceny sú zobrazené v stredoeurópskom čase (<b>CET/CEST</b>) a sú vyjadrené v eurocentoch za kilowatthodinu.",
+    "noPricesAvailable": "Upozorňujeme, že day-ahead ceny na <b>zajtra</b> <b>ešte nie sú dostupné</b>!",
+    "country": "Krajina",
+    "priceUnit": "€ cent / kWh",
+    "vat": "DPH %"
+  },
+  "countryPage": {
+    "countryNotFound": "Krajina nebola nájdená!",
+    "chartDescription": "Graf nižšie zobrazuje hodinové ceny elektriny pre {{country}}.",
+    "chartDescriptionPlural": "Grafy nižšie zobrazujú hodinové ceny elektriny pre {{country}}.",
+    "currentPriceSingle": "Aktuálna cena elektriny v",
+    "currentPriceMultiple": "Aktuálne ceny pre ponukové zóny v <b>{{country}}</b> sú:",
+    "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} centov</b> za kilowatthodinu (<b>kWh</b>).",
+    "priceInfoAt": "o",
+    "priceInfoIs": "je",
+    "noPricesNote": "Upozorňujeme, že day-ahead ceny na zajtra <b>ešte nie sú dostupné</b> pre {{country}}!"
+  },
+  "about": {
+    "title": "O projekte",
+    "paragraph1": "Vitajte na mape cien elektriny Thingler — interaktívnej a aktualizovanej mape na skúmanie cien elektriny v Európe. Mapa je vytvorená v Reacte a hostovaná na AWS pomocou serverless riešení s cieľom udržať prevádzkové náklady čo najnižšie. Údaje o cenách pochádzajú z ENTSO-E a pravidelne sa aktualizujú.",
+    "paragraph2": "Mapa zobrazuje priemerné ceny elektriny podľa krajín, vyjadrené v eurocentoch za kilowatthodinu a prezentované v stredoeurópskom čase (CET/CEST). Podrobnejšie informácie získate kliknutím na krajinu na mape alebo prehliadaním tabuľky.",
+    "paragraph3Start": "Zdrojový kód je dostupný na GitHube, ",
+    "paragraph3End": ". Ak máte otázky alebo spätnú väzbu, neváhajte nás kontaktovať cez GitHub.",
+    "thankYou": "Ďakujeme, že ste navštívili našu stránku."
+  },
+  "footer": {
+    "attribution": "Zobrazené cenové informácie pochádzajú z ENTSO-E, European Network of Transmission System Operators for Electricity. Všetky ceny sú pôvodne uvedené v stredoeurópskom čase (CET/CEST)."
+  },
+  "vatToggle": {
+    "localVat": "Miestna DPH",
+    "vat": "DPH"
+  },
+  "timeZone": {
+    "label": "Časové pásmo"
+  },
+  "dateSelector": {
+    "today": "Dnes",
+    "tomorrow": "Zajtra",
+    "todayPrices": "Dnešné ceny",
+    "tomorrowPrices": "Zajtrajšie ceny",
+    "months": [
+      "Január",
+      "Február",
+      "Marec",
+      "Apríl",
+      "Máj",
+      "Jún",
+      "Júl",
+      "August",
+      "September",
+      "Október",
+      "November",
+      "December"
+    ]
+  }
+}

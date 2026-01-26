@@ -1,0 +1,117 @@
+{
+  "countries": {
+    "Russia": "Rusia",
+    "Norway": "Norvegjia",
+    "Finland": "Finlanda",
+    "Sweden": "Suedia",
+    "Iceland": "Islanda",
+    "Estonia": "Estonia",
+    "United Kingdom": "Mbretëria e Bashkuar",
+    "Latvia": "Letonia",
+    "Denmark": "Danimarka",
+    "Belarus": "Bjellorusia",
+    "Lithuania": "Lituania",
+    "Ireland": "Irlanda",
+    "Northern Ireland": "Irlanda e Veriut",
+    "Poland": "Polonia",
+    "Germany & Luxembourg": "Gjermania & Luksemburgu",
+    "Ukraine": "Ukraina",
+    "Netherlands": "Holanda",
+    "Belgium": "Belgjika",
+    "France": "Franca",
+    "Czech Republic": "Republika Çeke",
+    "Slovakia": "Sllovakia",
+    "Moldova": "Moldavia",
+    "Romania": "Rumania",
+    "Hungary": "Hungaria",
+    "Austria": "Austria",
+    "Switzerland": "Zvicra",
+    "Italy": "Italia",
+    "Malta": "Malta",
+    "Slovenia": "Sllovenia",
+    "Croatia": "Kroacia",
+    "Serbia": "Serbia",
+    "Bulgaria": "Bullgaria",
+    "Bosnia-Hertsegovina": "Bosnja dhe Hercegovina",
+    "Turkey": "Turqia",
+    "Cyprus": "Qipro",
+    "Spain": "Spanja",
+    "Montenegro": "Mali i Zi",
+    "Kosovo": "Kosova",
+    "Portugal": "Portugalia",
+    "North Macedonia": "Maqedonia e Veriut",
+    "Greece": "Greqia",
+    "Albania": "Shqipëria"
+  },
+  "nav": {
+    "europeMap": "Harta e Europës",
+    "about": "Rreth",
+    "language": "Gjuha"
+  },
+  "header": {
+    "logoAria": "Logo, lidhje drejt faqes kryesore"
+  },
+  "pageTitle": {
+    "thingler": "Thingler",
+    "europeanElectricityPrices": "Çmimet e energjisë elektrike në Europë",
+    "electricityPricesFor": "Çmimet e energjisë për ",
+    "aboutThingler": "Rreth çmimeve të energjisë Thingler"
+  },
+  "europeMapDetails": {
+    "title": "Çmimet e energjisë",
+    "description": "Kjo faqe paraqet çmimet mesatare ditore, pa taksa, për vendet europiane që janë anëtare të ENTSO-E (European Network of Transmission System Operators for Electricity). Çmimet shfaqen sipas orës së Europës Qendrore (<b>CET/CEST</b>) dhe shprehen në eurocent për kilovat-orë.",
+    "noPricesAvailable": "Ju lutemi vini re se çmimet day-ahead për <b>nesër</b> <b>nuk janë ende të disponueshme</b>!",
+    "country": "Shteti",
+    "priceUnit": "€ cent / kWh",
+    "vat": "TVSH %"
+  },
+  "countryPage": {
+    "countryNotFound": "Shteti nuk u gjet!",
+    "chartDescription": "Grafiku më poshtë tregon çmimet orare të energjisë elektrike për {{country}}.",
+    "chartDescriptionPlural": "Grafikët më poshtë tregojnë çmimet orare të energjisë elektrike për {{country}}.",
+    "currentPriceSingle": "Çmimi aktual i energjisë elektrike në",
+    "currentPriceMultiple": "Çmimet aktuale për zonat e ofertimit të <b>{{country}}</b> janë:",
+    "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} cent</b> për kilovat-orë (<b>kWh</b>).",
+    "priceInfoAt": "në orën",
+    "priceInfoIs": "është",
+    "noPricesNote": "Ju lutemi vini re se çmimet day-ahead për nesër <b>nuk janë ende të disponueshme</b> për {{country}}!"
+  },
+  "about": {
+    "title": "Rreth",
+    "paragraph1": "Mirë se vini në hartën e çmimeve të energjisë Thingler, një hartë interaktive dhe e përditësuar për të eksploruar çmimet e energjisë elektrike në Europë. Harta është ndërtuar me React dhe hostuar në AWS duke përdorur zgjidhje serverless, me synimin për të mbajtur kostot e funksionimit sa më të ulëta. Të dhënat e çmimeve merren nga ENTSO-E dhe përditësohen rregullisht.",
+    "paragraph2": "Harta tregon çmimet mesatare të energjisë elektrike sipas shtetit, të shprehura në eurocent për kilovat-orë dhe të paraqitura sipas orës së Europës Qendrore (CET/CEST). Mund të merrni informacion më të detajuar duke klikuar mbi një shtet në hartë ose duke shfletuar tabelën.",
+    "paragraph3Start": "Kodi burimor është i disponueshëm në GitHub, ",
+    "paragraph3End": ". Nëse keni pyetje ose komente, mos hezitoni të na kontaktoni përmes GitHub.",
+    "thankYou": "Faleminderit që vizituat faqen tonë."
+  },
+  "footer": {
+    "attribution": "Të dhënat e çmimeve të shfaqura merren nga ENTSO-E, European Network of Transmission System Operators for Electricity. Të gjitha çmimet janë fillimisht sipas orës së Europës Qendrore (CET/CEST)."
+  },
+  "vatToggle": {
+    "localVat": "TVSH lokale",
+    "vat": "TVSH"
+  },
+  "timeZone": {
+    "label": "Zona kohore"
+  },
+  "dateSelector": {
+    "today": "Sot",
+    "tomorrow": "Nesër",
+    "todayPrices": "Çmimet e sotme",
+    "tomorrowPrices": "Çmimet e nesërme",
+    "months": [
+      "Janar",
+      "Shkurt",
+      "Mars",
+      "Prill",
+      "Maj",
+      "Qershor",
+      "Korrik",
+      "Gusht",
+      "Shtator",
+      "Tetor",
+      "Nëntor",
+      "Dhjetor"
+    ]
+  }
+}
