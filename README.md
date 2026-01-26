@@ -34,6 +34,10 @@ Thingler's Electricity Country Map, an interactive and up-to-date map for explor
 * [Get data API instructions](get-data/README.md)
 * [Fetch data from ENTSO-E instructions](fetch-prices/README.md)
 
+## Translations
+
+The application supports 36 languages. The translations have been generated with AI and may contain errors or inaccuracies. If you notice any translation issues, please open a pull request with corrections. Translation files are located in `frontend/src/locales/`.
+
 ## Contributing
 
 Feel free to open a pull request if you have any improvements or fixes.
