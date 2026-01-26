@@ -1,20 +1,26 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import BiddingZoneList from "../BiddingZoneList";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const Page = (props) => {
+  const { t } = useTranslation();
   const { country } = useParams();
   const biddingZoneList = BiddingZoneList();
   const countryName = biddingZoneList.reduce(
     (previous, zone) => (zone.country === country ? zone.country : previous),
     null
   );
-  let title = "European Electricity Prices";
-  if (countryName) {
-    title = props.title + countryName || "European Electricity Prices";
-  } else {
-    title = props.title || "European Electricity Prices";
+
+  let title = t("pageTitle.europeanElectricityPrices");
+  if (props.titleKey) {
+    const translatedTitle = t(props.titleKey);
+    if (countryName) {
+      title = translatedTitle + countryName;
+    } else {
+      title = translatedTitle;
+    }
   }
 
   useEffect(() => {

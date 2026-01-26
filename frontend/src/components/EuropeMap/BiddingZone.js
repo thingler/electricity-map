@@ -1,11 +1,13 @@
-import { Link } from "react-router-dom";
-
+import { useTranslation } from "react-i18next";
 import EnergyPriceLevels from "../../components/EnergyPriceLevels";
+import LocalizedLink from "../LocalizedLink";
 
 import css from "./BiddingZone.module.css";
 
 function BiddingZone(props) {
+  const { t } = useTranslation();
   const priceLevels = EnergyPriceLevels(props.priceLevelVAT);
+  const translatedCountry = t(`countries.${props.country}`, props.country);
 
   let price = props.children;
   if (price !== null) {
@@ -36,8 +38,8 @@ function BiddingZone(props) {
   }
 
   return (
-    <Link
-      aria-label={`Electricity prices for ${props.country}`}
+    <LocalizedLink
+      aria-label={`${t("pageTitle.electricityPricesFor")}${translatedCountry}`}
       to={`/country/${props.country}`}
     >
       <path className={className} d={props.d} />
@@ -46,7 +48,7 @@ function BiddingZone(props) {
           {price}
         </text>
       )}
-    </Link>
+    </LocalizedLink>
   );
 }
 

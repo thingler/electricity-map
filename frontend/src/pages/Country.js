@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 
 import { useContext, useEffect } from "react";
+import { useTranslation, Trans } from "react-i18next";
 
 import DateSelector from "../components/DateSelector/DateSelector";
 import TimeZone from "../components/TimeZone/TimeZone";
@@ -32,6 +33,7 @@ import CountryMap from "../components/CountryMap/CountryMap";
 import css from "./Country.module.css";
 
 function CountryPage() {
+  const { t } = useTranslation();
   const mapPageCtx = useContext(MapPageContext);
   const dateCtx = useContext(DateContext);
   const timeZoneCtx = useContext(TimeZoneContext);
@@ -52,6 +54,11 @@ function CountryPage() {
     (previous, zone) => (zone.country === country ? zone.country : previous),
     null
   );
+
+  // Translated country name for display
+  const translatedCountryName = countryName
+    ? t(`countries.${countryName}`, countryName)
+    : null;
 
   const vat = vatCtx.vat ? countryList[countryName].vat / 100 + 1 : 1;
   const priceLevels = EnergyPriceLevels(vat);
@@ -209,17 +216,24 @@ function CountryPage() {
   });
 
   function CountryInfo(props) {
+    const conjunction = props.biddingZones > 1
+      ? t("countryPage.priceInfoAt")
+      : t("countryPage.priceInfoIs");
+    const price = ((props.currentPrice * 10 * vat) / 100).toFixed(2);
+
     return (
       <div className={props.biddingZones > 1 ? css.manyBzs : css.oneBz}>
-        <b>{props.name}</b> {props.biddingZones > 1 ? "at" : "is"}{" "}
-        <b>{((props.currentPrice * 10 * vat) / 100).toFixed(2)} cents</b> per
-        kilowatt-hour (<b>kWh</b>).
+        <Trans
+          i18nKey="countryPage.priceInfo"
+          values={{ name: props.name, conjunction, price }}
+          components={{ b: <b /> }}
+        />
       </div>
     );
   }
 
   const infoJsx = countryBzs.map((zone, index) => {
-    const name = zone.description ? zone.description : countryName;
+    const name = zone.description ? zone.description : translatedCountryName;
     return (
       <CountryInfo
         key={index}
@@ -236,30 +250,37 @@ function CountryPage() {
         <CountryMap country={countryName} zones={countryBzs} vat={vat} />
       </div>
       <div className={css.details}>
-        <h1>{countryName ? countryName : "Country not found!"}</h1>
+        <h1>{countryName ? translatedCountryName : t("countryPage.countryNotFound")}</h1>
         {countryName && (
           <>
             <div className={css.description}>
-              The chart{chartJsx.length > 1 && "s"} below displays the hourly
-              electricity prices for {countryName}.
+              {chartJsx.length > 1
+                ? t("countryPage.chartDescriptionPlural", { country: translatedCountryName })
+                : t("countryPage.chartDescription", { country: translatedCountryName })}
               {now.date === dateCtx.date && infoJsx.length === 1 && (
                 <div className={css.info}>
-                  The current price of electricity in {infoJsx}
+                  {t("countryPage.currentPriceSingle")} {infoJsx}
                 </div>
               )}
               {now.date === dateCtx.date && infoJsx.length > 1 && (
                 <div className={css.info}>
                   <div>
-                    The current prices for the bidding zones of{" "}
-                    <b>{countryName}</b> are:
+                    <Trans
+                      i18nKey="countryPage.currentPriceMultiple"
+                      values={{ country: translatedCountryName }}
+                      components={{ b: <b /> }}
+                    />
                   </div>
                   {infoJsx}
                 </div>
               )}
               {!enoughNewDataExist && now.date < dateCtx.date && (
                 <div className={css.note}>
-                  Please be aware that the day-ahead prices for tomorrow are{" "}
-                  <b>not yet availabless</b> for {countryName}!
+                  <Trans
+                    i18nKey="countryPage.noPricesNote"
+                    values={{ country: translatedCountryName }}
+                    components={{ b: <b /> }}
+                  />
                 </div>
               )}
             </div>
