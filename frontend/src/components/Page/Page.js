@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import BiddingZoneList from "../BiddingZoneList";
-import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const Page = (props) => {
   const { t } = useTranslation();
@@ -17,7 +16,8 @@ const Page = (props) => {
   if (props.titleKey) {
     const translatedTitle = t(props.titleKey);
     if (countryName) {
-      title = translatedTitle + countryName;
+      const translatedCountryName = t(`countries.${countryName}`, countryName);
+      title = translatedTitle + translatedCountryName;
     } else {
       title = translatedTitle;
     }
@@ -27,27 +27,7 @@ const Page = (props) => {
     document.title = title;
   }, [title]);
 
-  return (
-    <>
-      <HelmetProvider>
-        <Helmet>
-          <meta property="og:url" content={window.location.href} />
-          <meta property="og:type" content="website" />
-          <meta property="og:title" content={title} />
-          <meta property="og:description" content={`Thingler - ${title}`} />
-          <meta property="og:image" content="https://thingler.io/map.png" />
-
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta property="twitter:domain" content="thingler.io" />
-          <meta property="twitter:url" content={window.location.href} />
-          <meta name="twitter:title" content={title} />
-          <meta name="twitter:description" content={`Thingler - ${title}`} />
-          <meta name="twitter:image" content="https://thingler.io/map.png" />
-        </Helmet>
-      </HelmetProvider>
-      {props.children}
-    </>
-  );
+  return props.children;
 };
 
 export default Page;
