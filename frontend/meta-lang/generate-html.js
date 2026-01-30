@@ -7,7 +7,7 @@ const translations = require("./translations");
 // Configuration
 const BUILD_DIR = path.join(__dirname, "../build");
 const BASE_URL = "https://thingler.io";
-const IMAGE_URL = "https://thingler.io/map.png";
+const IMAGE_URL = "https://thingler.io/map.jpg";
 
 const supportedLangs = [
   "en",
@@ -117,7 +117,7 @@ function escapeHTML(str) {
 }
 
 function injectMeta(html, title, description, url) {
-  const metaTags = `<meta charset="utf-8"/><title>${escapeHTML(title)}</title><meta property="og:url" content="${escapeHTML(url)}"/><meta property="og:type" content="website"/><meta property="og:title" content="${escapeHTML(title)}"/><meta property="og:description" content="${escapeHTML(description)}"/><meta property="og:image" content="${IMAGE_URL}"/><meta name="twitter:card" content="summary_large_image"/><meta property="twitter:domain" content="thingler.io"/><meta property="twitter:url" content="${escapeHTML(url)}"/><meta name="twitter:title" content="${escapeHTML(title)}"/><meta name="twitter:description" content="${escapeHTML(description)}"/><meta name="twitter:image" content="${IMAGE_URL}"/><meta name="description" content="${escapeHTML(description)}"/>`;
+  const metaTags = `<meta charset="utf-8"/><title>${escapeHTML(title)}</title><meta property="og:url" content="${escapeHTML(url)}"/><meta property="og:type" content="website"/><meta property="og:title" content="${escapeHTML(title)}"/><meta property="og:description" content="${escapeHTML(description)}"/><meta property="og:image" content="${IMAGE_URL}"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta name="twitter:card" content="summary_large_image"/><meta property="twitter:domain" content="thingler.io"/><meta property="twitter:url" content="${escapeHTML(url)}"/><meta name="twitter:title" content="${escapeHTML(title)}"/><meta name="twitter:description" content="${escapeHTML(description)}"/><meta name="twitter:image" content="${IMAGE_URL}"/><meta name="twitter:image:width" content="1200"/><meta name="twitter:image:height" content="630"/><meta name="description" content="${escapeHTML(description)}"/>`;
 
   // Remove existing charset and title tags
   html = html.replace(/<meta\s+charset=["'][^"']*["']\s*\/?>/gi, "");
