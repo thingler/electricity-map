@@ -30,7 +30,7 @@ function MapPage() {
       if (dateCtx.date !== urlDate) {
         dateCtx.updateDate(urlDate);
       }
-    } else if (!urlDate && dateCtx.date) {
+    } else if (!urlDate) {
       // No date in URL means today
       const today = dateCtx.now().date;
       if (dateCtx.date !== today) {

@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState } from "react";
 
 const DateContext = createContext({
   date: "",
@@ -43,12 +43,6 @@ export function DateContextProvider(props) {
       currentTime60MUTC: `${year}-${month}-${day} ${d.getUTCHours().toString().padStart(2, "0")}:00:00`,
     };
   }
-
-  useEffect(() => {
-    const d = new Date();
-    const now = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
-    updateDate(now);
-  }, []);
 
   const context = {
     date: date,
