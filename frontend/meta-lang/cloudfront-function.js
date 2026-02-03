@@ -16,8 +16,8 @@ function handler(event) {
     uri = uri.slice(0, -1);
   }
 
-  // Root or /map -> /index.html
-  if (uri === "/" || uri === "/map") {
+  // Root or /map or /map/{date} -> /index.html
+  if (uri === "/" || uri === "/map" || /^\/map\/\d{4}-\d{2}-\d{2}$/.test(uri)) {
     request.uri = "/index.html";
     return request;
   }
@@ -67,8 +67,8 @@ function handler(event) {
     var lang = match[1];
     var rest = uri.substring(lang.length + 1); // Remove /{lang}
 
-    // /{lang} or /{lang}/map -> /{lang}/index.html
-    if (rest === "" || rest === "/map") {
+    // /{lang} or /{lang}/map or /{lang}/map/{date} -> /{lang}/index.html
+    if (rest === "" || rest === "/map" || /^\/map\/\d{4}-\d{2}-\d{2}$/.test(rest)) {
       request.uri = "/" + lang + "/index.html";
       return request;
     }
@@ -79,9 +79,11 @@ function handler(event) {
       return request;
     }
 
-    // /{lang}/country/{name} -> /{lang}/country/{name}/index.html
+    // /{lang}/country/{name} or /{lang}/country/{name}/{date} -> /{lang}/country/{name}/index.html
     if (rest.startsWith("/country/")) {
-      request.uri = uri + "/index.html";
+      // Strip date suffix if present (YYYY-MM-DD)
+      var countryPath = uri.replace(/\/\d{4}-\d{2}-\d{2}$/, "");
+      request.uri = countryPath + "/index.html";
       return request;
     }
   } else {
@@ -91,9 +93,11 @@ function handler(event) {
       return request;
     }
 
-    // /country/{name} -> /country/{name}/index.html
+    // /country/{name} or /country/{name}/{date} -> /country/{name}/index.html
     if (uri.startsWith("/country/")) {
-      request.uri = uri + "/index.html";
+      // Strip date suffix if present (YYYY-MM-DD)
+      var countryPath = uri.replace(/\/\d{4}-\d{2}-\d{2}$/, "");
+      request.uri = countryPath + "/index.html";
       return request;
     }
   }

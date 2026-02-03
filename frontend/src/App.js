@@ -38,7 +38,23 @@ function AppRoutes() {
         }
       />
       <Route
+        path="/map/:date"
+        element={
+          <Page titleKey="pageTitle.europeanElectricityPrices">
+            <MapPage />
+          </Page>
+        }
+      />
+      <Route
         path="/country/:country"
+        element={
+          <Page titleKey="pageTitle.electricityPricesFor">
+            <CountryPage />
+          </Page>
+        }
+      />
+      <Route
+        path="/country/:country/:date"
         element={
           <Page titleKey="pageTitle.electricityPricesFor">
             <CountryPage />
@@ -81,7 +97,23 @@ function LanguageRoutes() {
         }
       />
       <Route
+        path="/map/:date"
+        element={
+          <Page titleKey="pageTitle.europeanElectricityPrices">
+            <MapPage />
+          </Page>
+        }
+      />
+      <Route
         path="/country/:country"
+        element={
+          <Page titleKey="pageTitle.electricityPricesFor">
+            <CountryPage />
+          </Page>
+        }
+      />
+      <Route
+        path="/country/:country/:date"
         element={
           <Page titleKey="pageTitle.electricityPricesFor">
             <CountryPage />

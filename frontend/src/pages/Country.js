@@ -1,6 +1,6 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { useTranslation, Trans } from "react-i18next";
 
 import DateSelector from "../components/DateSelector/DateSelector";
@@ -38,6 +38,9 @@ function CountryPage() {
   const dateCtx = useContext(DateContext);
   const timeZoneCtx = useContext(TimeZoneContext);
   const vatCtx = useContext(VATContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const isInitialMount = useRef(true);
 
   useEffect(() => {
     analyticsPageView();
@@ -49,7 +52,40 @@ function CountryPage() {
 
   const countryPriceCtx = useContext(CountryPriceContext);
   const biddingZoneList = BiddingZoneList();
-  const { country } = useParams();
+  const { country, date: urlDate } = useParams();
+
+  // Sync date from URL (on load and when navigating back/forward)
+  useEffect(() => {
+    if (urlDate && /^\d{4}-\d{2}-\d{2}$/.test(urlDate)) {
+      if (dateCtx.date !== urlDate) {
+        dateCtx.updateDate(urlDate);
+      }
+    } else if (!urlDate && dateCtx.date) {
+      // No date in URL means today
+      const today = dateCtx.now().date;
+      if (dateCtx.date !== today) {
+        dateCtx.updateDate(today);
+      }
+    }
+  }, [urlDate]);
+
+  // Update URL when date changes via DateSelector
+  useEffect(() => {
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
+    if (dateCtx.date && country) {
+      const today = dateCtx.now().date;
+      const basePath = location.pathname.split("/country/")[0];
+      const newPath = dateCtx.date === today
+        ? `${basePath}/country/${country}`
+        : `${basePath}/country/${country}/${dateCtx.date}`;
+      if (location.pathname !== newPath) {
+        navigate(newPath);
+      }
+    }
+  }, [dateCtx.date]);
   const countryName = biddingZoneList.reduce(
     (previous, zone) => (zone.country === country ? zone.country : previous),
     null
