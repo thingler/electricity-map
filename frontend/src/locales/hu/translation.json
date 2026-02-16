@@ -74,7 +74,13 @@
     "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} cent</b> kilowattóránként (<b>kWh</b>).",
     "priceInfoAt": "időpont:",
     "priceInfoIs": "értéke",
-    "noPricesNote": "Kérjük, vegye figyelembe, hogy a holnapi day-ahead árak <b>még nem érhetők el</b> {{country}} esetében!"
+    "noPricesNote": "Kérjük, vegye figyelembe, hogy a holnapi day-ahead árak <b>még nem érhetők el</b> {{country}} esetében!",
+    "summaryTitle": "Napi összefoglaló",
+    "summaryTitleZone": "Napi összefoglaló: {{zone}}",
+    "averagePrice": "Átlag",
+    "cheapestHour": "Legolcsóbb",
+    "mostExpensiveHour": "Legdrágább",
+    "medianPrice": "Medián"
   },
   "about": {
     "title": "Névjegy",

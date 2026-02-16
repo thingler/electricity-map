@@ -74,7 +74,13 @@
     "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} Cent</b> pro Kilowattstonn (<b>kWh</b>).",
     "priceInfoAt": "um",
     "priceInfoIs": "ass",
-    "noPricesNote": "W.e.g. notéieren, datt d’day-ahead Präisser fir muer <b>nach net verfügbar sinn</b> a {{country}}!"
+    "noPricesNote": "W.e.g. notéieren, datt d'day-ahead Präisser fir muer <b>nach net verfügbar sinn</b> a {{country}}!",
+    "summaryTitle": "Dagesoiwwersiicht",
+    "summaryTitleZone": "Dagesoiwwersiicht fir {{zone}}",
+    "averagePrice": "Duerchschnëtt",
+    "cheapestHour": "Billegsten",
+    "mostExpensiveHour": "Déiersten",
+    "medianPrice": "Median"
   },
   "about": {
     "title": "Iwwer",

@@ -74,7 +74,13 @@
     "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} sent</b> á hverja kílóvattstund (<b>kWh</b>).",
     "priceInfoAt": "kl.",
     "priceInfoIs": "er",
-    "noPricesNote": "Vinsamlegast athugið að day-ahead verð fyrir morgundaginn <b>eru ekki enn tiltæk</b> fyrir {{country}}!"
+    "noPricesNote": "Vinsamlegast athugið að day-ahead verð fyrir morgundaginn <b>eru ekki enn tiltæk</b> fyrir {{country}}!",
+    "summaryTitle": "Daglegt yfirlit",
+    "summaryTitleZone": "Daglegt yfirlit fyrir {{zone}}",
+    "averagePrice": "Meðaltal",
+    "cheapestHour": "Ódýrast",
+    "mostExpensiveHour": "Dýrast",
+    "medianPrice": "Miðgildi"
   },
   "about": {
     "title": "Um",

@@ -74,7 +74,13 @@
     "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} centai</b> už kilovatvalandę (<b>kWh</b>).",
     "priceInfoAt": "val.",
     "priceInfoIs": "yra",
-    "noPricesNote": "Atkreipkite dėmesį, kad rytojaus day-ahead kainos <b>dar nėra prieinamos</b> {{country}}!"
+    "noPricesNote": "Atkreipkite dėmesį, kad rytojaus day-ahead kainos <b>dar nėra prieinamos</b> {{country}}!",
+    "summaryTitle": "Dienos suvestinė",
+    "summaryTitleZone": "Dienos suvestinė zonai {{zone}}",
+    "averagePrice": "Vidurkis",
+    "cheapestHour": "Pigiausia",
+    "mostExpensiveHour": "Brangiausia",
+    "medianPrice": "Mediana"
   },
   "about": {
     "title": "Apie",

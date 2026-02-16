@@ -74,7 +74,13 @@
     "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} centów</b> za kilowatogodzinę (<b>kWh</b>).",
     "priceInfoAt": "o",
     "priceInfoIs": "wynosi",
-    "noPricesNote": "Zwróć uwagę, że ceny day-ahead na jutro <b>nie są jeszcze dostępne</b> w kraju {{country}}!"
+    "noPricesNote": "Zwróć uwagę, że ceny day-ahead na jutro <b>nie są jeszcze dostępne</b> w kraju {{country}}!",
+    "summaryTitle": "Podsumowanie dnia",
+    "summaryTitleZone": "Podsumowanie dnia dla {{zone}}",
+    "averagePrice": "Średnia",
+    "cheapestHour": "Najtańsza",
+    "mostExpensiveHour": "Najdroższa",
+    "medianPrice": "Mediana"
   },
   "about": {
     "title": "O projekcie",

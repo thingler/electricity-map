@@ -74,7 +74,13 @@
     "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} céntimos</b> por kilovatio-hora (<b>kWh</b>).",
     "priceInfoAt": "a las",
     "priceInfoIs": "es",
-    "noPricesNote": "Ten en cuenta que los precios day-ahead para mañana <b>aún no están disponibles</b> en {{country}}."
+    "noPricesNote": "Ten en cuenta que los precios day-ahead para mañana <b>aún no están disponibles</b> en {{country}}.",
+    "summaryTitle": "Resumen diario",
+    "summaryTitleZone": "Resumen diario para {{zone}}",
+    "averagePrice": "Promedio",
+    "cheapestHour": "Más barata",
+    "mostExpensiveHour": "Más cara",
+    "medianPrice": "Mediana"
   },
   "about": {
     "title": "Acerca de",

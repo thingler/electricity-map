@@ -74,7 +74,13 @@
     "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} cent</b> in aghaidh an chileavatuair (<b>kWh</b>).",
     "priceInfoAt": "ag",
     "priceInfoIs": "is",
-    "noPricesNote": "Tabhair faoi deara nach bhfuil praghsanna day-ahead do amárach <b>ar fáil fós</b> i {{country}}!"
+    "noPricesNote": "Tabhair faoi deara nach bhfuil praghsanna day-ahead do amárach <b>ar fáil fós</b> i {{country}}!",
+    "summaryTitle": "Achoimre laethúil",
+    "summaryTitleZone": "Achoimre laethúil do {{zone}}",
+    "averagePrice": "Meán",
+    "cheapestHour": "Is saoire",
+    "mostExpensiveHour": "Is daoire",
+    "medianPrice": "Airmheán"
   },
   "about": {
     "title": "Maidir",

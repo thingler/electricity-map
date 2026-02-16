@@ -74,7 +74,13 @@
     "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} євроцентів</b> за кіловат-годину (<b>kWh</b>).",
     "priceInfoAt": "о",
     "priceInfoIs": "становить",
-    "noPricesNote": "Зверніть увагу, що ціни day-ahead на завтра <b>ще недоступні</b> у {{country}}!"
+    "noPricesNote": "Зверніть увагу, що ціни day-ahead на завтра <b>ще недоступні</b> у {{country}}!",
+    "summaryTitle": "Денний огляд",
+    "summaryTitleZone": "Денний огляд для {{zone}}",
+    "averagePrice": "Середнє",
+    "cheapestHour": "Найдешевша",
+    "mostExpensiveHour": "Найдорожча",
+    "medianPrice": "Медіана"
   },
   "about": {
     "title": "Про проєкт",

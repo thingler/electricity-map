@@ -74,7 +74,13 @@
     "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} ċenteżmi</b> għal kull kilowatt-siegħa (<b>kWh</b>).",
     "priceInfoAt": "fil-",
     "priceInfoIs": "huwa",
-    "noPricesNote": "Jekk jogħġbok innota li l-prezzijiet day-ahead għal għada <b>għadhom mhumiex disponibbli</b> għal {{country}}!"
+    "noPricesNote": "Jekk jogħġbok innota li l-prezzijiet day-ahead għal għada <b>għadhom mhumiex disponibbli</b> għal {{country}}!",
+    "summaryTitle": "Sommarju tal-ġurnata",
+    "summaryTitleZone": "Sommarju tal-ġurnata għal {{zone}}",
+    "averagePrice": "Medja",
+    "cheapestHour": "L-irħas",
+    "mostExpensiveHour": "L-ogħla",
+    "medianPrice": "Medjana"
   },
   "about": {
     "title": "Dwar",

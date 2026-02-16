@@ -74,7 +74,13 @@
     "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} λεπτά</b> ανά κιλοβατώρα (<b>kWh</b>).",
     "priceInfoAt": "στις",
     "priceInfoIs": "είναι",
-    "noPricesNote": "Παρακαλούμε σημειώστε ότι οι day-ahead τιμές για αύριο <b>δεν είναι ακόμη διαθέσιμες</b> για {{country}}!"
+    "noPricesNote": "Παρακαλούμε σημειώστε ότι οι day-ahead τιμές για αύριο <b>δεν είναι ακόμη διαθέσιμες</b> για {{country}}!",
+    "summaryTitle": "Ημερήσια σύνοψη",
+    "summaryTitleZone": "Ημερήσια σύνοψη για {{zone}}",
+    "averagePrice": "Μέσος όρος",
+    "cheapestHour": "Φθηνότερη",
+    "mostExpensiveHour": "Ακριβότερη",
+    "medianPrice": "Διάμεσος"
   },
   "about": {
     "title": "Σχετικά",

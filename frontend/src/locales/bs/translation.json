@@ -74,7 +74,13 @@
     "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} centi</b> po kilovat-satu (<b>kWh</b>).",
     "priceInfoAt": "u",
     "priceInfoIs": "je",
-    "noPricesNote": "Imajte na umu da day-ahead cijene za sutra <b>još nisu dostupne</b> za {{country}}!"
+    "noPricesNote": "Imajte na umu da day-ahead cijene za sutra <b>još nisu dostupne</b> za {{country}}!",
+    "summaryTitle": "Dnevni pregled",
+    "summaryTitleZone": "Dnevni pregled za {{zone}}",
+    "averagePrice": "Prosjek",
+    "cheapestHour": "Najjeftinije",
+    "mostExpensiveHour": "Najskuplje",
+    "medianPrice": "Medijan"
   },
   "about": {
     "title": "O nama",

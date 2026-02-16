@@ -176,6 +176,72 @@ function CountryPage() {
     return previous;
   }, []);
 
+  function formatTime(utcTime, offset) {
+    const time = utcTime.replace(" ", "T");
+    const d = new Date(time);
+    d.setHours(d.getHours() + offset * -1);
+    const hour = `${d.getHours()}`.padStart(2, "0");
+    const minute = `${d.getMinutes()}`.padStart(2, "0");
+    return `${hour}:${minute}`;
+  }
+
+  function toDisplayPrice(priceMWh) {
+    return (Math.round(priceMWh * 10 * vat) / 100).toFixed(2);
+  }
+
+  function ZoneSummary({ zone, showTitle }) {
+    if (!zone.data || zone.data.length === 0) return null;
+
+    let sum = 0;
+    let min = { price: Infinity, time: "" };
+    let max = { price: -Infinity, time: "" };
+
+    for (const item of zone.data) {
+      sum += item.price;
+      if (item.price < min.price) {
+        min = { price: item.price, time: item.time };
+      }
+      if (item.price > max.price) {
+        max = { price: item.price, time: item.time };
+      }
+    }
+
+    const avg = sum / zone.data.length;
+    const sorted = [...zone.data].sort((a, b) => a.price - b.price);
+    const mid = Math.floor(sorted.length / 2);
+    const median = sorted.length % 2 !== 0
+      ? sorted[mid].price
+      : (sorted[mid - 1].price + sorted[mid].price) / 2;
+
+    return (
+      <div className={css.summarySection}>
+        {showTitle && (
+          <div className={css.summaryTitle}>{t("countryPage.summaryTitle")}</div>
+        )}
+        <div className={css.summaryGrid}>
+          <div className={css.summaryItem}>
+            <div className={css.summaryLabel}>{t("countryPage.averagePrice")}</div>
+            <div className={css.summaryValue}>{toDisplayPrice(avg)} c/kWh</div>
+          </div>
+          <div className={css.summaryItem}>
+            <div className={css.summaryLabel}>{t("countryPage.medianPrice")}</div>
+            <div className={css.summaryValue}>{toDisplayPrice(median)} c/kWh</div>
+          </div>
+          <div className={css.summaryItem}>
+            <div className={css.summaryLabel}>{t("countryPage.cheapestHour")}</div>
+            <div className={css.summaryValue}>{toDisplayPrice(min.price)} c/kWh</div>
+            <div className={css.summaryTime}>{formatTime(min.time, offset)}</div>
+          </div>
+          <div className={css.summaryItem}>
+            <div className={css.summaryLabel}>{t("countryPage.mostExpensiveHour")}</div>
+            <div className={css.summaryValue}>{toDisplayPrice(max.price)} c/kWh</div>
+            <div className={css.summaryTime}>{formatTime(max.time, offset)}</div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   function ChartBar(props) {
     return (
       <div className={css.chartBox}>
@@ -239,7 +305,7 @@ function CountryPage() {
         },
         title: {
           display: true,
-          text: zone.description ? `${zone.description} (c / kWh)` : "c / kWh",
+          text: "c / kWh",
           font: {
             size: "16",
             family: "latoRegular, sans-serif",
@@ -260,7 +326,19 @@ function CountryPage() {
       },
     };
 
-    return <ChartBar key={index} options={options} data={chartData} />;
+    const chart = <ChartBar key={`chart-${index}`} options={options} data={chartData} />;
+
+    if (countryBzs.length > 1) {
+      return (
+        <div key={index}>
+          <h2 className={css.zoneName}>{zone.description}</h2>
+          <ZoneSummary zone={zone} showTitle={false} />
+          {chart}
+        </div>
+      );
+    }
+
+    return chart;
   });
 
   function CountryInfo(props) {
@@ -343,6 +421,9 @@ function CountryPage() {
                 <DateSelector />
               </div>
             </div>
+            {countryBzs.length === 1 && (
+              <ZoneSummary zone={countryBzs[0]} showTitle={true} />
+            )}
           </>
         )}
         {chartJsx}

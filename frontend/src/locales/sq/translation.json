@@ -74,7 +74,13 @@
     "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} cent</b> për kilovat-orë (<b>kWh</b>).",
     "priceInfoAt": "në orën",
     "priceInfoIs": "është",
-    "noPricesNote": "Ju lutemi vini re se çmimet day-ahead për nesër <b>nuk janë ende të disponueshme</b> për {{country}}!"
+    "noPricesNote": "Ju lutemi vini re se çmimet day-ahead për nesër <b>nuk janë ende të disponueshme</b> për {{country}}!",
+    "summaryTitle": "Përmbledhje ditore",
+    "summaryTitleZone": "Përmbledhje ditore për {{zone}}",
+    "averagePrice": "Mesatarja",
+    "cheapestHour": "Më e lirë",
+    "mostExpensiveHour": "Më e shtrenjtë",
+    "medianPrice": "Mediana"
   },
   "about": {
     "title": "Rreth",

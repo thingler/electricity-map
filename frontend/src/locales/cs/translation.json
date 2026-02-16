@@ -74,7 +74,13 @@
     "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} centů</b> za kilowatthodinu (<b>kWh</b>).",
     "priceInfoAt": "v",
     "priceInfoIs": "je",
-    "noPricesNote": "Upozorňujeme, že day-ahead ceny pro zítra <b>zatím nejsou k dispozici</b> pro {{country}}!"
+    "noPricesNote": "Upozorňujeme, že day-ahead ceny pro zítra <b>zatím nejsou k dispozici</b> pro {{country}}!",
+    "summaryTitle": "Denní přehled",
+    "summaryTitleZone": "Denní přehled pro {{zone}}",
+    "averagePrice": "Průměr",
+    "cheapestHour": "Nejlevnější",
+    "mostExpensiveHour": "Nejdražší",
+    "medianPrice": "Medián"
   },
   "about": {
     "title": "O projektu",

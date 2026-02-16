@@ -74,7 +74,13 @@
     "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} sent</b> / kilovat-saat (<b>kWh</b>).",
     "priceInfoAt": "saat",
     "priceInfoIs": "olarak",
-    "noPricesNote": "{{country}} için yarına ait day-ahead fiyatlarının <b>henüz mevcut olmadığını</b> lütfen unutmayın!"
+    "noPricesNote": "{{country}} için yarına ait day-ahead fiyatlarının <b>henüz mevcut olmadığını</b> lütfen unutmayın!",
+    "summaryTitle": "Günlük özet",
+    "summaryTitleZone": "{{zone}} için günlük özet",
+    "averagePrice": "Ortalama",
+    "cheapestHour": "En ucuz",
+    "mostExpensiveHour": "En pahalı",
+    "medianPrice": "Medyan"
   },
   "about": {
     "title": "Hakkında",

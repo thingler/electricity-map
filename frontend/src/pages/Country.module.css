@@ -42,6 +42,48 @@
   display: block;
 }
 
+.details .zoneName {
+  font-size: 1.2rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.details .summarySection {
+  padding-bottom: 1.5rem;
+}
+
+.details .summarySection .summaryTitle {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.details .summarySection .summaryGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.details .summarySection .summaryItem {
+  background-color: #f4eeee;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+}
+
+.details .summarySection .summaryLabel {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.details .summarySection .summaryValue {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.details .summarySection .summaryTime {
+  font-size: 0.75rem;
+  color: #666;
+}
+
 .actionContainer {
   display: flex;
   flex-direction: row;

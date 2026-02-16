@@ -74,7 +74,13 @@
     "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} eurocenți</b> pe kilowatt-oră (<b>kWh</b>).",
     "priceInfoAt": "la",
     "priceInfoIs": "este",
-    "noPricesNote": "Vă rugăm să rețineți că prețurile day-ahead pentru mâine <b>nu sunt încă disponibile</b> în {{country}}!"
+    "noPricesNote": "Vă rugăm să rețineți că prețurile day-ahead pentru mâine <b>nu sunt încă disponibile</b> în {{country}}!",
+    "summaryTitle": "Rezumat zilnic",
+    "summaryTitleZone": "Rezumat zilnic pentru {{zone}}",
+    "averagePrice": "Medie",
+    "cheapestHour": "Cea mai ieftină",
+    "mostExpensiveHour": "Cea mai scumpă",
+    "medianPrice": "Mediană"
   },
   "about": {
     "title": "Despre",

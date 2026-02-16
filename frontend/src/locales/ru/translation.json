@@ -74,7 +74,13 @@
     "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} евроцентов</b> за киловатт-час (<b>kWh</b>).",
     "priceInfoAt": "в",
     "priceInfoIs": "составляет",
-    "noPricesNote": "Обратите внимание, что цены day-ahead на завтра <b>ещё недоступны</b> в {{country}}!"
+    "noPricesNote": "Обратите внимание, что цены day-ahead на завтра <b>ещё недоступны</b> в {{country}}!",
+    "summaryTitle": "Дневная сводка",
+    "summaryTitleZone": "Дневная сводка для {{zone}}",
+    "averagePrice": "Среднее",
+    "cheapestHour": "Самая низкая",
+    "mostExpensiveHour": "Самая высокая",
+    "medianPrice": "Медиана"
   },
   "about": {
     "title": "О проекте",

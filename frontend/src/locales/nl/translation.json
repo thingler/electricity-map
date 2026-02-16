@@ -74,7 +74,13 @@
     "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} cent</b> per kilowattuur (<b>kWh</b>).",
     "priceInfoAt": "om",
     "priceInfoIs": "is",
-    "noPricesNote": "Houd er rekening mee dat de day-ahead prijzen voor morgen <b>nog niet beschikbaar zijn</b> voor {{country}}!"
+    "noPricesNote": "Houd er rekening mee dat de day-ahead prijzen voor morgen <b>nog niet beschikbaar zijn</b> voor {{country}}!",
+    "summaryTitle": "Dagelijks overzicht",
+    "summaryTitleZone": "Dagelijks overzicht voor {{zone}}",
+    "averagePrice": "Gemiddelde",
+    "cheapestHour": "Goedkoopste",
+    "mostExpensiveHour": "Duurste",
+    "medianPrice": "Mediaan"
   },
   "about": {
     "title": "Over",

@@ -74,7 +74,13 @@
     "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} senttiä</b> kilowattitunnilta (<b>kWh</b>).",
     "priceInfoAt": "klo",
     "priceInfoIs": "on",
-    "noPricesNote": "Huomioithan, että huomisen päivän day-ahead-hinnat <b>eivät ole vielä saatavilla</b> maassa {{country}}!"
+    "noPricesNote": "Huomioithan, että huomisen päivän day-ahead-hinnat <b>eivät ole vielä saatavilla</b> maassa {{country}}!",
+    "summaryTitle": "Päivän yhteenveto",
+    "summaryTitleZone": "Päivän yhteenveto alueelle {{zone}}",
+    "averagePrice": "Keskiarvo",
+    "cheapestHour": "Halvin",
+    "mostExpensiveHour": "Kallein",
+    "medianPrice": "Mediaani"
   },
   "about": {
     "title": "Tietoa",

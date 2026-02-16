@@ -74,7 +74,13 @@
     "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} цента</b> за киловатчас (<b>kWh</b>).",
     "priceInfoAt": "в",
     "priceInfoIs": "е",
-    "noPricesNote": "Моля, имайте предвид, че day-ahead цените за утре <b>все още не са налични</b> за {{country}}!"
+    "noPricesNote": "Моля, имайте предвид, че day-ahead цените за утре <b>все още не са налични</b> за {{country}}!",
+    "summaryTitle": "Дневно обобщение",
+    "summaryTitleZone": "Дневно обобщение за {{zone}}",
+    "averagePrice": "Средна",
+    "cheapestHour": "Най-ниска",
+    "mostExpensiveHour": "Най-висока",
+    "medianPrice": "Медиана"
   },
   "about": {
     "title": "За проекта",

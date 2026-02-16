@@ -74,7 +74,13 @@
     "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} cent</b> per kilowattime (<b>kWh</b>).",
     "priceInfoAt": "kl.",
     "priceInfoIs": "er",
-    "noPricesNote": "Merk at day-ahead priser for i morgen <b>ennå ikke er tilgjengelige</b> i {{country}}!"
+    "noPricesNote": "Merk at day-ahead priser for i morgen <b>ennå ikke er tilgjengelige</b> i {{country}}!",
+    "summaryTitle": "Daglig oversikt",
+    "summaryTitleZone": "Daglig oversikt for {{zone}}",
+    "averagePrice": "Gjennomsnitt",
+    "cheapestHour": "Billigste",
+    "mostExpensiveHour": "Dyreste",
+    "medianPrice": "Median"
   },
   "about": {
     "title": "Om",

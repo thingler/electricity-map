@@ -74,7 +74,13 @@
     "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} eurocents</b> per kilowattura (<b>kWh</b>).",
     "priceInfoAt": "a las",
     "priceInfoIs": "è",
-    "noPricesNote": "Per plaschair resguardai che ils pretschs day-ahead per damaun <b>na èn anc betg disponibels</b> en {{country}}!"
+    "noPricesNote": "Per plaschair resguardai che ils pretschs day-ahead per damaun <b>na èn anc betg disponibels</b> en {{country}}!",
+    "summaryTitle": "Resumaziun dal di",
+    "summaryTitleZone": "Resumaziun dal di per {{zone}}",
+    "averagePrice": "Media",
+    "cheapestHour": "Pli bunmartgà",
+    "mostExpensiveHour": "Pli chara",
+    "medianPrice": "Mediana"
   },
   "about": {
     "title": "Davart",

@@ -74,7 +74,13 @@
     "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} centi</b> par kilovatstundu (<b>kWh</b>).",
     "priceInfoAt": "plkst.",
     "priceInfoIs": "ir",
-    "noPricesNote": "Lūdzu, ņemiet vērā, ka day-ahead cenas rītdienai <b>vēl nav pieejamas</b> valstī {{country}}!"
+    "noPricesNote": "Lūdzu, ņemiet vērā, ka day-ahead cenas rītdienai <b>vēl nav pieejamas</b> valstī {{country}}!",
+    "summaryTitle": "Dienas kopsavilkums",
+    "summaryTitleZone": "Dienas kopsavilkums zonai {{zone}}",
+    "averagePrice": "Vidējā",
+    "cheapestHour": "Lētākā",
+    "mostExpensiveHour": "Dārgākā",
+    "medianPrice": "Mediāna"
   },
   "about": {
     "title": "Par",

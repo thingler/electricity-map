@@ -74,7 +74,13 @@
     "priceInfo": "<b>{{name}}</b> {{conjunction}} <b>{{price}} centesimi</b> per kilowattora (<b>kWh</b>).",
     "priceInfoAt": "alle",
     "priceInfoIs": "è",
-    "noPricesNote": "Tieni presente che i prezzi day-ahead per domani <b>non sono ancora disponibili</b> per {{country}}!"
+    "noPricesNote": "Tieni presente che i prezzi day-ahead per domani <b>non sono ancora disponibili</b> per {{country}}!",
+    "summaryTitle": "Riepilogo giornaliero",
+    "summaryTitleZone": "Riepilogo giornaliero per {{zone}}",
+    "averagePrice": "Media",
+    "cheapestHour": "Più economica",
+    "mostExpensiveHour": "Più costosa",
+    "medianPrice": "Mediana"
   },
   "about": {
     "title": "Informazioni",
