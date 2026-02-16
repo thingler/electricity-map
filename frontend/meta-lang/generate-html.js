@@ -116,8 +116,21 @@ function escapeHTML(str) {
     .replace(/"/g, "&quot;");
 }
 
-function injectMeta(html, title, description, url, lang) {
-  const metaTags = `<meta charset="utf-8"/><title>${escapeHTML(title)}</title><meta property="og:url" content="${escapeHTML(url)}"/><meta property="og:type" content="website"/><meta property="og:title" content="${escapeHTML(title)}"/><meta property="og:description" content="${escapeHTML(description)}"/><meta property="og:image" content="${IMAGE_URL}"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta name="twitter:card" content="summary_large_image"/><meta property="twitter:domain" content="thingler.io"/><meta property="twitter:url" content="${escapeHTML(url)}"/><meta name="twitter:title" content="${escapeHTML(title)}"/><meta name="twitter:description" content="${escapeHTML(description)}"/><meta name="twitter:image" content="${IMAGE_URL}"/><meta name="twitter:image:width" content="1200"/><meta name="twitter:image:height" content="630"/><meta name="description" content="${escapeHTML(description)}"/>`;
+function generateHreflangTags(pagePath) {
+  const tags = supportedLangs.map((l) => {
+    const prefix = l === "en" ? "" : `/${l}`;
+    return `<link rel="alternate" hreflang="${l}" href="${BASE_URL}${prefix}${pagePath}"/>`;
+  });
+  // x-default points to the English version
+  tags.push(
+    `<link rel="alternate" hreflang="x-default" href="${BASE_URL}${pagePath}"/>`,
+  );
+  return tags.join("");
+}
+
+function injectMeta(html, title, description, url, lang, hreflangTags) {
+  const canonical = `<link rel="canonical" href="${escapeHTML(url)}"/>`;
+  const metaTags = `<meta charset="utf-8"/><title>${escapeHTML(title)}</title>${canonical}${hreflangTags}<meta property="og:url" content="${escapeHTML(url)}"/><meta property="og:type" content="website"/><meta property="og:title" content="${escapeHTML(title)}"/><meta property="og:description" content="${escapeHTML(description)}"/><meta property="og:image" content="${IMAGE_URL}"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta name="twitter:card" content="summary_large_image"/><meta property="twitter:domain" content="thingler.io"/><meta property="twitter:url" content="${escapeHTML(url)}"/><meta name="twitter:title" content="${escapeHTML(title)}"/><meta name="twitter:description" content="${escapeHTML(description)}"/><meta name="twitter:image" content="${IMAGE_URL}"/><meta name="twitter:image:width" content="1200"/><meta name="twitter:image:height" content="630"/><meta name="description" content="${escapeHTML(description)}"/>`;
 
   // Set html lang attribute
   html = html.replace(/<html\s+lang=["'][^"']*["']/i, `<html lang="${lang}"`);
@@ -134,6 +147,10 @@ function injectMeta(html, title, description, url, lang) {
 
   // Remove existing description meta tag
   html = html.replace(/<meta[^>]*name=["']description["'][^>]*>/gi, "");
+
+  // Remove existing canonical and hreflang tags
+  html = html.replace(/<link\s+rel=["']canonical["'][^>]*>/gi, "");
+  html = html.replace(/<link\s+rel=["']alternate["'][^>]*hreflang[^>]*>/gi, "");
 
   // Insert after <head>
   html = html.replace(/(<head[^>]*>)/i, `$1${metaTags}`);
@@ -163,7 +180,8 @@ function generatePages() {
       const title = getTranslation(lang, "title.map");
       const description = getTranslation(lang, "description.map");
       const url = `${BASE_URL}${langPrefix}/map`;
-      const html = injectMeta(sourceHtml, title, description, url, lang);
+      const hreflangTags = generateHreflangTags("/map");
+      const html = injectMeta(sourceHtml, title, description, url, lang, hreflangTags);
 
       if (lang === "en") {
         // For English, write to root index.html
@@ -180,7 +198,8 @@ function generatePages() {
       const title = getTranslation(lang, "title.about");
       const description = getTranslation(lang, "description.about");
       const url = `${BASE_URL}${langPrefix}/about`;
-      const html = injectMeta(sourceHtml, title, description, url, lang);
+      const hreflangTags = generateHreflangTags("/about");
+      const html = injectMeta(sourceHtml, title, description, url, lang, hreflangTags);
 
       const aboutDir = path.join(langDir, "about");
       ensureDir(aboutDir);
@@ -201,7 +220,8 @@ function generatePages() {
       );
       const encodedCountry = encodeURIComponent(country);
       const url = `${BASE_URL}${langPrefix}/country/${encodedCountry}`;
-      const html = injectMeta(sourceHtml, title, description, url, lang);
+      const hreflangTags = generateHreflangTags(`/country/${encodedCountry}`);
+      const html = injectMeta(sourceHtml, title, description, url, lang, hreflangTags);
 
       const countryDir = path.join(langDir, "country", country);
       ensureDir(countryDir);

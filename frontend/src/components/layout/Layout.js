@@ -8,10 +8,12 @@ import { LanguageContextProvider } from "../../store/LanguageContext";
 
 import Header from "./Header";
 import Footer from "./Footer";
+import HeadLinks from "./HeadLinks";
 
 function Layout(props) {
   return (
     <LanguageContextProvider>
+      <HeadLinks />
       <TimeZoneContextProvider>
         <DateContextProvider>
           <BzPriceContextProvider>
