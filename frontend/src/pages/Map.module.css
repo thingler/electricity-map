@@ -8,7 +8,7 @@
   flex: 0 0 65%;
   align-self: auto;
   /* background-color: #dddfd4; */
-  background-color: #E5DEDA;
+  background: linear-gradient(to right, #eae5e2 0%, #ddd7d3 100%);
   text-align: right;
 }
 
@@ -25,5 +25,6 @@
   }
   .text {
     margin: 4rem 0.7rem 0;
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.08);
   }
 }
