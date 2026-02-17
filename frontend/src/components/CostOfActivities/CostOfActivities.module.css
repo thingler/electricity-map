@@ -1,0 +1,86 @@
+.costSection {
+  padding-top: 1rem;
+}
+
+.costSection .sectionTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.costSection .grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.costSection .card {
+  background-color: #f4eeee;
+  border-radius: 4px;
+  padding: 0.75rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.costSection .iconCircle {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #e8d5c4;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.costSection .cardContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.costSection .cardTitle {
+  font-weight: bold;
+  font-size: 0.95rem;
+  margin-bottom: 0.15rem;
+}
+
+.costSection .mainCost {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.costSection .arrows {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.costSection .arrowDown {
+  color: #2a9d5c;
+}
+
+.costSection .arrowUp {
+  color: #8a5574;
+}
+
+.costSection .cardDesc {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+@media (min-width: 35em) {
+  .costSection .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 70em) {
+  .costSection .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

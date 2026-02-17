@@ -29,6 +29,7 @@ import {
 import { Bar } from "react-chartjs-2";
 
 import CountryMap from "../components/CountryMap/CountryMap";
+import CostOfActivities from "../components/CostOfActivities/CostOfActivities";
 
 import css from "./Country.module.css";
 
@@ -341,6 +342,33 @@ function CountryPage() {
     return chart;
   });
 
+  // Compute country-level avg/min/max prices (EUR/MWh) for CostOfActivities
+  let countryAvg = null;
+  let countryMin = null;
+  let countryMax = null;
+  if (countryBzs.length > 0) {
+    let avgSum = 0;
+    let avgCount = 0;
+    let globalMin = Infinity;
+    let globalMax = -Infinity;
+    for (const zone of countryBzs) {
+      if (!zone.data || zone.data.length === 0) continue;
+      let zoneSum = 0;
+      for (const item of zone.data) {
+        zoneSum += item.price;
+        if (item.price < globalMin) globalMin = item.price;
+        if (item.price > globalMax) globalMax = item.price;
+      }
+      avgSum += zoneSum / zone.data.length;
+      avgCount++;
+    }
+    if (avgCount > 0) {
+      countryAvg = avgSum / avgCount;
+      countryMin = globalMin;
+      countryMax = globalMax;
+    }
+  }
+
   function CountryInfo(props) {
     const conjunction = props.biddingZones > 1
       ? t("countryPage.priceInfoAt")
@@ -427,6 +455,7 @@ function CountryPage() {
           </>
         )}
         {chartJsx}
+        <CostOfActivities avg={countryAvg} min={countryMin} max={countryMax} vat={vat} />
       </div>
     </div>
   );
