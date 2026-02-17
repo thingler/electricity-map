@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import Page from "./components/Page/Page";
 import RootPage from "./pages/Root";
 import MapPage from "./pages/Map";
@@ -45,6 +45,7 @@ function AppRoutes() {
           </Page>
         }
       />
+      <Route path="/country" element={<Navigate to="/map" replace />} />
       <Route
         path="/country/:country"
         element={
@@ -104,6 +105,7 @@ function LanguageRoutes() {
           </Page>
         }
       />
+      <Route path="/country" element={<Navigate to="../map" replace />} />
       <Route
         path="/country/:country"
         element={
