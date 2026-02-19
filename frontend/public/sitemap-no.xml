@@ -46,7 +46,10 @@
     <loc>https://thingler.io/no/country/France</loc>
   </url>
   <url>
-    <loc>https://thingler.io/no/country/Germany%20%26%20Luxembourg</loc>
+    <loc>https://thingler.io/no/country/Germany</loc>
+  </url>
+  <url>
+    <loc>https://thingler.io/no/country/Luxembourg</loc>
   </url>
   <url>
     <loc>https://thingler.io/no/country/Greece</loc>

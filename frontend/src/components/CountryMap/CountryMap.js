@@ -8,10 +8,13 @@ function CountryMap(props) {
   const biddingZoneList = BiddingZoneList();
   let viewBox = "";
 
+  // Countries to match for this view (handles shared bidding zones)
+  const matchCountries = props.matchCountries || [props.country];
+
   const mapData = biddingZoneList.map((zone) => {
     let price = null;
 
-    if (zone.country === props.country) {
+    if (matchCountries.includes(zone.country)) {
       viewBox = zone.viewBox;
       const averagePrice = props.zones.reduce((previous, cZone) => {
         if (zone.bz !== cZone.bz) {
@@ -29,7 +32,7 @@ function CountryMap(props) {
 
     return (
       <BiddingZone
-        key={zone.bz}
+        key={`${zone.bz}-${zone.country}`}
         country={zone.country}
         d={zone.d}
         textX={zone.textX}

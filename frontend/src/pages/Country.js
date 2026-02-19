@@ -87,10 +87,13 @@ function CountryPage() {
       }
     }
   }, [dateCtx.date]);
+
+  // Find the country in BiddingZoneList
   const countryName = biddingZoneList.reduce(
-    (previous, zone) => (zone.country === country ? zone.country : previous),
+    (prev, zone) => (zone.country === country ? zone.country : prev),
     null
   );
+  const matchCountries = countryName ? [countryName] : [];
 
   // Translated country name for display
   const translatedCountryName = countryName
@@ -100,11 +103,15 @@ function CountryPage() {
   const vat = vatCtx.vat ? countryList[countryName].vat / 100 + 1 : 1;
   const priceLevels = EnergyPriceLevels(vat);
 
+  const matchKey = matchCountries.join(",");
   useEffect(() => {
     if (dateCtx.date) {
-      countryPriceCtx.updateCountryPrice(countryName, dateCtx.date);
+      for (const c of matchCountries) {
+        countryPriceCtx.updateCountryPrice(c, dateCtx.date);
+      }
     }
-  }, [countryName, dateCtx.date]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [matchKey, dateCtx.date]);
 
   ChartJS.register(
     CategoryScale,
@@ -129,7 +136,7 @@ function CountryPage() {
       enoughNewDataExist = true;
     }
 
-    if (zone.country === countryName && bzPriceData) {
+    if (matchCountries.includes(zone.country) && bzPriceData) {
       let bzData60M = bzPriceData.reduce((previous, data) => {
         if (data.resolution === "PT60M") {
           previous.push(data);
@@ -401,7 +408,7 @@ function CountryPage() {
   return (
     <div className={css.flexContainer}>
       <div className={css.map}>
-        <CountryMap country={countryName} zones={countryBzs} vat={vat} />
+        <CountryMap country={countryName} matchCountries={matchCountries} zones={countryBzs} vat={vat} />
       </div>
       <div className={css.details}>
         <h1>{countryName ? translatedCountryName : t("countryPage.countryNotFound")}</h1>

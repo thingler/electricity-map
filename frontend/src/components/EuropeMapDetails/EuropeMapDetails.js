@@ -65,7 +65,8 @@ function EuropeMapDetails() {
       return previous;
     }, {});
 
-    return Object.keys(countries).map((countryName) => {
+    const rows = [];
+    for (const countryName of Object.keys(countries)) {
       const zones = countries[countryName];
       const translatedName = t(`countries.${countryName}`, countryName);
       const avgPrice =
@@ -73,14 +74,15 @@ function EuropeMapDetails() {
           ? zones[0].averagePrice
           : zones.reduce((sum, z) => sum + z.averagePrice, 0) / zones.length;
       const vat = zones[0].vat;
-      return {
+      rows.push({
         name: countryName,
         translatedName,
         zones,
         avgPrice,
         vat,
-      };
-    });
+      });
+    }
+    return rows;
   }, [biddingZoneList, bzPriceCtx.bzPrice, vatCtx.vat, t]);
 
   const columns = useMemo(

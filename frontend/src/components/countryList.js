@@ -41,8 +41,11 @@ export const countryList = {
   Poland: {
     vat: 23,
   },
-  "Germany & Luxembourg": {
+  Germany: {
     vat: 19,
+  },
+  Luxembourg: {
+    vat: 17,
   },
   Ukraine: {
     vat: 20,

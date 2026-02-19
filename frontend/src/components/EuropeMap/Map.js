@@ -57,7 +57,7 @@ function EuropeMap() {
 
     return (
       <BiddingZone
-        key={zone.bz}
+        key={`${zone.bz}-${zone.country}`}
         country={zone.country}
         d={zone.d}
         textX={zone.textX}
